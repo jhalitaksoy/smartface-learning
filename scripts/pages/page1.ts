@@ -2,6 +2,7 @@ import Page1Design from 'generated/pages/page1';
 import componentContextPatch from "@smartface/contx/lib/smartface/componentContextPatch";
 import PageTitleLayout from "components/PageTitleLayout";
 import System from "sf-core/device/system";
+import { Point2D } from 'sf-core/primitive/point2d';
 
 export default class Page1 extends Page1Design {
     router: any;
@@ -11,9 +12,22 @@ export default class Page1 extends Page1Design {
         this.onShow = onShow.bind(this, this.onShow.bind(this));
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        this.btnNext.onPress = () => {
-            this.router.push("/pages/page2", { message: "Hello World!" });
+        //this.button1.onPress = () => {
+        //    this.router.push("/pages/page2", { message: "Hello World!" });
+        //}
+        this.labelForgotPassword.onTouch = (point2d : Point2D)=>{
+            this.router.push("/pages/page2", {message : "Text"})
         }
+    }
+
+    initMaterialTextBoxes() {
+        this.mtbUsername.options = {
+            hint: "Username"
+        }
+        this.mtbPassword.options = {
+            hint: "Password"
+        }
+        this.mtbPassword.materialTextBox.isPassword = true;
     }
 }
 
@@ -39,4 +53,5 @@ function onLoad(superOnLoad: () => void) {
     if (System.OS === "Android") {
         this.headerBar.title = "";
     }
+    this.initMaterialTextBoxes()
 }

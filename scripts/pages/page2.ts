@@ -14,9 +14,9 @@ export default class Page2 extends Page2Design {
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        touch.addPressEvent(this.btnSayHello, () => {
+        /*touch.addPressEvent(this.btnSayHello, () => {
             alert("Hello World!");
-        });
+        });*/
     }
 }
 
@@ -29,6 +29,8 @@ function onShow(superOnShow: () => void) {
     this.headerBar.titleLayout.applyLayout();
     this.routeData && console.info(this.routeData.message);
 }
+
+
 
 /**
  * @event onLoad
@@ -59,4 +61,3 @@ function onLoad(superOnLoad: () => void) {
     }
     headerBar.itemColor = Color.WHITE;
 }
-

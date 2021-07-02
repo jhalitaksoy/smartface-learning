@@ -1,0 +1,8 @@
+{
+    ".padding": {
+		"&-vertical": {
+			"paddingLeft": 25,
+			"paddingRight": 25
+		}
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"#page2": {
+		"flexProps": {
+			"justifyContent": "FLEX_START"
+		},
+		"&-textbox": {}
+	}
+}

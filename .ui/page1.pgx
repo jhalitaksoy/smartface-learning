@@ -1,15 +1,18 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page #pgLogin",
 			"id": "e891b86d",
 			"initialized": true,
 			"props": {
 				"children": [
 					"42b807d1",
 					"b7d28cff",
-					"980522a9",
-					"9e49-7873-afba-472b"
+					"b277-e9c7-ea45-ec68",
+					"5a3c-70c6-20ce-3ac9",
+					"b1c7-4096-3f3c-6cec",
+					"7875-1d68-1216-5279",
+					"9d45-b650-6d64-a3cf"
 				],
 				"isRemovable": true,
 				"name": "page1",
@@ -20,7 +23,7 @@
 			"type": "Page",
 			"userProps": {
 				"flexProps": {
-					"justifyContent": "SPACE_BETWEEN",
+					"justifyContent": "FLEX_START",
 					"alignItems": "STRETCH"
 				},
 				"orientation": "PORTRAIT",
@@ -29,8 +32,7 @@
 				"paddingRight": 16,
 				"safeAreaEnabled": true
 			},
-			"version": "6.15.1",
-			"degree": 0
+			"version": "6.15.1"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -44,8 +46,7 @@
 			"type": "StatusBar",
 			"userProps": {
 				"visible": true
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-headerBar",
@@ -61,71 +62,118 @@
 			"userProps": {
 				"title": "Page1",
 				"visible": true
-			},
-			"degree": 1
+			}
 		},
 		{
-			"className": ".sf-label",
-			"id": "980522a9",
+			"className": ".sf-label #pgLogin-lblLoginText",
+			"id": "b277-e9c7-ea45-ec68",
 			"props": {
-				"autoHeight": 39.325842696629216,
 				"children": [],
-				"name": "lbl",
+				"name": "label1",
 				"parent": "e891b86d",
-				"text": "Page1",
+				"text": "Login"
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "8iM97ITtL",
+				"text": "Login"
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "5a3c-70c6-20ce-3ac9",
+			"initialized": false,
+			"props": {
+				"children": [],
+				"name": "mtbUsername",
+				"parent": "e891b86d",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"height": 50,
+				"left": 0,
+				"testId": "jEGfrGBJI",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "b1c7-4096-3f3c-6cec",
+			"initialized": false,
+			"props": {
+				"children": [],
+				"name": "mtbPassword",
+				"parent": "e891b86d",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"height": 50,
+				"left": 0,
+				"testId": "Rc4q8Mhv9",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label #pgLogin-lblForgotPassword",
+			"id": "7875-1d68-1216-5279",
+			"props": {
+				"children": [],
+				"name": "labelForgotPassword",
+				"parent": "e891b86d",
+				"text": "Forgot Password?",
 				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
-				"autoHeight": 39.325842696629216,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"flexProps": {
-					"marginLeft": 20,
-					"marginRight": 20,
-					"alignSelf": "STRETCH",
-					"flexGrow": 1
-				},
-				"font": {
-					"size": 32,
-					"bold": false,
-					"italic": false,
-					"family": "SFProText",
-					"style": "Regular"
-				},
-				"height": 600,
-				"multiline": true,
-				"text": "Page1",
-				"textAlignment": "MIDCENTER",
-				"textColor": "rgba( 210, 210, 210, 1 )",
-				"usePageVariable": true,
-				"testId": "L-42gAben"
-			},
-			"degree": 1
+				"testId": "UaDQsAN3V",
+				"text": "Forgot Password?",
+				"usePageVariable": true
+			}
 		},
 		{
-			"className": ".sf-button",
-			"id": "9e49-7873-afba-472b",
+			"className": ".sf-button #pgLogin-btnLogin",
+			"id": "9d45-b650-6d64-a3cf",
 			"props": {
-				"autoHeight": 50.561797752808985,
 				"children": [],
-				"name": "btnNext",
+				"name": "button1",
 				"parent": "e891b86d",
-				"text": "Next Page",
+				"text": "LOGIN",
 				"usePageVariable": true
 			},
 			"type": "Button",
 			"userProps": {
-				"autoHeight": 50.561797752808985,
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"positionType": "RELATIVE"
-				},
-				"text": "Next Page",
-				"usePageVariable": true,
-				"width": null,
-				"testId": "ucEDBF6ZMB"
-			},
-			"degree": 1
+				"testId": "q_WrTyOLp",
+				"text": "LOGIN",
+				"usePageVariable": true
+			}
 		}
 	]
 }
