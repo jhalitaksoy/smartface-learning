@@ -1,0 +1,1 @@
+export type LoginParameters = {name: string, password: string}

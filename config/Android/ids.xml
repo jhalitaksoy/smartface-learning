@@ -15,7 +15,7 @@
     <item name="_Page1_MtbUsername" type="id" />
     <item name="_Page1_MtbPassword" type="id" />
     <item name="_Page1_LabelForgotPassword" type="id" />
-    <item name="_Page1_Button1" type="id" />
+    <item name="_Page1_ButtonLogin" type="id" />
     <item name="_Page2_TextBoxEmail" type="id" />
     <item name="_Page2_ButtonSendCode" type="id" />
 </resources>

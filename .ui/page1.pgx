@@ -163,7 +163,7 @@
 			"id": "9d45-b650-6d64-a3cf",
 			"props": {
 				"children": [],
-				"name": "button1",
+				"name": "buttonLogin",
 				"parent": "e891b86d",
 				"text": "LOGIN",
 				"usePageVariable": true
