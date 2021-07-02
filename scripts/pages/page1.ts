@@ -27,16 +27,16 @@ export default class Page1 extends Page1Design {
             }
             try {
                 const res = await login(loginParameters)
-                if (res.statusCode == 200) {
-                    const json = res.body
-                    alert("Login Successed")
-                } else if (res.statusCode == 409) {
-                    alert("Login Failed")
-                }else{
-                    alert("Unknown Error")
-                }
+                const jwtToken = res.body
+                console.log(jwtToken);
+                alert("Login Successed")
             } catch (error) {
-                alert("Error : " + error.toString())
+                if (error.statusCode == 409) {
+                    alert("Login Failed")
+                    return
+                }
+                alert("Unknown Error")
+                console.log(error);
             }
         }
     }
