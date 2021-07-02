@@ -3,8 +3,8 @@ import componentContextPatch from "@smartface/contx/lib/smartface/componentConte
 import PageTitleLayout from "components/PageTitleLayout";
 import System from "sf-core/device/system";
 import { Point2D } from 'sf-core/primitive/point2d';
-import { login } from 'services/auth_service';
 import { LoginParameters } from 'models/login-parameters';
+import { context } from 'context';
 
 export default class Page1 extends Page1Design {
     router: any;
@@ -26,10 +26,11 @@ export default class Page1 extends Page1Design {
                 password: this.mtbPassword.materialTextBox.text,
             }
             try {
-                const res = await login(loginParameters)
+                const res = await context.authService.login(loginParameters)
                 const jwtToken = res.body
+                context.jwtKeyStore.setJwtKey(jwtToken)
                 console.log(jwtToken);
-                alert("Login Successed")
+                this.router.push("/pages/home", { message: "Text" })
             } catch (error) {
                 if (error.statusCode == 409) {
                     alert("Login Failed")

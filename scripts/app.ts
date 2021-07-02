@@ -6,6 +6,7 @@ import System from "sf-core/device/system";
 import "theme";
 import "sf-extension-utils";
 import router from "routes";
+import { context } from "context";
 
 // Set uncaught exception handler, all exceptions that are not caught will
 // trigger onUnhandledError callback.
@@ -17,4 +18,9 @@ Application.onUnhandledError = function (e: UnhandledError) {
     });
 };
 
-router.push("/pages/page1");
+const jwtKey = context.jwtKeyStore.getJwtKey()
+if (jwtKey) {
+    router.push("/pages/home");
+} else {
+    router.push("/pages/page1");
+}

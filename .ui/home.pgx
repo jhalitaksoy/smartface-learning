@@ -1,0 +1,65 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "cd0e-ab65-fd48-4e41",
+			"initialized": true,
+			"props": {
+				"children": [
+					"7891-ad17-c5fd-8e53",
+					"cfb8-1e7e-b654-aa31",
+					"7a53-45dd-b14c-3f81"
+				],
+				"name": "home",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "7891-ad17-c5fd-8e53",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "cd0e-ab65-fd48-4e41"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-headerBar",
+			"id": "cfb8-1e7e-b654-aa31",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "cd0e-ab65-fd48-4e41",
+				"title": "home"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "home"
+			}
+		},
+		{
+			"className": ".sf-button",
+			"id": "7a53-45dd-b14c-3f81",
+			"props": {
+				"children": [],
+				"name": "buttonLogout",
+				"parent": "cd0e-ab65-fd48-4e41",
+				"text": "Logout",
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
+				"testId": "ZQOJsReu9",
+				"text": "Logout",
+				"usePageVariable": true
+			}
+		}
+	]
+}
