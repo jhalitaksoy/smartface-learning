@@ -12,6 +12,7 @@
 					"5a3c-70c6-20ce-3ac9",
 					"b1c7-4096-3f3c-6cec",
 					"7875-1d68-1216-5279",
+					"614c-8fb5-7a89-1ec5",
 					"9d45-b650-6d64-a3cf"
 				],
 				"isRemovable": true,
@@ -156,6 +157,22 @@
 				"testId": "UaDQsAN3V",
 				"text": "Forgot Password?",
 				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-activityIndicator",
+			"id": "614c-8fb5-7a89-1ec5",
+			"props": {
+				"children": [],
+				"name": "activityIndicator1",
+				"parent": "e891b86d",
+				"usePageVariable": true
+			},
+			"type": "ActivityIndicator",
+			"userProps": {
+				"testId": "7nItjBWGc",
+				"usePageVariable": true,
+				"visible": false
 			}
 		},
 		{

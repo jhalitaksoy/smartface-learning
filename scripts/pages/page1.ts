@@ -5,6 +5,7 @@ import System from "sf-core/device/system";
 import { Point2D } from 'sf-core/primitive/point2d';
 import { LoginParameters } from 'models/login-parameters';
 import { context } from 'context';
+import setupButtonActivity from "sf-extension-utils/lib/button-activity";
 
 export default class Page1 extends Page1Design {
     router: any;
@@ -20,7 +21,10 @@ export default class Page1 extends Page1Design {
         this.labelForgotPassword.onTouch = (point2d: Point2D) => {
             this.router.push("/pages/page2", { message: "Text" })
         }
-        this.buttonLogin.onPress = async () => {
+        
+        setupButtonActivity(this.buttonLogin, this.activityIndicator1, async (showIndicator, hideIndicator) => {
+
+            showIndicator();
             const loginParameters: LoginParameters = {
                 name: this.mtbUsername.materialTextBox.text,
                 password: this.mtbPassword.materialTextBox.text,
@@ -31,7 +35,9 @@ export default class Page1 extends Page1Design {
                 context.jwtKeyStore.setJwtKey(jwtToken)
                 console.log(jwtToken);
                 this.router.push("/pages/home", { message: "Text" })
+                hideIndicator();
             } catch (error) {
+                hideIndicator();
                 if (error.statusCode == 409) {
                     alert("Login Failed")
                     return
@@ -39,7 +45,9 @@ export default class Page1 extends Page1Design {
                 alert("Unknown Error")
                 console.log(error);
             }
-        }
+            hideIndicator();
+            return {}
+        });
     }
 
     initMaterialTextBoxes() {
