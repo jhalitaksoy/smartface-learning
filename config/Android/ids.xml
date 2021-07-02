@@ -11,14 +11,11 @@
     <item name="___library___Simple_listviewitem_LblChevron" type="id" />
     <item name="___library___Simple_gridviewItem_LblSubtitle" type="id" />
     <item name="___library___Simple_listviewitem_FlLine" type="id" />
-    <item name="_Page2_Lbl" type="id" />
-    <item name="_Page2_BtnSayHello" type="id" />
     <item name="_Page1_Label1" type="id" />
     <item name="_Page1_MtbUsername" type="id" />
     <item name="_Page1_MtbPassword" type="id" />
-    <item name="_Page1_Label2" type="id" />
-    <item name="_Page1_Button1" type="id" />
     <item name="_Page1_LabelForgotPassword" type="id" />
-    <item name="_Page2_TextBox1" type="id" />
-    <item name="_Page2_Button1" type="id" />
+    <item name="_Page1_Button1" type="id" />
+    <item name="_Page2_TextBoxEmail" type="id" />
+    <item name="_Page2_ButtonSendCode" type="id" />
 </resources>

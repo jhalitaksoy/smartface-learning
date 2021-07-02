@@ -17,6 +17,9 @@ export default class Page2 extends Page2Design {
         /*touch.addPressEvent(this.btnSayHello, () => {
             alert("Hello World!");
         });*/
+        this.buttonSendCode.onTouch = ()=>{
+            alert(this.textBoxEmail.text)
+        }
     }
 }
 

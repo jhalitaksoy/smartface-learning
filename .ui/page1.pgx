@@ -159,7 +159,7 @@
 			}
 		},
 		{
-			"className": ".sf-button #pgLogin-btnLogin",
+			"className": ".sf-button #pgLogin-btnLogin .mybutton",
 			"id": "9d45-b650-6d64-a3cf",
 			"props": {
 				"children": [],

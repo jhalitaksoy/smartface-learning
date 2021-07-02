@@ -62,29 +62,33 @@
 			"id": "5bd6-15bb-a6d3-d39d",
 			"props": {
 				"children": [],
-				"name": "textBox1",
+				"hint": "Your Email Address",
+				"name": "textBoxEmail",
 				"parent": "7761adc8",
-				"text": "textBox1"
+				"usePageVariable": true
 			},
 			"type": "TextBox",
 			"userProps": {
+				"hint": "Your Email Address",
 				"testId": "pz4YxjEjp",
-				"text": "textBox1"
+				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-button",
+			"className": ".sf-button #page2-button .mybutton",
 			"id": "50af-2f11-4dc8-1365",
 			"props": {
 				"children": [],
-				"name": "button1",
+				"name": "buttonSendCode",
 				"parent": "7761adc8",
-				"text": "button1"
+				"text": "Kod Gönder",
+				"usePageVariable": true
 			},
 			"type": "Button",
 			"userProps": {
 				"testId": "OIn9NOX_r",
-				"text": "button1"
+				"text": "Kod Gönder",
+				"usePageVariable": true
 			}
 		}
 	]
