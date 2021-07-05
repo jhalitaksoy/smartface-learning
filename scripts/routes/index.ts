@@ -16,25 +16,39 @@ const router = Router.of({
             routes: [
                 Route.of({
                     path: "/pages/page1",
-                    build: buildExtender({ 
-                        getPageClass: () => Pages.Page1, 
-                        headerBarStyle: { visible: true } 
+                    build: buildExtender({
+                        getPageClass: () => Pages.Page1,
+                        headerBarStyle: { visible: true }
                     })
                 }),
                 Route.of({
                     path: "/pages/page2",
-                    build: buildExtender({ 
-                        getPageClass: () => Pages.Page2, 
-                        headerBarStyle: { visible: true } 
+                    build: buildExtender({
+                        getPageClass: () => Pages.Page2,
+                        headerBarStyle: { visible: true }
                     })
                 }),
                 Route.of({
                     path: "/pages/home",
-                    build: buildExtender({ 
-                        getPageClass: () => Pages.Home, 
-                        headerBarStyle: { visible: true } 
+                    build: buildExtender({
+                        getPageClass: () => Pages.Home,
+                        headerBarStyle: { visible: true }
                     })
                 }),
+                StackRouter.of({
+                    path: "/pages/auth",
+                    to: "/pages/auth/register",
+                    modal: true, // This is essential
+                    routes: [
+                        Route.of({
+                            path: "/pages/auth/register",
+                            build: buildExtender({
+                                getPageClass: () => Pages.Register,
+                                headerBarStyle: { visible: false }
+                            })
+                        })
+                    ]
+                })
             ]
         })
     ]

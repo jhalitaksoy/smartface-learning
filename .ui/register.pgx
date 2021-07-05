@@ -1,0 +1,63 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "0ecc-160b-e931-e5a9",
+			"initialized": true,
+			"props": {
+				"children": [
+					"ffd1-0e97-0b2a-ae64",
+					"1b78-5a34-719e-884d",
+					"af9f-8c76-5a9c-552f"
+				],
+				"name": "register",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "ffd1-0e97-0b2a-ae64",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "0ecc-160b-e931-e5a9"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-headerBar",
+			"id": "1b78-5a34-719e-884d",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "0ecc-160b-e931-e5a9",
+				"title": "register"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "register"
+			}
+		},
+		{
+			"className": ".sf-button",
+			"id": "af9f-8c76-5a9c-552f",
+			"props": {
+				"children": [],
+				"name": "button1",
+				"parent": "0ecc-160b-e931-e5a9",
+				"text": "button1"
+			},
+			"type": "Button",
+			"userProps": {
+				"testId": "iD9FfGbJ2",
+				"text": "button1"
+			}
+		}
+	]
+}

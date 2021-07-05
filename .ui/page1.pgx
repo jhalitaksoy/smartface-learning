@@ -13,7 +13,8 @@
 					"b1c7-4096-3f3c-6cec",
 					"7875-1d68-1216-5279",
 					"614c-8fb5-7a89-1ec5",
-					"9d45-b650-6d64-a3cf"
+					"9d45-b650-6d64-a3cf",
+					"491d-02d4-142d-243a"
 				],
 				"isRemovable": true,
 				"name": "page1",
@@ -189,6 +190,26 @@
 			"userProps": {
 				"testId": "q_WrTyOLp",
 				"text": "LOGIN",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label #pgLogin-lblForgotPassword",
+			"id": "491d-02d4-142d-243a",
+			"props": {
+				"children": [],
+				"name": "labelGotoRegister",
+				"parent": "e891b86d",
+				"text": "Register",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"left": 0,
+				"testId": "UaDQsAN3V",
+				"text": "Register",
+				"textAlignment": "MIDCENTER",
+				"top": 0,
 				"usePageVariable": true
 			}
 		}

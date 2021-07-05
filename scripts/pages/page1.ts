@@ -22,6 +22,10 @@ export default class Page1 extends Page1Design {
             this.router.push("/pages/page2", { message: "Text" })
         }
 
+        this.labelGotoRegister.onTouch = (point2d: Point2D) => {
+            this.router.push("/pages/auth/register", { message: "Text" })
+        }
+
         setupButtonActivity(this.buttonLogin, this.activityIndicator1, async (showIndicator, hideIndicator) => {
             showIndicator();
             this.setPageEnability(false)
