@@ -26,33 +26,7 @@ export default class Page1 extends Page1Design {
             this.router.push("/pages/auth/register")
         }
 
-        setupButtonActivity(this.buttonLogin, this.activityIndicator1, async (showIndicator, hideIndicator) => {
-            showIndicator();
-            this.setPageEnability(false)
-            const loginParameters: LoginParameters = {
-                name: this.mtbUsername.materialTextBox.text,
-                password: this.mtbPassword.materialTextBox.text,
-            }
-            try {
-                const res = await context.authService.login(loginParameters)
-                const jwtToken = res.body
-                context.jwtKeyStore.setJwtKey(jwtToken)
-                this.router.push("/pages/home", { message: "Text" })
-                context.userStore.setUserName(loginParameters.name)
-                hideIndicator();
-                this.setPageEnability(true)
-            } catch (error) {
-                hideIndicator();
-                this.setPageEnability(true)
-                if (error.statusCode == 409) {
-                    alert("Login Failed")
-                    return
-                }
-                alert("Unknown Error")
-                console.log(error);
-            }
-            return {}
-        });
+        setupButtonActivity(this.buttonLogin, this.activityIndicator1, this.onLoginTab);
     }
 
     setPageEnability(enability: boolean) {
@@ -62,8 +36,37 @@ export default class Page1 extends Page1Design {
         this.mtbUsername.materialTextBox.touchEnabled = enability
         this.mtbPassword.materialTextBox.touchEnabled = enability
         this.labelForgotPassword.touchEnabled = enability
+        this.labelGotoRegister.touchEnabled = enability
     }
-    
+
+    onLoginTab = async (showIndicator, hideIndicator) => {
+        showIndicator();
+        this.setPageEnability(false)
+        const loginParameters: LoginParameters = {
+            name: this.mtbUsername.materialTextBox.text,
+            password: this.mtbPassword.materialTextBox.text,
+        }
+        try {
+            const res = await context.authService.login(loginParameters)
+            const jwtToken = res.body
+            context.jwtKeyStore.setJwtKey(jwtToken)
+            this.router.push("/pages/home", { message: "Text" })
+            context.userStore.setUserName(loginParameters.name)
+            hideIndicator();
+            this.setPageEnability(true)
+        } catch (error) {
+            hideIndicator();
+            this.setPageEnability(true)
+            if (error.statusCode == 409) {
+                alert("Login Failed")
+                return
+            }
+            alert("Unknown Error")
+            console.log(error);
+        }
+        return {}
+    }
+
     initMaterialTextBoxes() {
         this.mtbUsername.options = {
             hint: "Username"
@@ -74,9 +77,9 @@ export default class Page1 extends Page1Design {
         this.mtbPassword.materialTextBox.isPassword = true;
     }
 
-    handleUserName(){
+    handleUserName() {
         const userName = context.userStore.getUserName()
-        if(userName){
+        if (userName) {
             this.mtbUsername.materialTextBox.text = userName
         }
     }

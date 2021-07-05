@@ -15,41 +15,7 @@ export default class Register extends RegisterDesign {
         this.labelGotoLogin.onTouch = (point2d: Point2D) => {
             this.router.dismiss()
         }
-        setupButtonActivity(this.buttonRegisterSubmit, this.activityIndicator1, async (showIndicator, hideIndicator) => {
-            showIndicator();
-            this.setPageEnability(false)
-            const password1 = this.mtbPassword1.materialTextBox.text
-            const password2 = this.mtbPassword2.materialTextBox.text
-
-            if (password1 != password2) {
-                hideIndicator();
-                this.setPageEnability(true)
-                alert("Passwords does not match!")
-                return
-            }
-
-            const registerParameters: RegisterParameters = {
-                name: this.mtbUserName.materialTextBox.text,
-                password: password1,
-            }
-            try {
-                const res = await context.authService.register(registerParameters)
-                context.userStore.setUserName(registerParameters.name)
-                hideIndicator();
-                this.setPageEnability(true)
-                this.router.dismiss()
-            } catch (error) {
-                hideIndicator();
-                this.setPageEnability(true)
-                if (error.statusCode == 409) {
-                    alert("Try different user name")
-                    return
-                }
-                alert("Unknown Error")
-                console.log(error);
-            }
-            return {}
-        })
+        setupButtonActivity(this.buttonRegisterSubmit, this.activityIndicator1, this.onRegisterTab)
     }
 
     setPageEnability(enability: boolean) {
@@ -59,6 +25,44 @@ export default class Register extends RegisterDesign {
         this.mtbPassword2.touchEnabled = enability
         this.mtbPassword1.materialTextBox.touchEnabled = enability
         this.mtbPassword2.materialTextBox.touchEnabled = enability
+        this.labelGotoLogin.touchEnabled = enability
+    }
+
+    onRegisterTab = async (showIndicator, hideIndicator) => {
+        showIndicator();
+        this.setPageEnability(false)
+
+        const password1 = this.mtbPassword1.materialTextBox.text
+        const password2 = this.mtbPassword2.materialTextBox.text
+
+        if (password1 != password2) {
+            hideIndicator();
+            this.setPageEnability(true)
+            alert("Passwords does not match!")
+            return
+        }
+
+        const registerParameters: RegisterParameters = {
+            name: this.mtbUserName.materialTextBox.text,
+            password: password1,
+        }
+        try {
+            const res = await context.authService.register(registerParameters)
+            context.userStore.setUserName(registerParameters.name)
+            hideIndicator();
+            this.setPageEnability(true)
+            this.router.dismiss()
+        } catch (error) {
+            hideIndicator();
+            this.setPageEnability(true)
+            if (error.statusCode == 409) {
+                alert("Try different user name")
+                return
+            }
+            alert("Unknown Error")
+            console.log(error);
+        }
+        return {}
     }
 
     initMaterialTextBoxes() {
