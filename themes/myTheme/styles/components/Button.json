@@ -1,5 +1,6 @@
 {
-	".mybutton": {
-		"backgroundColor": "rgba( 12, 0, 0, 1 )"
-	}
+    ".mybutton": {
+        "backgroundColor": "#5EA35D",
+        "borderRadius": 25
+    }
 }

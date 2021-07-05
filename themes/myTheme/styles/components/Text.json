@@ -1,0 +1,12 @@
+{
+	".title": {
+		"textAlignment": "MIDLEFT",
+		"textColor": "rgba( 24, 1, 1, 1 )",
+		"font": {
+			"size": 24
+		}
+	},
+    ".sub-title": {
+		"textAlignment": "MIDCENTER"
+	}
+}

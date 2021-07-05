@@ -18,7 +18,14 @@
     <item name="_Page1_LabelForgotPassword" type="id" />
     <item name="_Page1_ActivityIndicator1" type="id" />
     <item name="_Page1_ButtonLogin" type="id" />
-    <item name="_Register_Button1" type="id" />
+    <item name="_Page1_LabelGotoRegister" type="id" />
     <item name="_Page2_TextBoxEmail" type="id" />
     <item name="_Page2_ButtonSendCode" type="id" />
+    <item name="_Register_LabelRegisterTittle" type="id" />
+    <item name="_Register_MtbUserName" type="id" />
+    <item name="_Register_MtbPassword1" type="id" />
+    <item name="_Register_MtbPassword2" type="id" />
+    <item name="_Register_ActivityIndicator1" type="id" />
+    <item name="_Register_ButtonRegisterSubmit" type="id" />
+    <item name="_Register_LabelGotoLogin" type="id" />
 </resources>

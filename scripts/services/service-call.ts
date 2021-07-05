@@ -5,10 +5,10 @@ const sc = new ServiceCall({
 });
 
 export const post = (endPointPath: string, body?: { [key: string]: any } | string) => {
-    return sc.request(`/login`, {
+    return sc.request(endPointPath, {
         method: "POST",
         body: body,
-        fullResponse : true,
+        fullResponse: true,
         headers: { "Content-Type": "application/json" },
     })
 }

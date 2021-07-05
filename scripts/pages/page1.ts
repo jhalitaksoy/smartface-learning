@@ -23,7 +23,7 @@ export default class Page1 extends Page1Design {
         }
 
         this.labelGotoRegister.onTouch = (point2d: Point2D) => {
-            this.router.push("/pages/auth/register", { message: "Text" })
+            this.router.push("/pages/auth/register")
         }
 
         setupButtonActivity(this.buttonLogin, this.activityIndicator1, async (showIndicator, hideIndicator) => {
@@ -38,6 +38,7 @@ export default class Page1 extends Page1Design {
                 const jwtToken = res.body
                 context.jwtKeyStore.setJwtKey(jwtToken)
                 this.router.push("/pages/home", { message: "Text" })
+                context.userStore.setUserName(loginParameters.name)
                 hideIndicator();
                 this.setPageEnability(true)
             } catch (error) {
@@ -72,6 +73,13 @@ export default class Page1 extends Page1Design {
         }
         this.mtbPassword.materialTextBox.isPassword = true;
     }
+
+    handleUserName(){
+        const userName = context.userStore.getUserName()
+        if(userName){
+            this.mtbUsername.materialTextBox.text = userName
+        }
+    }
 }
 
 /**
@@ -97,4 +105,5 @@ function onLoad(superOnLoad: () => void) {
         this.headerBar.title = "";
     }
     this.initMaterialTextBoxes()
+    this.handleUserName();
 }

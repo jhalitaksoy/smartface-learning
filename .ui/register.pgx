@@ -8,7 +8,13 @@
 				"children": [
 					"ffd1-0e97-0b2a-ae64",
 					"1b78-5a34-719e-884d",
-					"af9f-8c76-5a9c-552f"
+					"f4e2-ae08-65ba-523c",
+					"32a7-1ab0-be6f-0968",
+					"9a70-6855-7e59-6e62",
+					"b176-b51f-49b1-26d8",
+					"e9c0-3610-9e97-0fd1",
+					"021e-a419-dc1a-3c6e",
+					"57b3-e59c-a8b6-01a6"
 				],
 				"name": "register",
 				"orientation": "PORTRAIT",
@@ -45,18 +51,165 @@
 			}
 		},
 		{
-			"className": ".sf-button",
-			"id": "af9f-8c76-5a9c-552f",
+			"className": ".sf-label .title",
+			"id": "f4e2-ae08-65ba-523c",
 			"props": {
 				"children": [],
-				"name": "button1",
+				"name": "labelRegisterTittle",
 				"parent": "0ecc-160b-e931-e5a9",
-				"text": "button1"
+				"text": "Register"
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "-5JDEvY3_",
+				"text": "Register"
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "32a7-1ab0-be6f-0968",
+			"initialized": false,
+			"props": {
+				"children": [],
+				"name": "mtbUserName",
+				"parent": "0ecc-160b-e931-e5a9",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"height": 50,
+				"left": 0,
+				"marginTop": 20,
+				"testId": "lxLqWza7_",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "9a70-6855-7e59-6e62",
+			"initialized": false,
+			"props": {
+				"children": [],
+				"name": "mtbPassword1",
+				"parent": "0ecc-160b-e931-e5a9",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"height": 50,
+				"left": 0,
+				"marginTop": 10,
+				"testId": "Nms0Ojynz",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "b176-b51f-49b1-26d8",
+			"initialized": false,
+			"props": {
+				"children": [],
+				"name": "mtbPassword2",
+				"parent": "0ecc-160b-e931-e5a9",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"height": 50,
+				"left": 0,
+				"marginTop": 10,
+				"testId": "VLXlXToPe",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-activityIndicator",
+			"id": "e9c0-3610-9e97-0fd1",
+			"props": {
+				"children": [],
+				"name": "activityIndicator1",
+				"parent": "0ecc-160b-e931-e5a9",
+				"usePageVariable": true
+			},
+			"type": "ActivityIndicator",
+			"userProps": {
+				"testId": "Yk9y9MfgH",
+				"usePageVariable": true,
+				"visible": false
+			}
+		},
+		{
+			"className": ".sf-button .mybutton",
+			"id": "021e-a419-dc1a-3c6e",
+			"props": {
+				"children": [],
+				"name": "buttonRegisterSubmit",
+				"parent": "0ecc-160b-e931-e5a9",
+				"text": "Register",
+				"usePageVariable": true
 			},
 			"type": "Button",
 			"userProps": {
-				"testId": "iD9FfGbJ2",
-				"text": "button1"
+				"marginTop": 0,
+				"testId": "qzCl732lW",
+				"text": "Register",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .sub-title",
+			"id": "57b3-e59c-a8b6-01a6",
+			"props": {
+				"children": [],
+				"name": "labelGotoLogin",
+				"parent": "0ecc-160b-e931-e5a9",
+				"text": "Goto Login",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "8JO7fSLAu",
+				"text": "Goto Login",
+				"usePageVariable": true
 			}
 		}
 	]
