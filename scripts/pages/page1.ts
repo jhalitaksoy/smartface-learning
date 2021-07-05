@@ -21,10 +21,10 @@ export default class Page1 extends Page1Design {
         this.labelForgotPassword.onTouch = (point2d: Point2D) => {
             this.router.push("/pages/page2", { message: "Text" })
         }
-        
-        setupButtonActivity(this.buttonLogin, this.activityIndicator1, async (showIndicator, hideIndicator) => {
 
+        setupButtonActivity(this.buttonLogin, this.activityIndicator1, async (showIndicator, hideIndicator) => {
             showIndicator();
+            this.setPageEnability(false)
             const loginParameters: LoginParameters = {
                 name: this.mtbUsername.materialTextBox.text,
                 password: this.mtbPassword.materialTextBox.text,
@@ -33,11 +33,12 @@ export default class Page1 extends Page1Design {
                 const res = await context.authService.login(loginParameters)
                 const jwtToken = res.body
                 context.jwtKeyStore.setJwtKey(jwtToken)
-                console.log(jwtToken);
                 this.router.push("/pages/home", { message: "Text" })
                 hideIndicator();
+                this.setPageEnability(true)
             } catch (error) {
                 hideIndicator();
+                this.setPageEnability(true)
                 if (error.statusCode == 409) {
                     alert("Login Failed")
                     return
@@ -45,11 +46,19 @@ export default class Page1 extends Page1Design {
                 alert("Unknown Error")
                 console.log(error);
             }
-            hideIndicator();
             return {}
         });
     }
 
+    setPageEnability(enability: boolean) {
+        this.layout.touchEnabled = enability
+        this.mtbUsername.touchEnabled = enability
+        this.mtbPassword.touchEnabled = enability
+        this.mtbUsername.materialTextBox.touchEnabled = enability
+        this.mtbPassword.materialTextBox.touchEnabled = enability
+        this.labelForgotPassword.touchEnabled = enability
+    }
+    
     initMaterialTextBoxes() {
         this.mtbUsername.options = {
             hint: "Username"
