@@ -1,11 +1,11 @@
 import Page1Design from 'generated/pages/page1';
 import componentContextPatch from "@smartface/contx/lib/smartface/componentContextPatch";
 import PageTitleLayout from "components/PageTitleLayout";
-import System from "sf-core/device/system";
-import { Point2D } from 'sf-core/primitive/point2d';
+import System from "@smartface/native/device/system";
+import { Point2D } from '@smartface/native/primitive/point2d';
 import { LoginParameters } from 'models/login-parameters';
 import { context } from 'context';
-import setupButtonActivity from "sf-extension-utils/lib/button-activity";
+import setupButtonActivity from "@smartface/extension-utils/lib/button-activity";
 
 export default class Page1 extends Page1Design {
     router: any;

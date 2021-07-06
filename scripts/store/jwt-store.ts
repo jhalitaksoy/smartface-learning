@@ -1,5 +1,5 @@
-//import { Data } from "sf-core"; // bug ***
-import Data = require('sf-core/global/data');
+//import { Data } from "@smartface/native"; // bug ***
+import Data = require('@smartface/native/global/data');
 
 export interface JwtKeyStore {
     getJwtKey(): string

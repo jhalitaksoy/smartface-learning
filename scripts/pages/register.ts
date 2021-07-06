@@ -1,6 +1,6 @@
 import RegisterDesign from 'generated/pages/register';
-import { Point2D } from 'sf-core/primitive/point2d';
-import setupButtonActivity from 'sf-extension-utils/lib/button-activity';
+import { Point2D } from '@smartface/native/primitive/point2d';
+import setupButtonActivity from '@smartface/extension-utils/lib/button-activity';
 import { RegisterParameters } from 'models/register-parameters';
 import { context } from 'context';
 

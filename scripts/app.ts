@@ -1,10 +1,10 @@
 /* globals lang */
 import "i18n/i18n"; // Generates global lang object
-import Application from "sf-core/application";
+import Application from "@smartface/native/application";
 import { errorStackBySourceMap } from "error-by-sourcemap";
-import System from "sf-core/device/system";
+import System from "@smartface/native/device/system";
 import "theme";
-import "sf-extension-utils";
+import "@smartface/extension-utils";
 import router from "routes";
 import { context } from "context";
 

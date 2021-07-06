@@ -1,5 +1,5 @@
 import sc, { post } from "./service-call";
-import ServiceCall, { IRequestOptions } from "sf-extension-utils/lib/service-call";
+import ServiceCall, { IRequestOptions } from "@smartface/extension-utils/lib/service-call";
 import { LoginParameters } from "models/login-parameters";
 import { RegisterParameters } from "models/register-parameters";
 

@@ -1,4 +1,4 @@
-import ServiceCall from "sf-extension-utils/lib/service-call";
+import ServiceCall from "@smartface/extension-utils/lib/service-call";
 const sc = new ServiceCall({
     baseUrl: "https://halitaksoy.com/auth-test",
     logEnabled: true,
