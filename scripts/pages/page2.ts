@@ -18,8 +18,16 @@ export default class Page2 extends Page2Design {
             alert("Hello World!");
         });*/
         this.buttonSendCode.onTouch = ()=>{
-            alert(this.textBoxEmail.text)
+            alert(this.mtbEmail.materialTextBox.text)
         }
+    }
+
+     initMaterialTextBoxes() {
+        this.mtbEmail.options = {
+            hint: "Username"
+        }
+
+        this.mtbEmail.materialTextBox.isPassword = true;
     }
 }
 
@@ -63,4 +71,5 @@ function onLoad(superOnLoad: () => void) {
         headerBar = this.parentController.headerBar;
     }
     headerBar.itemColor = Color.WHITE;
+    this.initMaterialTextBoxes();
 }

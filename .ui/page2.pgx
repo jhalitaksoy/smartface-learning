@@ -8,7 +8,7 @@
 				"children": [
 					"a829471c",
 					"35f1c1a1",
-					"5bd6-15bb-a6d3-d39d",
+					"17d8-00ac-ef44-4c0d",
 					"50af-2f11-4dc8-1365"
 				],
 				"isRemovable": true,
@@ -62,20 +62,36 @@
 			}
 		},
 		{
-			"className": ".sf-textBox #page2-textbox",
-			"id": "5bd6-15bb-a6d3-d39d",
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "17d8-00ac-ef44-4c0d",
+			"initialized": false,
 			"props": {
 				"children": [],
-				"hint": "Your Email Address",
-				"name": "textBoxEmail",
+				"name": "mtbEmail",
 				"parent": "7761adc8",
 				"usePageVariable": true
 			},
-			"type": "TextBox",
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
 			"userProps": {
-				"hint": "Your Email Address",
-				"testId": "pz4YxjEjp",
-				"usePageVariable": true
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"height": 50,
+				"left": 0,
+				"marginTop": 10,
+				"testId": "PzHsI50dH",
+				"top": 0,
+				"usePageVariable": true,
+				"width": null
 			}
 		},
 		{
@@ -90,6 +106,8 @@
 			},
 			"type": "Button",
 			"userProps": {
+				"marginBottom": null,
+				"marginTop": 15,
 				"testId": "OIn9NOX_r",
 				"text": "Kod Gönder",
 				"usePageVariable": true
