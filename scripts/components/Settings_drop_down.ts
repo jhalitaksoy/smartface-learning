@@ -8,7 +8,6 @@ import Settings, { SettingsItem } from 'pages/settings';
 export default class Settings_drop_down extends Settings_drop_downDesign {
     pageName?: string | undefined;
 
-    selectedValue: string
     settingsItem: SettingsItem
     myMenu: Menu;
 
@@ -45,13 +44,12 @@ export default class Settings_drop_down extends Settings_drop_downDesign {
     setModel(settingsItem: SettingsItem) {
         this.settingsItem = settingsItem;
         this.lblTitle.text = this.settingsItem.title
-        this.selectedValue = settingsItem.values[0]
-        this.updatedSelectedValue(settingsItem.values[0])
+        this.updatedSelectedValue(settingsItem.selectedItem)
         this.createMenu()
     }
 
     updatedSelectedValue(value: string) {
-        this.selectedValue = value;
-        this.lblValue.text = this.selectedValue;
+        this.settingsItem.selectedItem = value
+        this.lblValue.text = this.settingsItem.selectedItem;
     }
 }

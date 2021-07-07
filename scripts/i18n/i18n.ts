@@ -51,5 +51,11 @@ import 'i18n/en';
 import 'i18n/fi';
 import 'i18n/tr';
 import Application = require('@smartface/native/application');
+import { context } from 'context';
 
-SMF.i18n.switchLanguage(Device.language);
+SMF.i18n.switchLanguage(context.settingsStore.getLanguage() || Device.language);
+
+context.settingsStore.listenLanguageChange((language : string)=>{
+    SMF.i18n.switchLanguage(language || Device.language);
+    Application.restart()
+})

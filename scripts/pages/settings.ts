@@ -2,9 +2,11 @@ import SettingsDesign from 'generated/pages/settings';
 import addChild from "@smartface/contx/lib/smartface/action/addChild";
 import Settings_drop_down from 'components/Settings_drop_down';
 import { switchLanguage } from 'i18n/i18n';
+import { context } from 'context';
 
 export type SettingsItem = {
     title: string,
+    selectedItem : string,
     values: Array<string>
     onSelected?: (value: string) => void
 }
@@ -19,11 +21,11 @@ export default class Settings extends SettingsDesign {
     }
 
     onThemeSelected(theme: string) {
-        
+        context.settingsStore.setTheme(theme)
     }
 
     onLanguageChanged(language: string) {
-        switchLanguage(language)
+        context.settingsStore.setLanguage(language)
     }
 
     initListView() {
@@ -34,11 +36,13 @@ export default class Settings extends SettingsDesign {
                 title: lang["language"],
                 values: ["en", "tr"],
                 onSelected: this.onLanguageChanged,
+                selectedItem : context.settingsStore.getLanguage() || "en",
             },
             {
                 title: lang["theme"],
-                values: [lang["light"], lang["dark"]],
+                values: ["light", "dark"],
                 onSelected: this.onThemeSelected,
+                selectedItem : context.settingsStore.getTheme() || "light",
             },
         ]
 
