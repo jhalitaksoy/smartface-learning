@@ -42,9 +42,14 @@ SMF.i18n = {
     }
 };
 
+export function switchLanguage(language : string){
+    SMF.i18n.switchLanguage(language);
+}
+
 import 'i18n/de';
 import 'i18n/en';
 import 'i18n/fi';
 import 'i18n/tr';
+import Application = require('@smartface/native/application');
 
 SMF.i18n.switchLanguage(Device.language);
