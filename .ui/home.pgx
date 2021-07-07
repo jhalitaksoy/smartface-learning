@@ -17,7 +17,10 @@
 			},
 			"type": "Page",
 			"userProps": {
-				"borderColor": "rgba( 195, 174, 207, 0 )"
+				"borderColor": "rgba( 195, 174, 207, 0 )",
+				"flexProps": {
+					"justifyContent": "FLEX_START"
+				}
 			}
 		},
 		{
@@ -30,10 +33,14 @@
 				"parent": "cd0e-ab65-fd48-4e41"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {
+				"android": {
+					"color": "rgba( 94, 163, 93, 1 )"
+				}
+			}
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar .my-headerBar",
 			"id": "cfb8-1e7e-b654-aa31",
 			"props": {
 				"children": [],
@@ -60,8 +67,7 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"borderColor": "rgba( 0, 0, 0, 1 )",
-				"borderWidth": 1,
+				"borderRadius": 5,
 				"flexProps": {
 					"flexGrow": 1,
 					"alignSelf": "STRETCH"
@@ -102,7 +108,7 @@
 			}
 		},
 		{
-			"className": ".sf-button",
+			"className": ".sf-button .mybutton",
 			"id": "7a53-45dd-b14c-3f81",
 			"props": {
 				"children": [],

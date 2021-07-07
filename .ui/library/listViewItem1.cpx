@@ -15,12 +15,14 @@
 			},
 			"type": "ListViewItem",
 			"userProps": {
+				"backgroundColor": "rgba( 209, 167, 167, 0 )",
 				"flexProps": {
 					"flexDirection": "ROW",
 					"justifyContent": "SPACE_AROUND"
 				},
 				"height": 75,
 				"left": 0,
+				"marginBottom": 1,
 				"testId": "wIkJu90N-",
 				"top": 444.44444444444446,
 				"width": 375
@@ -42,11 +44,17 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"backgroundColor": "rgba( 188, 216, 210, 1 )",
 				"flexProps": {
 					"flexGrow": 1,
 					"flexDirection": "ROW",
 					"justifyContent": "SPACE_BETWEEN"
 				},
+				"marginBottom": 1,
+				"marginTop": 0,
+				"paddingBottom": 5,
+				"paddingLeft": 5,
+				"paddingRight": 5,
 				"testId": "j4zb4tj50",
 				"width": 50
 			}

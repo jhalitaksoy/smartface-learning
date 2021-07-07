@@ -6,6 +6,7 @@ import { Point2D } from '@smartface/native/primitive/point2d';
 import { LoginParameters } from 'models/login-parameters';
 import { context } from 'context';
 import setupButtonActivity from "@smartface/extension-utils/lib/button-activity";
+import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 
 export default class Page1 extends Page1Design {
     router: any;
@@ -109,4 +110,18 @@ function onLoad(superOnLoad: () => void) {
     }
     this.initMaterialTextBoxes()
     this.handleUserName();
+
+    this.myItem = new HeaderBarItem({
+        title: "Done",
+        android: {
+            systemIcon: 17301577   // OR 'ic_dialog_email'
+        },
+        ios: {
+            systemItem: HeaderBarItem.iOS.SystemItem.BOOKMARKS
+        },
+        onPress: function () {
+            console.log("You pressed Done item!");
+        }
+    });
+    this.headerBar.setItems([this.myItem]);
 }

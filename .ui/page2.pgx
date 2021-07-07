@@ -38,11 +38,14 @@
 			},
 			"type": "StatusBar",
 			"userProps": {
+				"android": {
+					"color": "rgba( 94, 163, 93, 1 )"
+				},
 				"visible": true
 			}
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar .my-headerBar",
 			"id": "35f1c1a1",
 			"props": {
 				"children": [],
@@ -53,6 +56,7 @@
 			},
 			"type": "HeaderBar",
 			"userProps": {
+				"backgroundColor": "rgba( 94, 163, 93, 1 )",
 				"title": "Page2",
 				"visible": true
 			}

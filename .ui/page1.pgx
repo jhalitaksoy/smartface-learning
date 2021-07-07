@@ -47,11 +47,14 @@
 			},
 			"type": "StatusBar",
 			"userProps": {
+				"android": {
+					"color": "rgba( 94, 163, 93, 1 )"
+				},
 				"visible": true
 			}
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar .my-headerBar",
 			"id": "b7d28cff",
 			"props": {
 				"children": [],
@@ -139,7 +142,7 @@
 				"height": 50,
 				"left": 0,
 				"testId": "Rc4q8Mhv9",
-				"top": 0,
+				"top": 15,
 				"usePageVariable": true
 			}
 		},
@@ -157,6 +160,7 @@
 			"userProps": {
 				"testId": "UaDQsAN3V",
 				"text": "Forgot Password?",
+				"top": 15,
 				"usePageVariable": true
 			}
 		},

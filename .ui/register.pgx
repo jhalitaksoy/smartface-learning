@@ -33,10 +33,14 @@
 				"parent": "0ecc-160b-e931-e5a9"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {
+				"android": {
+					"color": "rgba( 94, 163, 93, 1 )"
+				}
+			}
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar .my-headerBar",
 			"id": "1b78-5a34-719e-884d",
 			"props": {
 				"children": [],
@@ -123,7 +127,7 @@
 				},
 				"height": 50,
 				"left": 0,
-				"marginTop": 10,
+				"marginTop": 15,
 				"testId": "Nms0Ojynz",
 				"top": 0,
 				"usePageVariable": true
@@ -155,7 +159,7 @@
 				},
 				"height": 50,
 				"left": 0,
-				"marginTop": 10,
+				"marginTop": 15,
 				"testId": "VLXlXToPe",
 				"top": 0,
 				"usePageVariable": true
