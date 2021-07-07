@@ -74,14 +74,16 @@
 			"id": "b277-e9c7-ea45-ec68",
 			"props": {
 				"children": [],
-				"name": "label1",
+				"name": "lblTitle",
 				"parent": "e891b86d",
-				"text": "Login"
+				"text": "Login",
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
 				"testId": "8iM97ITtL",
-				"text": "Login"
+				"text": "Login",
+				"usePageVariable": true
 			}
 		},
 		{

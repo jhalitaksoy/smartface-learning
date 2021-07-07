@@ -16,6 +16,10 @@ export default class Register extends RegisterDesign {
             this.router.dismiss()
         }
         setupButtonActivity(this.buttonRegisterSubmit, this.activityIndicator1, this.onRegisterTab)
+
+        this.labelRegisterTittle.text = lang["register"]
+        this.buttonRegisterSubmit.text = lang["register"]
+        this.labelGotoLogin.text = lang["goto-login"]
     }
 
     setPageEnability(enability: boolean) {
@@ -67,16 +71,16 @@ export default class Register extends RegisterDesign {
 
     initMaterialTextBoxes() {
         this.mtbUserName.options = {
-            hint: "Username"
+            hint: lang["username"]
         }
 
         this.mtbPassword1.options = {
-            hint: "Password"
+            hint: lang["password"]
         }
         this.mtbPassword1.materialTextBox.isPassword = true;
 
         this.mtbPassword2.options = {
-            hint: "Password Again"
+            hint: lang["password-repeat"]
         }
         this.mtbPassword2.materialTextBox.isPassword = true;
     }

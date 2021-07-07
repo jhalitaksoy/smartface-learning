@@ -20,11 +20,12 @@ export default class Page2 extends Page2Design {
         this.buttonSendCode.onTouch = ()=>{
             alert(this.mtbEmail.materialTextBox.text)
         }
+        this.buttonSendCode.text = lang["send"]
     }
 
      initMaterialTextBoxes() {
         this.mtbEmail.options = {
-            hint: "Username"
+            hint: lang["code"]
         }
 
         this.mtbEmail.materialTextBox.isPassword = true;

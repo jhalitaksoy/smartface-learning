@@ -28,6 +28,11 @@ export default class Page1 extends Page1Design {
         }
 
         setupButtonActivity(this.buttonLogin, this.activityIndicator1, this.onLoginTab);
+
+        this.lblTitle.text =  lang["login"]
+        this.labelForgotPassword.text = lang["password-forget"]
+        this.labelGotoRegister.text = lang["goto-register"]
+        this.buttonLogin.text = lang["login"]
     }
 
     setPageEnability(enability: boolean) {
@@ -70,10 +75,10 @@ export default class Page1 extends Page1Design {
 
     initMaterialTextBoxes() {
         this.mtbUsername.options = {
-            hint: "Username"
+            hint: lang["username"]
         }
         this.mtbPassword.options = {
-            hint: "Password"
+            hint: lang["password"]
         }
         this.mtbPassword.materialTextBox.isPassword = true;
     }

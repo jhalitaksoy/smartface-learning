@@ -61,12 +61,14 @@
 				"children": [],
 				"name": "labelRegisterTittle",
 				"parent": "0ecc-160b-e931-e5a9",
-				"text": "Register"
+				"text": "Register",
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
 				"testId": "-5JDEvY3_",
-				"text": "Register"
+				"text": "Register",
+				"usePageVariable": true
 			}
 		},
 		{

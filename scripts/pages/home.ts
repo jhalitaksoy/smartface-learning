@@ -17,6 +17,7 @@ export default class Home extends HomeDesign {
             context.jwtKeyStore.deleteJwtKey();
             this.router.push("/pages/page1")
         }
+        this.buttonLogout.text = lang["logout"]
     }
     
     initListView() {

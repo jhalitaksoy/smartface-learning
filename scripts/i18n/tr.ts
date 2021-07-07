@@ -46,4 +46,15 @@ SMF.i18n.defineLanguage('tr', {
     "theme" : "Tema",
     "light" : "Açık",
     "dark" : "Koyu",
+    "logout" : "Çıkış Yap",
+    "login" : "Giriş yap",
+    "username" : "Kullanıcı Adı",
+    "password" : "Şifre",
+    "password-repeat" : "Şifreyi Tekrar Girin",
+    "password-forget" : "Şifremi Unuttum",
+    "goto-register" : "Kayıt Ol",
+    "goto-login" : "Giriş Yap",
+    "register" : "Kayıt Ol",
+    "code" : "kod",    
+    "send" : "Gönder"
 });
