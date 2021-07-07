@@ -48,6 +48,20 @@ const router = Router.of({
                             })
                         })
                     ]
+                }),
+                 StackRouter.of({
+                    path: "/pages/modal",
+                    to: "/pages/modal/settings",
+                    modal: true, // This is essential
+                    routes: [
+                        Route.of({
+                            path: "/pages/modal/settings",
+                            build: buildExtender({
+                                getPageClass: () => Pages.Settings,
+                                headerBarStyle: { visible: false }
+                            })
+                        })
+                    ]
                 })
             ]
         })

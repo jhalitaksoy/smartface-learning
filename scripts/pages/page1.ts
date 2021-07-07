@@ -84,6 +84,23 @@ export default class Page1 extends Page1Design {
             this.mtbUsername.materialTextBox.text = userName
         }
     }
+
+    setupHeaderBar(){
+        const router = this.router;
+        const myItem = new HeaderBarItem({
+            title: "Done",
+            android: {
+                systemIcon: 17301577   // OR 'ic_dialog_email'
+            },
+            ios: {
+                systemItem: HeaderBarItem.iOS.SystemItem.BOOKMARKS
+            },
+            onPress: function () {
+                router.push("/pages/modal/settings")
+            }
+        });
+        this.headerBar.setItems([myItem])
+    }
 }
 
 /**
@@ -110,18 +127,6 @@ function onLoad(superOnLoad: () => void) {
     }
     this.initMaterialTextBoxes()
     this.handleUserName();
-
-    this.myItem = new HeaderBarItem({
-        title: "Done",
-        android: {
-            systemIcon: 17301577   // OR 'ic_dialog_email'
-        },
-        ios: {
-            systemItem: HeaderBarItem.iOS.SystemItem.BOOKMARKS
-        },
-        onPress: function () {
-            console.log("You pressed Done item!");
-        }
-    });
-    this.headerBar.setItems([this.myItem]);
+    this.setupHeaderBar();
+   
 }
