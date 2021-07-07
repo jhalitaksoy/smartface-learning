@@ -8,6 +8,7 @@
 				"children": [
 					"7891-ad17-c5fd-8e53",
 					"cfb8-1e7e-b654-aa31",
+					"7365-f3c4-9de6-a492",
 					"7a53-45dd-b14c-3f81"
 				],
 				"name": "home",
@@ -15,7 +16,9 @@
 				"parent": null
 			},
 			"type": "Page",
-			"userProps": {}
+			"userProps": {
+				"borderColor": "rgba( 195, 174, 207, 0 )"
+			}
 		},
 		{
 			"className": ".sf-statusBar",
@@ -42,6 +45,60 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "home"
+			}
+		},
+		{
+			"className": ".sf-listView",
+			"id": "7365-f3c4-9de6-a492",
+			"props": {
+				"children": [
+					"16f4-7293-b9b6-af0f"
+				],
+				"name": "listView1",
+				"parent": "cd0e-ab65-fd48-4e41",
+				"usePageVariable": true
+			},
+			"type": "ListView",
+			"userProps": {
+				"borderColor": "rgba( 0, 0, 0, 1 )",
+				"borderWidth": 1,
+				"flexProps": {
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
+				},
+				"testId": "wjT8YhTfy",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-listViewItem",
+			"hiddenComponent": false,
+			"id": "16f4-7293-b9b6-af0f",
+			"props": {
+				"children": [],
+				"name": "listViewItem1",
+				"parent": "7365-f3c4-9de6-a492"
+			},
+			"source": {
+				"page": "__library__",
+				"type": "listViewItem1",
+				"id": "eb26-3d5e-8ade-681d"
+			},
+			"type": "ListViewItem",
+			"userProps": {
+				"flex": {
+					"flexDirection": 2,
+					"positionType": 0
+				},
+				"flexProps": {
+					"flexDirection": "ROW",
+					"positionType": "RELATIVE"
+				},
+				"height": 75,
+				"left": 0,
+				"testId": "wIkJu90N-",
+				"top": 0,
+				"width": 375
 			}
 		},
 		{

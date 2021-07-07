@@ -6,5 +6,9 @@ export default class Simple_listviewitem extends Simple_listviewitemDesign {
 		// Initalizes super class for this scope
 		super(props);
 		this.pageName = pageName;
-	}
+    }
+    
+    setTitle(text : string){
+        this.lblTitle.text = text;
+    }
 }

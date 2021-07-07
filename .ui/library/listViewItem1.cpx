@@ -1,0 +1,97 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem",
+			"id": "eb26-3d5e-8ade-681d",
+			"props": {
+				"children": [
+					"a4f1-ce9f-2e0f-6da4"
+				],
+				"name": "listViewItem1",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW",
+					"justifyContent": "SPACE_AROUND"
+				},
+				"height": 75,
+				"left": 0,
+				"testId": "wIkJu90N-",
+				"top": 444.44444444444446,
+				"width": 375
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "a4f1-ce9f-2e0f-6da4",
+			"props": {
+				"children": [
+					"9de0-7f47-e757-6b4f",
+					"9ddf-4294-afec-a0aa"
+				],
+				"name": "flexLayout1",
+				"parent": "eb26-3d5e-8ade-681d"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1,
+					"flexDirection": "ROW",
+					"justifyContent": "SPACE_BETWEEN"
+				},
+				"testId": "j4zb4tj50",
+				"width": 50
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "9de0-7f47-e757-6b4f",
+			"props": {
+				"children": [],
+				"name": "title",
+				"parent": "a4f1-ce9f-2e0f-6da4",
+				"text": "label3",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "XYn6P40Ts",
+				"text": "label3",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "9ddf-4294-afec-a0aa",
+			"props": {
+				"children": [],
+				"name": "subTitle",
+				"parent": "a4f1-ce9f-2e0f-6da4",
+				"text": "label3",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "lXseuX5hO",
+				"text": "label3",
+				"usePageVariable": true,
+				"width": null
+			}
+		}
+	]
+}

@@ -20,8 +20,10 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
+				"height": 54.16666666666667,
 				"left": 0,
-				"top": 361.9047619047619
+				"top": 361.9047619047619,
+				"width": 375
 			}
 		},
 		{
@@ -33,7 +35,8 @@
 				"children": [],
 				"name": "lblTitle",
 				"parent": "1841-ff9a-b968-028d",
-				"text": "ListView Cell Title"
+				"text": "ListView Cell Title",
+				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
@@ -43,7 +46,8 @@
 				"autoHeight": 51.086956521739125,
 				"autoWidth": 134.91847826086956,
 				"marginLeft": 16,
-				"text": "ListView Cell Title"
+				"text": "ListView Cell Title",
+				"usePageVariable": true
 			}
 		},
 		{
