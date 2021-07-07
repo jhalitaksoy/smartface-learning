@@ -4,7 +4,7 @@
         "@smartface/component-materialtextbox": "^5.0.0-rc.0",
         "@smartface/contx": "^4.0.0-rc.3",
         "@smartface/extension-utils": "^15.0.0-rc.0",
-        "@smartface/native": "4.3.2-alpha.30",
+        "@smartface/native": "4.3.2-beta.25",
         "@smartface/router": "^2.0.0-rc.1",
         "@smartface/styler": "^2.0.0",
         "source-map": "0.6.1"
