@@ -44,7 +44,7 @@ export default class Register extends RegisterDesign {
         if (password1 != password2) {
             hideIndicator();
             this.setPageEnability(true)
-            alert("Passwords does not match!")
+            alert(lang["passwordsDoNotMatch"])
             return
         }
 
@@ -62,10 +62,10 @@ export default class Register extends RegisterDesign {
             hideIndicator();
             this.setPageEnability(true)
             if (error.statusCode == 409) {
-                alert("Try different user name")
+                alert(lang["tryDifferentUserName"])
                 return
             }
-            alert("Unknown Error")
+            alert(lang["applicationError"])
             console.log(error);
         }
         return {}

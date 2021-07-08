@@ -7,9 +7,11 @@ export function modifyMaterialTextBox(materialTextBox: MaterialTextBox) {
     const color = Color.create(colorText)
     materialTextBox.textColor = color
     materialTextBox.cursorColor = color
-    materialTextBox.hintTextColor = color
+    materialTextBox.selectedHintTextColor = color
     materialTextBox.lineColor = {
         normal: color,
         selected: color
     }
+    // @ts-ignore
+    materialTextBox.hintTextColor = color
 }

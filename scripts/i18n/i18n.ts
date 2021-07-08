@@ -58,4 +58,4 @@ SMF.i18n.switchLanguage(context.settingsStore.getLanguage() || Device.language);
 context.settingsStore.listenLanguageChange((language : string)=>{
     SMF.i18n.switchLanguage(language || Device.language);
     Application.restart()
-})
+})  

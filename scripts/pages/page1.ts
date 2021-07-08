@@ -68,10 +68,10 @@ export default class Page1 extends Page1Design {
             hideIndicator();
             this.setPageEnable(true)
             if (error.statusCode == 409) {
-                alert("Login Failed")
+                alert(lang["loginFailed"])
                 return
             }
-            alert("Unknown Error")
+            alert(lang["applicationError"])
             console.log(error);
         }
         return {}
@@ -118,7 +118,6 @@ function onShow(superOnShow: () => void) {
  */
 function onLoad(superOnLoad: () => void) {
     superOnLoad();
-    console.info('Onload page1');
     this.headerBar.leftItemEnabled = false;
     this.headerBar.titleLayout = new PageTitleLayout();
     componentContextPatch(this.headerBar.titleLayout, "titleLayout");

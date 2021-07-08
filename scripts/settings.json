@@ -1,13 +1,13 @@
 {
 	"config": {
 		"theme": {
-			"currentTheme": "darkTheme",
+			"currentTheme": "myTheme",
 			"baseTheme": "baseTheme",
 			"themes": [
 				"defaultTheme",
 				"baseTheme",
-				"myTheme",
-				"darkTheme"
+				"darkTheme",
+				"myTheme"
 			]
 		},
 		"paths": {
