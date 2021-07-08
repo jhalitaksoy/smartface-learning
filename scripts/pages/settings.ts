@@ -3,6 +3,7 @@ import addChild from "@smartface/contx/lib/smartface/action/addChild";
 import Settings_drop_down from 'components/Settings_drop_down';
 import { switchLanguage } from 'i18n/i18n';
 import { context } from 'context';
+import { ThemeService } from 'theme';
 
 export type SettingsItem = {
     title: string,
@@ -22,6 +23,8 @@ export default class Settings extends SettingsDesign {
 
     onThemeSelected(theme: string) {
         context.settingsStore.setTheme(theme)
+        const nextTheme = theme == "light" ? "myTheme" : "darkTheme"
+        ThemeService.changeTheme(nextTheme);
     }
 
     onLanguageChanged(language: string) {

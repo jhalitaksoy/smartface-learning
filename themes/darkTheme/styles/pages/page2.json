@@ -1,0 +1,13 @@
+{
+	"#page2": {
+		"flexProps": {
+			"justifyContent": "FLEX_START"
+		},
+		"&-textbox": {
+			"marginTop": 10
+		},
+        "&-button" : {
+            "marginTop": 10
+        }
+	}
+}

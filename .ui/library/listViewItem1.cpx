@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-listViewItem",
+			"className": ".sf-listViewItem #listview-item",
 			"id": "eb26-3d5e-8ade-681d",
 			"props": {
 				"children": [
@@ -15,7 +15,6 @@
 			},
 			"type": "ListViewItem",
 			"userProps": {
-				"backgroundColor": "rgba( 209, 167, 167, 0 )",
 				"flexProps": {
 					"flexDirection": "ROW",
 					"justifyContent": "SPACE_AROUND"
@@ -29,7 +28,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout #listview-item",
 			"id": "a4f1-ce9f-2e0f-6da4",
 			"props": {
 				"children": [
@@ -44,7 +43,6 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"backgroundColor": "rgba( 188, 216, 210, 1 )",
 				"flexProps": {
 					"flexGrow": 1,
 					"flexDirection": "ROW",

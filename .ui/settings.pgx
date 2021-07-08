@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page #page",
 			"id": "8a75-9cbf-e197-cc35",
 			"initialized": true,
 			"props": {
@@ -19,7 +19,7 @@
 			"version": "0.0.1.a"
 		},
 		{
-			"className": ".sf-statusBar",
+			"className": ".sf-statusBar .my-statusBar",
 			"id": "cf74-e16b-4e1f-24a7",
 			"props": {
 				"children": [],
@@ -28,7 +28,9 @@
 				"parent": "8a75-9cbf-e197-cc35"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {
+                "visible": true
+            }
 		},
 		{
 			"className": ".sf-headerBar .my-headerBar",

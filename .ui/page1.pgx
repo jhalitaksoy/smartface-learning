@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page #pgLogin",
+			"className": ".sf-page #page #pgLogin #page-textbox",
 			"id": "e891b86d",
 			"initialized": true,
 			"props": {
@@ -37,7 +37,7 @@
 			"version": "6.15.1"
 		},
 		{
-			"className": ".sf-statusBar",
+			"className": ".sf-statusBar .my-statusBar",
 			"id": "42b807d1",
 			"props": {
 				"children": [],
@@ -47,9 +47,6 @@
 			},
 			"type": "StatusBar",
 			"userProps": {
-				"android": {
-					"color": "rgba( 94, 163, 93, 1 )"
-				},
 				"visible": true
 			}
 		},
@@ -70,7 +67,7 @@
 			}
 		},
 		{
-			"className": ".sf-label #pgLogin-lblLoginText",
+			"className": ".sf-label #pgLogin-lblLoginText .my-label-title",
 			"id": "b277-e9c7-ea45-ec68",
 			"props": {
 				"children": [],
@@ -87,7 +84,7 @@
 			}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper",
+			"className": ".flexLayout .materialTextBox-wrapper .mt-mtb",
 			"hiddenComponent": false,
 			"id": "5a3c-70c6-20ce-3ac9",
 			"initialized": false,
@@ -118,7 +115,7 @@
 			}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper",
+			"className": ".flexLayout .materialTextBox-wrapper .mt-mtb",
 			"hiddenComponent": false,
 			"id": "b1c7-4096-3f3c-6cec",
 			"initialized": false,
@@ -149,7 +146,7 @@
 			}
 		},
 		{
-			"className": ".sf-label #pgLogin-lblForgotPassword",
+			"className": ".sf-label #pgLogin-lblForgotPassword .my-label",
 			"id": "7875-1d68-1216-5279",
 			"props": {
 				"children": [],
@@ -200,7 +197,7 @@
 			}
 		},
 		{
-			"className": ".sf-label #pgLogin-lblForgotPassword",
+			"className": ".sf-label #pgLogin-lblForgotPassword .my-label",
 			"id": "491d-02d4-142d-243a",
 			"props": {
 				"children": [],

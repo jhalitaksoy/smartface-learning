@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page #page",
 			"id": "cd0e-ab65-fd48-4e41",
 			"initialized": true,
 			"props": {
@@ -24,7 +24,7 @@
 			}
 		},
 		{
-			"className": ".sf-statusBar",
+			"className": ".sf-statusBar .my-statusBar",
 			"id": "7891-ad17-c5fd-8e53",
 			"props": {
 				"children": [],
@@ -34,9 +34,7 @@
 			},
 			"type": "StatusBar",
 			"userProps": {
-				"android": {
-					"color": "rgba( 94, 163, 93, 1 )"
-				}
+                "visible": true
 			}
 		},
 		{

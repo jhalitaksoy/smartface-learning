@@ -1,0 +1,8 @@
+{
+	"#page": {
+        "backgroundColor" : "#473029",
+		"&-textbox": {
+			"marginTop": 10
+		}
+	}
+}

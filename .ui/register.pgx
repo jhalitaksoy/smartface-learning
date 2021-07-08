@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page #page",
 			"id": "0ecc-160b-e931-e5a9",
 			"initialized": true,
 			"props": {
@@ -21,10 +21,12 @@
 				"parent": null
 			},
 			"type": "Page",
-			"userProps": {}
+			"userProps": {
+               
+            }
 		},
 		{
-			"className": ".sf-statusBar",
+			"className": ".sf-statusBar .my-statusBar",
 			"id": "ffd1-0e97-0b2a-ae64",
 			"props": {
 				"children": [],
@@ -34,9 +36,7 @@
 			},
 			"type": "StatusBar",
 			"userProps": {
-				"android": {
-					"color": "rgba( 94, 163, 93, 1 )"
-				}
+                "visible": true
 			}
 		},
 		{
@@ -55,7 +55,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .title",
+			"className": ".sf-label .title .my-label-title",
 			"id": "f4e2-ae08-65ba-523c",
 			"props": {
 				"children": [],
@@ -202,7 +202,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .sub-title",
+			"className": ".sf-label .sub-title .my-label",
 			"id": "57b3-e59c-a8b6-01a6",
 			"props": {
 				"children": [],

@@ -3,9 +3,11 @@ import Application from "@smartface/native/application";
 import { config } from "settings.json";
 import { clearCache } from "@smartface/extension-utils/lib/getCombinedStyle";
 import { createThemeContextBound } from "@smartface/contx/lib/styling/ThemeContext";
+import { context } from "context";
 
 const themeConfig = config.theme;
-const currentTheme = Data.getStringVariable("currentTheme") || themeConfig.currentTheme;
+const theme =  context.settingsStore.getTheme() == "dark" ?  "darkTheme" : "myTheme" 
+const currentTheme = theme || themeConfig.currentTheme;
 const themeSources = themeConfig.themes
     .map(name => ({
         name,

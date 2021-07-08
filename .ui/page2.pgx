@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page #page2",
+			"className": ".sf-page #page",
 			"id": "7761adc8",
 			"initialized": true,
 			"props": {
@@ -28,7 +28,7 @@
 			"version": "6.15.1"
 		},
 		{
-			"className": ".sf-statusBar",
+			"className": ".sf-statusBar .my-statusBar",
 			"id": "a829471c",
 			"props": {
 				"children": [],
@@ -38,9 +38,6 @@
 			},
 			"type": "StatusBar",
 			"userProps": {
-				"android": {
-					"color": "rgba( 94, 163, 93, 1 )"
-				},
 				"visible": true
 			}
 		},
@@ -56,7 +53,6 @@
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"backgroundColor": "rgba( 94, 163, 93, 1 )",
 				"title": "Page2",
 				"visible": true
 			}

@@ -1,0 +1,9 @@
+{
+    ".my-label" : {
+        "textColor" : "#ffffff",
+        "&-title" : {
+            "fontSize" : 36,
+            "textColor" : "#ffffff"
+        }
+    }
+}
