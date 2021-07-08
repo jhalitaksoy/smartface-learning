@@ -3,23 +3,24 @@ import { context } from 'context';
 import { Resource } from 'models/resource';
 import Simple_listviewitem from 'components/Simple_listviewitem';
 import ListViewItem1 from 'components/ListViewItem1';
+import { createSettingsButton } from 'core/factory/HeaderBarItemFactory';
 
 export default class Home extends HomeDesign {
     router: any;
-    resource : Resource
-	constructor() {
-		super();
-		// Overrides super.onShow method
-		this.onShow = onShow.bind(this, this.onShow.bind(this));
-		// Overrides super.onLoad method
+    resource: Resource
+    constructor() {
+        super();
+        // Overrides super.onShow method
+        this.onShow = onShow.bind(this, this.onShow.bind(this));
+        // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        this.buttonLogout.onTouch = ()=>{
+        this.buttonLogout.onTouch = () => {
             context.jwtKeyStore.deleteJwtKey();
             this.router.push("/pages/page1")
         }
         this.buttonLogout.text = lang["logout"]
     }
-    
+
     initListView() {
         this.listView1.rowHeight = ListViewItem1.getHeight();
         this.listView1.onRowBind = (listViewItem: ListViewItem1, index: number) => {
@@ -48,6 +49,11 @@ export default class Home extends HomeDesign {
             alert(JSON.stringify(e, null, '\t'));
         }
     }
+
+    setupHeaderBar() {
+        const router = this.router;
+        this.headerBar.setItems([createSettingsButton(router)])
+    }
 }
 
 /**
@@ -57,7 +63,7 @@ export default class Home extends HomeDesign {
  * @param {Object} parameters passed from Router.go function
  */
 function onShow(superOnShow: () => void) {
-	superOnShow();
+    superOnShow();
 }
 
 /**
@@ -69,4 +75,5 @@ function onLoad(superOnLoad: () => void) {
     superOnLoad();
     this.initListView();
     this.getUsers();
+    this.setupHeaderBar();
 }

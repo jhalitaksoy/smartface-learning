@@ -3,6 +3,8 @@ import { Point2D } from '@smartface/native/primitive/point2d';
 import setupButtonActivity from '@smartface/extension-utils/lib/button-activity';
 import { RegisterParameters } from 'models/register-parameters';
 import { context } from 'context';
+import { modifyMaterialTextBox } from 'core/factory/MaterialTextBoxFactory';
+import { createSettingsButton } from 'core/factory/HeaderBarItemFactory';
 
 export default class Register extends RegisterDesign {
     router: any;
@@ -83,6 +85,14 @@ export default class Register extends RegisterDesign {
             hint: lang["password-repeat"]
         }
         this.mtbPassword2.materialTextBox.isPassword = true;
+        modifyMaterialTextBox(this.mtbUserName.materialTextBox)
+        modifyMaterialTextBox(this.mtbPassword1.materialTextBox)
+        modifyMaterialTextBox(this.mtbPassword2.materialTextBox)
+    }
+
+    setupHeaderBar() {
+        const router = this.router;
+        this.headerBar.setItems([createSettingsButton(router)])
     }
 }
 
@@ -104,4 +114,5 @@ function onShow(superOnShow: () => void) {
 function onLoad(superOnLoad: () => void) {
     superOnLoad();
     this.initMaterialTextBoxes()
+    this.setupHeaderBar()
 }

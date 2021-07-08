@@ -7,6 +7,10 @@ import { LoginParameters } from 'models/login-parameters';
 import { context } from 'context';
 import setupButtonActivity from "@smartface/extension-utils/lib/button-activity";
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
+import { modifyMaterialTextBox } from 'core/factory/MaterialTextBoxFactory';
+import Color from '@smartface/native/ui/color';
+import TextBox from '@smartface/native/ui/textbox';
+import { createSettingsButton } from 'core/factory/HeaderBarItemFactory';
 
 export default class Page1 extends Page1Design {
     router: any;
@@ -75,12 +79,15 @@ export default class Page1 extends Page1Design {
 
     initMaterialTextBoxes() {
         this.mtbUsername.options = {
-            hint: lang["username"]
+            hint: lang["username"],
         }
         this.mtbPassword.options = {
-            hint: lang["password"]
+            hint: lang["password"],
         }
         this.mtbPassword.materialTextBox.isPassword = true;
+
+        modifyMaterialTextBox(this.mtbUsername.materialTextBox)
+        modifyMaterialTextBox(this.mtbPassword.materialTextBox)
     }
 
     handleUserName() {
@@ -92,19 +99,7 @@ export default class Page1 extends Page1Design {
 
     setupHeaderBar(){
         const router = this.router;
-        const myItem = new HeaderBarItem({
-            title: "Done",
-            android: {
-                systemIcon: 17301577   // OR 'ic_dialog_email'
-            },
-            ios: {
-                systemItem: HeaderBarItem.iOS.SystemItem.BOOKMARKS
-            },
-            onPress: function () {
-                router.push("/pages/modal/settings")
-            }
-        });
-        this.headerBar.setItems([myItem])
+        this.headerBar.setItems([createSettingsButton(router)])
     }
 }
 

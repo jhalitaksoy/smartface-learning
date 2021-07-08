@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".flexLayout .materialTextBox-wrapper #my-mtb",
+			"className": ".flexLayout .materialTextBox-wrapper .my-mtb",
 			"id": "574a-10da-b765-48e5",
 			"initialized": true,
 			"props": {

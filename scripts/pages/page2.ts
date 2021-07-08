@@ -6,6 +6,7 @@ import PageTitleLayout from "components/PageTitleLayout";
 import componentContextPatch from "@smartface/contx/lib/smartface/componentContextPatch";
 import Color from "@smartface/native/ui/color";
 import System from "@smartface/native/device/system";
+import { modifyMaterialTextBox } from 'core/factory/MaterialTextBoxFactory';
 
 export default class Page2 extends Page2Design {
     constructor() {
@@ -29,6 +30,7 @@ export default class Page2 extends Page2Design {
         }
 
         this.mtbEmail.materialTextBox.isPassword = true;
+        modifyMaterialTextBox(this.mtbEmail.materialTextBox)
     }
 }
 
