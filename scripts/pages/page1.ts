@@ -35,19 +35,19 @@ export default class Page1 extends Page1Design {
         this.buttonLogin.text = lang["login"]
     }
 
-    setPageEnability(enability: boolean) {
-        this.layout.touchEnabled = enability
-        this.mtbUsername.touchEnabled = enability
-        this.mtbPassword.touchEnabled = enability
-        this.mtbUsername.materialTextBox.touchEnabled = enability
-        this.mtbPassword.materialTextBox.touchEnabled = enability
-        this.labelForgotPassword.touchEnabled = enability
-        this.labelGotoRegister.touchEnabled = enability
+    setPageEnable(enable: boolean) {
+        this.layout.touchEnabled = enable
+        this.mtbUsername.touchEnabled = enable
+        this.mtbPassword.touchEnabled = enable
+        this.mtbUsername.materialTextBox.touchEnabled = enable
+        this.mtbPassword.materialTextBox.touchEnabled = enable
+        this.labelForgotPassword.touchEnabled = enable
+        this.labelGotoRegister.touchEnabled = enable
     }
 
     onLoginTab = async (showIndicator, hideIndicator) => {
         showIndicator();
-        this.setPageEnability(false)
+        this.setPageEnable(false)
         const loginParameters: LoginParameters = {
             name: this.mtbUsername.materialTextBox.text,
             password: this.mtbPassword.materialTextBox.text,
@@ -59,10 +59,10 @@ export default class Page1 extends Page1Design {
             this.router.push("/pages/home", { message: "Text" })
             context.userStore.setUserName(loginParameters.name)
             hideIndicator();
-            this.setPageEnability(true)
+            this.setPageEnable(true)
         } catch (error) {
             hideIndicator();
-            this.setPageEnability(true)
+            this.setPageEnable(true)
             if (error.statusCode == 409) {
                 alert("Login Failed")
                 return

@@ -74,6 +74,9 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"flexProps": {
+					"flexGrow": 3
+				},
 				"testId": "XYn6P40Ts",
 				"text": "label3",
 				"usePageVariable": true,
@@ -95,8 +98,12 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
 				"testId": "lXseuX5hO",
 				"text": "label3",
+				"textAlignment": "MIDRIGHT",
 				"usePageVariable": true,
 				"width": null
 			}
