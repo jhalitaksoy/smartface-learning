@@ -8,8 +8,7 @@
 				"children": [
 					"7891-ad17-c5fd-8e53",
 					"cfb8-1e7e-b654-aa31",
-					"7365-f3c4-9de6-a492",
-					"7a53-45dd-b14c-3f81"
+					"7365-f3c4-9de6-a492"
 				],
 				"name": "home",
 				"orientation": "PORTRAIT",
@@ -34,7 +33,7 @@
 			},
 			"type": "StatusBar",
 			"userProps": {
-                "visible": true
+				"visible": true
 			}
 		},
 		{
@@ -103,23 +102,6 @@
 				"testId": "wIkJu90N-",
 				"top": 0,
 				"width": 375
-			}
-		},
-		{
-			"className": ".sf-button .mybutton",
-			"id": "7a53-45dd-b14c-3f81",
-			"props": {
-				"children": [],
-				"name": "buttonLogout",
-				"parent": "cd0e-ab65-fd48-4e41",
-				"text": "Logout",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"testId": "ZQOJsReu9",
-				"text": "Logout",
-				"usePageVariable": true
 			}
 		}
 	]

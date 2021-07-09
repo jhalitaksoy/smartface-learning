@@ -4,10 +4,11 @@ import Settings_drop_down from 'components/Settings_drop_down';
 import { switchLanguage } from 'i18n/i18n';
 import { context } from 'context';
 import { ThemeService } from 'theme';
+import Application = require('@smartface/native/application');
 
 export type SettingsItem = {
     title: string,
-    selectedItem : string,
+    selectedItem: string,
     values: Array<string>
     onSelected?: (value: string) => void
 }
@@ -25,6 +26,7 @@ export default class Settings extends SettingsDesign {
         context.settingsStore.setTheme(theme)
         const nextTheme = theme == "light" ? "myTheme" : "darkTheme"
         ThemeService.changeTheme(nextTheme);
+        Application.restart()
     }
 
     onLanguageChanged(language: string) {
@@ -39,13 +41,13 @@ export default class Settings extends SettingsDesign {
                 title: lang["language"],
                 values: ["en", "tr"],
                 onSelected: this.onLanguageChanged,
-                selectedItem : context.settingsStore.getLanguage() || "en",
+                selectedItem: context.settingsStore.getLanguage() || "en",
             },
             {
                 title: lang["theme"],
                 values: ["light", "dark"],
                 onSelected: this.onThemeSelected,
-                selectedItem : context.settingsStore.getTheme() || "light",
+                selectedItem: context.settingsStore.getTheme() || "light",
             },
         ]
 
@@ -63,6 +65,11 @@ export default class Settings extends SettingsDesign {
         myListViewItem.setModel(settingsItem)
         this.dispatch(addChild(`item${++itemIndex}`, myListViewItem));
         return myListViewItem
+    }
+
+    setupHeaderBar() {
+        this.headerBar.leftItemEnabled = false;
+        this.headerBar.title = lang["settings"]
     }
 }
 
@@ -84,4 +91,5 @@ function onShow(superOnShow: () => void) {
 function onLoad(superOnLoad: () => void) {
     superOnLoad();
     this.initListView();
+    this.setupHeaderBar();
 }

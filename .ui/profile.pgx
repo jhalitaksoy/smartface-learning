@@ -1,0 +1,83 @@
+{
+	"components": [
+		{
+			"className": ".sf-page #page",
+			"id": "8aed-9a0f-6bc9-a12d",
+			"initialized": true,
+			"props": {
+				"children": [
+					"3f7f-b591-c24a-a49b",
+					"609c-65e3-fcf0-9321",
+					"6b14-f162-4b5b-e8dd",
+					"711d-fd37-e001-2482"
+				],
+				"name": "profile",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar .my-statusBar",
+			"id": "3f7f-b591-c24a-a49b",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "8aed-9a0f-6bc9-a12d"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-headerBar .my-headerBar",
+			"id": "609c-65e3-fcf0-9321",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "8aed-9a0f-6bc9-a12d",
+				"title": "profile"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "profile"
+			}
+		},
+		{
+			"className": ".sf-label .my-label",
+			"id": "6b14-f162-4b5b-e8dd",
+			"props": {
+				"children": [],
+				"name": "lblTitle",
+				"parent": "8aed-9a0f-6bc9-a12d",
+				"text": "Hello"
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "UdTcMEwbN",
+				"text": "Hello"
+			}
+		},
+		{
+			"className": ".sf-button .mybutton",
+			"id": "711d-fd37-e001-2482",
+			"props": {
+				"children": [],
+				"name": "btnLogout",
+				"parent": "8aed-9a0f-6bc9-a12d",
+				"text": "Logout",
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
+				"marginTop": 10,
+				"testId": "gCs_XMSzg",
+				"text": "Logout",
+				"usePageVariable": true
+			}
+		}
+	]
+}

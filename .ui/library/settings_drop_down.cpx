@@ -46,7 +46,7 @@
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label .my-label",
 			"id": "3fc6-b3d2-419b-c4ea",
 			"props": {
 				"children": [],
@@ -67,7 +67,7 @@
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label .my-label",
 			"id": "fe38-c470-5f97-465b",
 			"props": {
 				"children": [],

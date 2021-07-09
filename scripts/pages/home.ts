@@ -14,11 +14,6 @@ export default class Home extends HomeDesign {
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        this.buttonLogout.onTouch = () => {
-            context.jwtKeyStore.deleteJwtKey();
-            this.router.push("/pages/page1")
-        }
-        this.buttonLogout.text = lang["logout"]
     }
 
     initListView() {
@@ -52,7 +47,9 @@ export default class Home extends HomeDesign {
 
     setupHeaderBar() {
         const router = this.router;
-        this.headerBar.setItems([createSettingsButton(router)])
+        this.headerBar.leftItemEnabled = false;
+        this.headerBar.title = lang["home"]
+        //this.headerBar.setItems([createSettingsButton(router)])
     }
 }
 

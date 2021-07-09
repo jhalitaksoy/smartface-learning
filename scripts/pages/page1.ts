@@ -98,8 +98,8 @@ export default class Page1 extends Page1Design {
     }
 
     setupHeaderBar(){
-        const router = this.router;
-        this.headerBar.setItems([createSettingsButton(router)])
+        //const router = this.router;
+        //this.headerBar.setItems([createSettingsButton(router)])
     }
 }
 

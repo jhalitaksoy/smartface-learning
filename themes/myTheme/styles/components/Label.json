@@ -1,0 +1,7 @@
+{
+    ".my-label" : {
+        "&-title" : {
+            "fontSize" : 36,
+        }
+    }
+}
