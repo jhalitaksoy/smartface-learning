@@ -7,6 +7,7 @@ import { ThemeService } from 'theme';
 import Application = require('@smartface/native/application');
 import Image = require('@smartface/native/ui/image');
 import Settings_item from 'components/Settings_item';
+import Settings_item_ThemeSwitch from 'components/settings_items/SettingsItemThemeSwitch';
 
 export type SettingsItem = {
     icon: Image,
@@ -23,7 +24,7 @@ export default class Settings extends SettingsDesign {
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
     }
 
-    onThemeSelected(theme: string) {
+    onThemeSelected(theme: "light" | "dark") {
         context.settingsStore.setTheme(theme)
         const nextTheme = theme == "light" ? "myTheme" : "darkTheme"
         ThemeService.changeTheme(nextTheme);
@@ -32,6 +33,11 @@ export default class Settings extends SettingsDesign {
 
     onLanguageChanged(language: string) {
         context.settingsStore.setLanguage(language)
+    }
+
+    getTheme() : "light" | "dark"{
+        const themeStr = context.settingsStore.getTheme()
+        return themeStr == "dark" ? "dark" : "light"
     }
 
     initListView() {
@@ -49,7 +55,7 @@ export default class Settings extends SettingsDesign {
             {
                 icon: Image.createFromFile("images://user.png", 40, 40),
                 title: lang["theme"],
-                view: new Settings_item(this)
+                view: new Settings_item_ThemeSwitch(this.getTheme(), this.onThemeSelected, this)
                 /*values: ["light", "dark"],
                 onSelected: this.onThemeSelected,
                 selectedItem: context.settingsStore.getTheme() || "light",*/

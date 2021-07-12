@@ -1,0 +1,7 @@
+{
+	".iconswitch": {
+		"flexProps": {
+			"flexDirection": "ROW"
+		},
+	}
+}

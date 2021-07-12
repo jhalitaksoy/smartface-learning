@@ -1,0 +1,83 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .iconswitch",
+			"id": "72db-4b0c-34ad-20d4",
+			"props": {
+				"children": [
+					"4713-4e8f-7b38-0001",
+					"5962-b5b8-7014-0998"
+				],
+				"name": "icon_switch",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW",
+					"flexGrow": 1
+				},
+				"height": 50,
+				"left": 24.193548387096776,
+				"testId": "VFVe06lBS",
+				"top": 93.54838709677419,
+				"width": 100
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "4713-4e8f-7b38-0001",
+			"props": {
+				"children": [],
+				"name": "imageViewLeft",
+				"parent": "72db-4b0c-34ad-20d4",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"marginBottom": 5,
+				"marginLeft": 5,
+				"marginTop": 5,
+				"testId": "DzG3z-gOG",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "5962-b5b8-7014-0998",
+			"props": {
+				"children": [],
+				"name": "imageViewRight",
+				"parent": "72db-4b0c-34ad-20d4",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"marginBottom": 5,
+				"marginRight": 5,
+				"marginTop": 5,
+				"testId": "ECvdwjoa2",
+				"usePageVariable": true,
+				"width": null
+			}
+		}
+	]
+}

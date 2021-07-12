@@ -19,7 +19,9 @@
 			},
 			"type": "ListViewItem",
 			"userProps": {
-				"flexProps": {},
+				"flexProps": {
+					"justifyContent": "SPACE_BETWEEN"
+				},
 				"height": 54.16666666666667,
 				"left": 0,
 				"top": 361.9047619047619,
