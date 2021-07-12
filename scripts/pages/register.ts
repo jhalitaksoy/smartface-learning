@@ -5,6 +5,7 @@ import { RegisterParameters } from 'models/register-parameters';
 import { context } from 'context';
 import { modifyMaterialTextBox } from 'core/factory/MaterialTextBoxFactory';
 import { createSettingsButton } from 'core/factory/HeaderBarItemFactory';
+import Color = require('@smartface/native/ui/color');
 
 export default class Register extends RegisterDesign {
     router: any;
@@ -35,23 +36,38 @@ export default class Register extends RegisterDesign {
     }
 
     onRegisterTab = async (showIndicator, hideIndicator) => {
-        showIndicator();
-        this.setPageEnability(false)
-
+        const userName = this.mtbUserName.materialTextBox.text
         const password1 = this.mtbPassword1.materialTextBox.text
         const password2 = this.mtbPassword2.materialTextBox.text
 
+        const registerParameters: RegisterParameters = {
+            name: userName,
+            password: password1,
+        }
+
+        if (!registerParameters.name) {
+            this.setErrorMessages(lang["cannotBeEmty"], undefined, undefined)
+            return;
+        }
+
+        if (!registerParameters.password) {
+            this.setErrorMessages(undefined, lang["cannotBeEmty"], undefined)
+            return;
+        }
+
+        if (!password2) {
+            this.setErrorMessages(undefined, undefined, lang["cannotBeEmty"])
+            return;
+        }
+
         if (password1 != password2) {
-            hideIndicator();
-            this.setPageEnability(true)
-            alert(lang["passwordsDoNotMatch"])
+            this.setErrorMessages(undefined, lang["passwordsDoNotMatch"], lang["passwordsDoNotMatch"])
             return
         }
 
-        const registerParameters: RegisterParameters = {
-            name: this.mtbUserName.materialTextBox.text,
-            password: password1,
-        }
+        showIndicator();
+        this.setPageEnability(false)
+
         try {
             const res = await context.authService.register(registerParameters)
             context.userStore.setUserName(registerParameters.name)
@@ -62,7 +78,7 @@ export default class Register extends RegisterDesign {
             hideIndicator();
             this.setPageEnability(true)
             if (error.statusCode == 409) {
-                alert(lang["tryDifferentUserName"])
+                this.setErrorMessages(lang["tryDifferentUserName"], undefined, undefined)
                 return
             }
             alert(lang["applicationError"])
@@ -75,24 +91,47 @@ export default class Register extends RegisterDesign {
         this.mtbUserName.options = {
             hint: lang["username"]
         }
-
         this.mtbPassword1.options = {
             hint: lang["password"]
         }
-        this.mtbPassword1.materialTextBox.isPassword = true;
-
         this.mtbPassword2.options = {
             hint: lang["password-repeat"]
         }
+
+        this.mtbPassword1.materialTextBox.isPassword = true;
         this.mtbPassword2.materialTextBox.isPassword = true;
+
         modifyMaterialTextBox(this.mtbUserName.materialTextBox)
         modifyMaterialTextBox(this.mtbPassword1.materialTextBox)
         modifyMaterialTextBox(this.mtbPassword2.materialTextBox)
+
+        this.mtbUserName.materialTextBox.onTextChanged = () => {
+            this.resetErrorMessages()
+        }
+        this.mtbPassword1.materialTextBox.onTextChanged = () => {
+            this.resetErrorMessages()
+        }
+        this.mtbPassword2.materialTextBox.onTextChanged = () => {
+            this.resetErrorMessages()
+        }
+    }
+
+    resetErrorMessages() {
+        this.setErrorMessages(undefined, undefined, undefined)
+    }
+
+    setErrorMessages(
+        userNameErrorMessage: string,
+        password1ErrorMessage: string,
+        password2ErrorMessage: string) {
+        this.mtbUserName.materialTextBox.errorMessage = userNameErrorMessage
+        this.mtbPassword1.materialTextBox.errorMessage = password1ErrorMessage
+        this.mtbPassword2.materialTextBox.errorMessage = password2ErrorMessage
     }
 
     setupHeaderBar() {
         const router = this.router;
-        this.headerBar.setItems([createSettingsButton(router)])
+        //this.headerBar.setItems([createSettingsButton(router)])
     }
 }
 

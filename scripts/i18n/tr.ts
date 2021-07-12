@@ -63,4 +63,5 @@ SMF.i18n.defineLanguage('tr', {
     "home": "Anasayfa",
     "profile": "Profil",
     "settings": "Ayarlar",
+    "cannotBeEmty" : "Bu alan boş olamaz!"
 });

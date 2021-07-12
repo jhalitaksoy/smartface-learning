@@ -65,4 +65,5 @@ SMF.i18n.defineLanguage('en', {
     "home" : "Home",
     "profile" : "Profile",
     "settings" : "Settings",
+    "cannotBeEmty" : "This area cannot be empty!"
 });

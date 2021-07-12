@@ -33,7 +33,7 @@ export default class Page1 extends Page1Design {
 
         setupButtonActivity(this.buttonLogin, this.activityIndicator1, this.onLoginTab);
 
-        this.lblTitle.text =  lang["login"]
+        this.lblTitle.text = lang["login"]
         this.labelForgotPassword.text = lang["password-forget"]
         this.labelGotoRegister.text = lang["goto-register"]
         this.buttonLogin.text = lang["login"]
@@ -50,17 +50,27 @@ export default class Page1 extends Page1Design {
     }
 
     onLoginTab = async (showIndicator, hideIndicator) => {
-        showIndicator();
-        this.setPageEnable(false)
         const loginParameters: LoginParameters = {
             name: this.mtbUsername.materialTextBox.text,
             password: this.mtbPassword.materialTextBox.text,
         }
+        if(!loginParameters.name){
+            this.setErrorMessages(lang["cannotBeEmty"], undefined)
+            return;
+        }
+
+          if(!loginParameters.password){
+            this.setErrorMessages(undefined, lang["cannotBeEmty"])
+            return;
+        }
+
+        showIndicator();
+        this.setPageEnable(false)
         try {
             const res = await context.authService.login(loginParameters)
             const jwtToken = res.body
             context.jwtKeyStore.setJwtKey(jwtToken)
-            this.router.push("/pages/home", { message: "Text" })
+            this.router.push("/pages/home/home", { message: "Text" })
             context.userStore.setUserName(loginParameters.name)
             hideIndicator();
             this.setPageEnable(true)
@@ -68,7 +78,7 @@ export default class Page1 extends Page1Design {
             hideIndicator();
             this.setPageEnable(true)
             if (error.statusCode == 409) {
-                alert(lang["loginFailed"])
+                this.setErrorMessages(lang["loginFailed"], lang["loginFailed"])
                 return
             }
             alert(lang["applicationError"])
@@ -88,6 +98,24 @@ export default class Page1 extends Page1Design {
 
         modifyMaterialTextBox(this.mtbUsername.materialTextBox)
         modifyMaterialTextBox(this.mtbPassword.materialTextBox)
+
+        this.mtbUsername.materialTextBox.onTextChanged = () => {
+            this.resetErrorMessages()
+        }
+        this.mtbPassword.materialTextBox.onTextChanged = () => {
+            this.resetErrorMessages()
+        }
+    }
+
+    resetErrorMessages() {
+        this.setErrorMessages(undefined, undefined)
+    }
+
+    setErrorMessages(
+        userNameErrorMessage: string,
+        passwordErrorMessage: string) {
+        this.mtbUsername.materialTextBox.errorMessage = userNameErrorMessage
+        this.mtbPassword.materialTextBox.errorMessage = passwordErrorMessage
     }
 
     handleUserName() {
@@ -97,7 +125,7 @@ export default class Page1 extends Page1Design {
         }
     }
 
-    setupHeaderBar(){
+    setupHeaderBar() {
         //const router = this.router;
         //this.headerBar.setItems([createSettingsButton(router)])
     }
@@ -127,5 +155,5 @@ function onLoad(superOnLoad: () => void) {
     this.initMaterialTextBoxes()
     this.handleUserName();
     this.setupHeaderBar();
-   
+
 }
