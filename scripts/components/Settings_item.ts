@@ -28,6 +28,9 @@ export default class Settings_item extends Settings_itemDesign {
         const view = this.onCustomViewCreate();
         if (view) {
             this.flexLayout1.addChild(view, "iconSwitch2", ".sf-flexLayout")
+        }else{
+            //todo
+            //this.flexLayout1.removeChild"")
         }
     }
 }

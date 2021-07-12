@@ -23,6 +23,10 @@ export default class Home extends HomeDesign {
             const passenger = this.passengers.data[index]
             listViewItem.setTitle(passenger.name)
             listViewItem.setSubTitle(passenger.airline.name)
+            const router = this.router
+            listViewItem.onTouch = () => {
+                router.push("/pages/home/details", {passenger : passenger})
+            }
         };
 
         this.listView1.onPullRefresh = () => {

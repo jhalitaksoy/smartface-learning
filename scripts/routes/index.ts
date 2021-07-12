@@ -32,23 +32,36 @@ const router = Router.of({
                         headerBarStyle: { visible: true }
                     })
                 }),
+
                 BottomTabBarRouter.of({
                     path: "/pages/home",
                     to: "/pages/home/home",
                     tabbarParams: createBottomTabBarParams(),
                     items: () => [
-                        { title: "Home", icon: Image.createFromFile("images://home.png")},
+                        { title: "Home", icon: Image.createFromFile("images://home.png") },
                         { title: "Profile", icon: Image.createFromFile("images://user.png") },
                         { title: "Settings", icon: Image.createFromFile("images://settings.png") }],
                     // tab1
                     routes: [
-                        Route.of({
-                            path: "/pages/home/home",
-                            build: buildExtender({
-                                getPageClass: () => Pages.Home,
-                                headerBarStyle: { visible: true }
-                            })
+                        StackRouter.of({
+                            path: "/pages/home/",
+                            routes: [
+                                Route.of({
+                                    path: "/pages/home/home",
+                                    build: buildExtender({
+                                        getPageClass: () => Pages.Home,
+                                        headerBarStyle: { visible: true }
+                                    })
+                                }),
+                                Route.of({
+                                    path: "/pages/home/details",
+                                    build: buildExtender({
+                                        getPageClass: () => Pages.Details,
+                                        headerBarStyle: { visible: true }
+                                    })
+                                }),]
                         }),
+
                         Route.of({
                             path: "/pages/home/profile",
                             build: buildExtender({

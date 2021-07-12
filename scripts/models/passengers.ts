@@ -10,7 +10,7 @@ export interface Airline {
     established: string;
 }
 
-export interface PassengerList {
+export interface Passenger {
     _id: string;
     name: string;
     trips: number;
@@ -21,5 +21,5 @@ export interface PassengerList {
 export interface Passengers {
     totalPassengers: number;
     totalPages: number;
-    data: PassengerList[];
+    data: Passenger[];
 }

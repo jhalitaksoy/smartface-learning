@@ -17,8 +17,7 @@
 			"type": "FlexLayout",
 			"userProps": {
 				"flexProps": {
-					"flexDirection": "ROW",
-					"flexGrow": 1
+					"flexDirection": "ROW"
 				},
 				"height": 50,
 				"left": 24.193548387096776,
