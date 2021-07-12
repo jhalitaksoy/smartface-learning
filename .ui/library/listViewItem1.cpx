@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-listViewItem #listview-item",
+			"className": ".sf-listViewItem #listview-item .my-label",
 			"id": "eb26-3d5e-8ade-681d",
 			"props": {
 				"children": [
@@ -58,7 +58,7 @@
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label .my-label-primary",
 			"id": "9de0-7f47-e757-6b4f",
 			"props": {
 				"children": [],
@@ -73,7 +73,7 @@
 			"type": "Label",
 			"userProps": {
 				"flexProps": {
-					"flexGrow": 3
+					"flexGrow": 1
 				},
 				"testId": "XYn6P40Ts",
 				"text": "label3",
@@ -82,7 +82,7 @@
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label .my-label-secondary",
 			"id": "9ddf-4294-afec-a0aa",
 			"props": {
 				"children": [],

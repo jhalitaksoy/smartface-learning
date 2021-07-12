@@ -4,10 +4,11 @@ import { Resource } from 'models/resource';
 import Simple_listviewitem from 'components/Simple_listviewitem';
 import ListViewItem1 from 'components/ListViewItem1';
 import { createSettingsButton } from 'core/factory/HeaderBarItemFactory';
+import { Passengers } from 'models/passengers';
 
 export default class Home extends HomeDesign {
     router: any;
-    resource: Resource
+    passengers: Passengers
     constructor() {
         super();
         // Overrides super.onShow method
@@ -19,9 +20,9 @@ export default class Home extends HomeDesign {
     initListView() {
         this.listView1.rowHeight = ListViewItem1.getHeight();
         this.listView1.onRowBind = (listViewItem: ListViewItem1, index: number) => {
-            listViewItem.setTitle(this.resource.data[index].name)
-            listViewItem.setSubTitle(this.resource.data[index].year.toString())
-            listViewItem.setColor(this.resource.data[index].color)
+            const passenger = this.passengers.data[index]
+            listViewItem.setTitle(passenger.name)
+            listViewItem.setSubTitle(passenger.airline.name)
         };
 
         this.listView1.onPullRefresh = () => {
@@ -31,13 +32,13 @@ export default class Home extends HomeDesign {
     }
 
     refreshListView() {
-        this.listView1.itemCount = this.resource.data.length;
+        this.listView1.itemCount = this.passengers.data.length;
         this.listView1.refreshData();
     }
 
-    async getUsers() {
+    async getPassengerData() {
         try {
-            this.resource = await context.resourceService.getResourceList()
+            this.passengers = await context.passengerService.getPassengerData(1, 10)
             this.refreshListView();
         }
         catch (e) {
@@ -71,6 +72,6 @@ function onShow(superOnShow: () => void) {
 function onLoad(superOnLoad: () => void) {
     superOnLoad();
     this.initListView();
-    this.getUsers();
+    this.getPassengerData();
     this.setupHeaderBar();
 }

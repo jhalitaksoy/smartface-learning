@@ -1,5 +1,15 @@
 {
-    ".my-mtb" : {
-        "textColor" : "#ffffff"
-    }
+	".my-mtb": {
+		"textColor": "#ffffff"
+	},
+	".my": {
+		"&-label": {
+			"&-primary": {
+				"textColor": "rgba(255,255,255,1)"
+			},
+			"&-secondary": {
+				"textColor": "rgba(255,255,255,1)"
+			}
+		}
+	}
 }

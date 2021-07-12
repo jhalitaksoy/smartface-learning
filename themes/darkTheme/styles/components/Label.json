@@ -4,6 +4,14 @@
         "&-title" : {
             "fontSize" : 36,
             "textColor" : "#ffffff"
-        }
+        },
+        "&-primary": {
+				"textColor": "rgba(255,255,255,1)",
+				"fontSize": 16
+			},
+		"&-secondary": {
+				"fontSize": 12,
+				"textColor": "rgba(255,255,255,1)"
+			},
     }
 }
