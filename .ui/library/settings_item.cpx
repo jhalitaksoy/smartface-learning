@@ -1,0 +1,101 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem",
+			"id": "e821-b5c9-c023-86a3",
+			"props": {
+				"children": [
+					"6250-e6e8-be4c-5b9e"
+				],
+				"name": "settings_item",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {
+				"flexProps": {
+					"alignItems": "CENTER"
+				},
+				"height": 67.74193548387098,
+				"left": 0,
+				"testId": "-lOOf_mrk",
+				"top": 260.60606060606057,
+				"width": 369.35483870967744
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "6250-e6e8-be4c-5b9e",
+			"props": {
+				"children": [
+					"5c2e-a1c0-5563-e2d1",
+					"5361-4806-6b11-f622"
+				],
+				"name": "flexLayout1",
+				"parent": "e821-b5c9-c023-86a3",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1,
+					"flexDirection": "ROW",
+					"alignItems": "CENTER"
+				},
+				"height": 170.96774193548387,
+				"testId": "nhQHv7kBN",
+				"usePageVariable": true,
+				"width": 362.9032258064516
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "5c2e-a1c0-5563-e2d1",
+			"props": {
+				"children": [],
+				"name": "imageView1",
+				"parent": "6250-e6e8-be4c-5b9e",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"height": 50,
+				"testId": "vtgWiRtxs",
+				"usePageVariable": true,
+				"width": 50
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "5361-4806-6b11-f622",
+			"props": {
+				"children": [],
+				"name": "labelTitle",
+				"parent": "6250-e6e8-be4c-5b9e",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"testId": "VJqR7Qn6j",
+				"text": "label1",
+				"usePageVariable": true
+			}
+		}
+	]
+}

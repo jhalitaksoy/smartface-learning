@@ -20,7 +20,7 @@ export default class Settings_drop_down extends Settings_drop_downDesign {
         }
     }
 
-    onMenuItemSelected(value: string) {
+    /*onMenuItemSelected(value: string) {
         this.updatedSelectedValue(value)
         if (this.settingsItem.onSelected) {
             this.settingsItem.onSelected(value)
@@ -51,5 +51,5 @@ export default class Settings_drop_down extends Settings_drop_downDesign {
     updatedSelectedValue(value: string) {
         this.settingsItem.selectedItem = value
         this.lblValue.text = this.settingsItem.selectedItem;
-    }
+    }*/
 }

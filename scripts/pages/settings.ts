@@ -5,12 +5,13 @@ import { switchLanguage } from 'i18n/i18n';
 import { context } from 'context';
 import { ThemeService } from 'theme';
 import Application = require('@smartface/native/application');
+import Image = require('@smartface/native/ui/image');
+import Settings_item from 'components/Settings_item';
 
 export type SettingsItem = {
+    icon: Image,
     title: string,
-    selectedItem: string,
-    values: Array<string>
-    onSelected?: (value: string) => void
+    view: Settings_item
 }
 
 export default class Settings extends SettingsDesign {
@@ -38,16 +39,20 @@ export default class Settings extends SettingsDesign {
 
         const settingsItems: Array<SettingsItem> = [
             {
+                icon: Image.createFromFile("images://user.png", 40, 40),
                 title: lang["language"],
-                values: ["en", "tr"],
+                view: new Settings_item(this)
+                /*values: ["en", "tr"],
                 onSelected: this.onLanguageChanged,
-                selectedItem: context.settingsStore.getLanguage() || "en",
+                selectedItem: context.settingsStore.getLanguage() || "en",*/
             },
             {
+                icon: Image.createFromFile("images://user.png", 40, 40),
                 title: lang["theme"],
-                values: ["light", "dark"],
+                view: new Settings_item(this)
+                /*values: ["light", "dark"],
                 onSelected: this.onThemeSelected,
-                selectedItem: context.settingsStore.getTheme() || "light",
+                selectedItem: context.settingsStore.getTheme() || "light",*/
             },
         ]
 
@@ -56,15 +61,16 @@ export default class Settings extends SettingsDesign {
         this.listView1.onRowCreate = () => {
             itemIndex++;
             const settingsItem = settingsItems[itemIndex]
-            return this.createDropDown(itemIndex, settingsItem)
+            this.dispatch(addChild(`item${itemIndex}`, settingsItem.view));
+            return settingsItem.view
         }
-    }
 
-    createDropDown(itemIndex: number, settingsItem: SettingsItem) {
-        var myListViewItem = new Settings_drop_down(this);
-        myListViewItem.setModel(settingsItem)
-        this.dispatch(addChild(`item${++itemIndex}`, myListViewItem));
-        return myListViewItem
+        this.listView1.onRowBind = (item : Settings_item, index : number) => {
+            const model = settingsItems[index]
+            item.setIcon(model.icon)
+            item.setTitle(model.title)
+            item.fireOnCustomViewCreate()
+        }
     }
 
     setupHeaderBar() {
