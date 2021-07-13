@@ -9,5 +9,10 @@
 		"android": {
 			"color": "#5EA35D"
 		}
+	},
+	".sf": {
+		"&-imageView": {
+			"tintColor": "rgba( 0, 0, 0, 1 )"
+		}
 	}
 }

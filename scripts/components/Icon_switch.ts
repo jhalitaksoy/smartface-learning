@@ -26,10 +26,12 @@ export default class Icon_switch extends Icon_switchDesign {
     
     setLeftIcon(icon : Image){
         this.imageViewLeft.image = icon
+        this.updateUI();
     }
 
     setRightIcon(icon : Image){
         this.imageViewRight.image = icon
+        this.updateUI();
     }
 
     updateUI(){

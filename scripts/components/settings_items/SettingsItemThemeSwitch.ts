@@ -32,14 +32,14 @@ export default class Settings_item_ThemeSwitch extends Settings_item {
         return this.iconSwitch
     }
 
-    onStateChange(_this : Settings_item_ThemeSwitch ,state: "left" | "right") {
+    onStateChange(_this: Settings_item_ThemeSwitch, state: "left" | "right") {
         this.fireOnThemeChange(state == "left" ? "light" : "dark")
 
     }
 
     fireOnThemeChange(theme: "light" | "dark") {
         if (this.onThemeChange) {
-            this.onThemeChange(theme);
+            is.onThemeChange(theme);
         }
     }
 }
