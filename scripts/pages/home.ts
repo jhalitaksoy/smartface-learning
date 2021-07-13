@@ -31,7 +31,7 @@ export default class Home extends HomeDesign {
         this.listView1.itemCount = this.passengers.data.length + 1
         this.listView1.onRowSelected = (item: ListViewItem, index: number) => {
 
-            router.push("/pages/home/details", { passenger: this.passengers.data[index] })
+            router.push("/bottom/stackhome/details", { passenger: this.passengers.data[index] })
         }
         const router = this.router
         this.listView1.onRowCreate = (type) => {

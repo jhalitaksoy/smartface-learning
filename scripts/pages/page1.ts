@@ -20,15 +20,12 @@ export default class Page1 extends Page1Design {
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        //this.button1.onPress = () => {
-        //    this.router.push("/pages/page2", { message: "Hello World!" });
-        //}
         this.labelForgotPassword.onTouch = (point2d: Point2D) => {
-            this.router.push("/pages/page2", { message: "Text" })
+            this.router.push("/auth/forget_password", { message: "Text" })
         }
 
         this.labelGotoRegister.onTouch = (point2d: Point2D) => {
-            this.router.push("/pages/auth/register")
+            this.router.push("/auth/stackmodel/register")
         }
 
         setupButtonActivity(this.buttonLogin, this.activityIndicator1, this.onLoginTab);
@@ -70,7 +67,7 @@ export default class Page1 extends Page1Design {
             const res = await context.authService.login(loginParameters)
             const jwtToken = res.body
             context.jwtKeyStore.setJwtKey(jwtToken)
-            this.router.push("/pages/home/home", { message: "Text" })
+            this.router.push("/bottom/stackhome/home", { message: "Text" })
             context.userStore.setUserName(loginParameters.name)
             hideIndicator();
             this.setPageEnable(true)

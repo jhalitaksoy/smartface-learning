@@ -20,7 +20,7 @@ Application.onUnhandledError = function (e: UnhandledError) {
 
 const jwtKey = context.jwtKeyStore.getJwtKey()
 if (jwtKey) {
-    router.push("/pages/home");
+    router.push("/bottom/stackhome/home");
 } else {
-    router.push("/pages/page1");
+    router.push("/auth/login");
 }

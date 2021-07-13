@@ -11,7 +11,7 @@ export default class Profile extends ProfileDesign {
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
         this.btnLogout.onTouch = () => {
             context.jwtKeyStore.deleteJwtKey();
-            this.router.push("/pages/page1")
+            this.router.push("/auth/login")
         }
         this.btnLogout.text = lang["logout"]
     }

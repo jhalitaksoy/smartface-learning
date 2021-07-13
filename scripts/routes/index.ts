@@ -16,98 +16,97 @@ const router = Router.of({
     isRoot: true,
     routes: [
         StackRouter.of({
-            path: "/pages",
+            path: "/auth",
             routes: [
                 Route.of({
-                    path: "/pages/page1",
+                    path: "/auth/login",
                     build: buildExtender({
                         getPageClass: () => Pages.Page1,
                         headerBarStyle: { visible: true }
                     })
                 }),
                 Route.of({
-                    path: "/pages/page2",
+                    path: "/auth/forget_password",
                     build: buildExtender({
                         getPageClass: () => Pages.Page2,
                         headerBarStyle: { visible: true }
                     })
                 }),
-
-                BottomTabBarRouter.of({
-                    path: "/pages/home",
-                    to: "/pages/home/home",
-                    tabbarParams: createBottomTabBarParams(),
-                    items: () => [
-                        { title: "Home", icon: Image.createFromFile("images://home.png") },
-                        { title: "Profile", icon: Image.createFromFile("images://user.png") },
-                        { title: "Settings", icon: Image.createFromFile("images://settings.png") }],
-                    // tab1
+                StackRouter.of({
+                    path: "/auth/stackmodel",
+                    to: "/auth/stackmodel/register",
+                    modal: true, // This is essential
                     routes: [
-                        StackRouter.of({
-                            path: "/pages/home/",
-                            routes: [
-                                Route.of({
-                                    path: "/pages/home/home",
-                                    build: buildExtender({
-                                        getPageClass: () => Pages.Home,
-                                        headerBarStyle: { visible: true }
-                                    })
-                                }),
-                                Route.of({
-                                    path: "/pages/home/details",
-                                    build: buildExtender({
-                                        getPageClass: () => Pages.Details,
-                                        headerBarStyle: { visible: true }
-                                    })
-                                }),]
-                        }),
-
                         Route.of({
-                            path: "/pages/home/profile",
+                            path: "/auth/stackmodel/register",
                             build: buildExtender({
-                                getPageClass: () => Pages.Profile,
+                                getPageClass: () => Pages.Register,
+                                headerBarStyle: { visible: true }
+                            })
+                        })
+                    ]
+                })
+            ]
+        }),
+
+        BottomTabBarRouter.of({
+            path: "/bottom",
+            to: "/bottom/stackhome/home",
+            tabbarParams: createBottomTabBarParams(),
+            items: () => [
+                { title: "Home", icon: Image.createFromFile("images://home.png") },
+                { title: "Profile", icon: Image.createFromFile("images://user.png") },
+                { title: "Settings", icon: Image.createFromFile("images://settings.png") }],
+            // tab1
+            routes: [
+                StackRouter.of({
+                    path: "/bottom/stackhome",
+                    to: "/bottom/stackhome/home",
+                    routes: [
+                        Route.of({
+                            path: "/bottom/stackhome/home",
+                            build: buildExtender({
+                                getPageClass: () => Pages.Home,
                                 headerBarStyle: { visible: true }
                             })
                         }),
                         Route.of({
-                            path: "/pages/home/settings",
+                            path: "/bottom/stackhome/details",
                             build: buildExtender({
-                                getPageClass: () => Pages.Settings,
+                                getPageClass: () => Pages.Details,
                                 headerBarStyle: { visible: true }
                             })
                         }),
                     ]
                 }),
                 StackRouter.of({
-                    path: "/pages/auth",
-                    to: "/pages/auth/register",
-                    modal: true, // This is essential
+                    path: "/bottom/stackprofile",
+                    to: "/bottom/stackprofile/profile",
                     routes: [
                         Route.of({
-                            path: "/pages/auth/register",
+                            path: "/bottom/stackprofile/profile",
                             build: buildExtender({
-                                getPageClass: () => Pages.Register,
-                                headerBarStyle: { visible: false }
+                                getPageClass: () => Pages.Profile,
+                                headerBarStyle: { visible: true }
                             })
-                        })
+                        }),
                     ]
                 }),
-                /*StackRouter.of({
-                    path: "/pages/modal",
-                    to: "/pages/modal/settings",
-                    modal: true, // This is essential
+                StackRouter.of({
+                    path: "/bottom/stacksettings",
+                    to: "/bottom/stacksettings/settings",
                     routes: [
                         Route.of({
-                            path: "/pages/modal/settings",
+                            path: "/bottom/stacksettings/settings",
                             build: buildExtender({
                                 getPageClass: () => Pages.Settings,
-                                headerBarStyle: { visible: false }
+                                headerBarStyle: { visible: true }
                             })
-                        })
+                        }),
                     ]
-                })*/
+                }),
             ]
-        })
+        }),
     ]
 });
 
