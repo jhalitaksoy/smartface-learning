@@ -8,7 +8,8 @@
 				"children": [
 					"afa2-9191-ffab-0633",
 					"130a-5031-32de-4205",
-					"8fc1-19bf-2ded-a713"
+					"fce1-d410-1d34-da59",
+					"f50c-6b27-3d7d-e9fe"
 				],
 				"name": "details",
 				"orientation": "PORTRAIT",
@@ -46,27 +47,81 @@
 			}
 		},
 		{
-			"className": ".sf-label .my-label-primary",
-			"id": "8fc1-19bf-2ded-a713",
+			"className": ".sf-imageView",
+			"id": "fce1-d410-1d34-da59",
 			"props": {
 				"children": [],
-				"name": "labelTitle",
+				"name": "imageView1",
 				"parent": "84d7-6708-8ccd-1f7f",
-				"text": "label1",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "ImageView",
 			"userProps": {
-				"font": {
-					"size": 24,
-					"bold": true,
-					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+				"flexProps": {
+					"alignSelf": "CENTER"
 				},
-				"testId": "9D54enc2n",
-				"text": "label1",
+				"height": 163.23529411764704,
+				"testId": "k2fYYZGIk",
+				"usePageVariable": true,
+				"width": 175
+			}
+		},
+		{
+			"className": ".sf-listView",
+			"id": "f50c-6b27-3d7d-e9fe",
+			"props": {
+				"children": [
+					"7419-7881-47f0-4fd9"
+				],
+				"name": "listView1",
+				"parent": "84d7-6708-8ccd-1f7f",
 				"usePageVariable": true
+			},
+			"type": "ListView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
+				},
+				"height": null,
+				"marginTop": 10,
+				"testId": "A8AxJECeL",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".sf-listViewItem #listview-item .my-label",
+			"hiddenComponent": false,
+			"id": "7419-7881-47f0-4fd9",
+			"props": {
+				"children": [],
+				"name": "listViewItem1",
+				"parent": "f50c-6b27-3d7d-e9fe"
+			},
+			"source": {
+				"page": "__library__",
+				"type": "listViewItem1",
+				"id": "eb26-3d5e-8ade-681d"
+			},
+			"type": "ListViewItem",
+			"userProps": {
+				"flex": {
+					"flexDirection": 2,
+					"justifyContent": 4,
+					"positionType": 0
+				},
+				"flexProps": {
+					"flexDirection": "ROW",
+					"justifyContent": "SPACE_AROUND",
+					"positionType": "RELATIVE"
+				},
+				"height": 75,
+				"left": 0,
+				"marginBottom": 1,
+				"testId": "wIkJu90N-",
+				"top": 0,
+				"width": 375
 			}
 		}
 	]

@@ -19,7 +19,7 @@
 					"flexDirection": "ROW",
 					"justifyContent": "SPACE_AROUND"
 				},
-				"height": 75,
+				"height": 54.41176470588235,
 				"left": 0,
 				"marginBottom": 1,
 				"testId": "wIkJu90N-",
@@ -48,13 +48,14 @@
 					"flexDirection": "ROW",
 					"justifyContent": "SPACE_BETWEEN"
 				},
+				"height": null,
 				"marginBottom": 1,
 				"marginTop": 0,
 				"paddingBottom": 5,
 				"paddingLeft": 5,
 				"paddingRight": 5,
 				"testId": "j4zb4tj50",
-				"width": 50
+				"width": null
 			}
 		},
 		{

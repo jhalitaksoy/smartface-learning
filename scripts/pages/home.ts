@@ -18,7 +18,7 @@ export default class Home extends HomeDesign {
     }
 
     initListView() {
-        this.listView1.rowHeight = ListViewItem1.getHeight();
+        //this.listView1.rowHeight = ListViewItem1.getHeight();
         this.listView1.onRowBind = (listViewItem: ListViewItem1, index: number) => {
             const passenger = this.passengers.data[index]
             listViewItem.setTitle(passenger.name)

@@ -1,11 +1,21 @@
 import DetailsDesign from 'generated/pages/details';
 import { Passenger } from 'models/passengers';
+import ListViewItem1 from 'components/ListViewItem1';
+import Image = require('@smartface/native/ui/image');
+import Http = require("@smartface/native/net/http");
+
+type KeyValue = {
+    name: string,
+    value: string
+}
 
 export default class Details extends DetailsDesign {
     router: any;
     routeData: {
         passenger: Passenger
     };
+    myHttp = new Http();
+
     constructor() {
         super();
         // Overrides super.onShow method
@@ -16,7 +26,66 @@ export default class Details extends DetailsDesign {
     }
 
     initData() {
-        this.labelTitle.text = this.routeData.passenger.name
+        this.headerBar.title = this.routeData.passenger.name
+
+        const listData: Array<KeyValue> = [
+            {
+                name: "Passenger Name",
+                value: this.routeData.passenger.name
+            },
+            {
+                name: "Passenger Trips",
+                value: this.routeData.passenger.trips.toString(),
+            },
+            {
+                name: "Airline Name",
+                value: this.routeData.passenger.airline.name,
+            },
+            {
+                name: "Airline Country",
+                value: this.routeData.passenger.airline.country,
+            },
+            {
+                name: "Airline Slogan",
+                value: this.routeData.passenger.airline.slogan,
+            },
+            {
+                name: "Airline Website",
+                value: this.routeData.passenger.airline.website,
+            },
+            {
+                name: "Airline Headquaters",
+                value: this.routeData.passenger.airline.head_quaters,
+            }
+        ]
+
+        this.listView1.itemCount = listData.length
+        this.listView1.onRowBind = (item: ListViewItem1, index: number) => {
+            const keyValue = listData[index]
+            item.setTitle(keyValue.name)
+            item.setSubTitle(keyValue.value)
+        }
+
+        this.myHttp.requestImage({
+            url: this.routeData.passenger.airline.logo,
+            onLoad: (e: {
+                statusCode: number;
+                headers: { [key: string]: string };
+                image: Image;
+            }): void => {
+                // Image loaded.
+                this.imageView1.image = e.image;
+            },
+            onError: (e: {
+                message: string;
+                body: any;
+                statusCode: number;
+                headers: { [key: string]: string };
+            }): void => {
+                // Http request image failed.
+                alert(e.message);
+            }
+        });
     }
 }
 
