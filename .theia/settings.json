@@ -6,6 +6,6 @@
         "**/dist/**": true,
         "**/scripts/generated/**": true
     },
-    "editor.autoSave": "off",
+    "editor.autoSave": "on",
     "application.confirmExit": "off"
 }

@@ -60,10 +60,11 @@
 				"flexProps": {
 					"alignSelf": "CENTER"
 				},
-				"height": 163.23529411764704,
+				"height": 139.1891891891892,
+				"imageFillType": "ASPECTFIT",
 				"testId": "k2fYYZGIk",
 				"usePageVariable": true,
-				"width": 175
+				"width": 324.3243243243243
 			}
 		},
 		{

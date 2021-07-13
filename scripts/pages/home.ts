@@ -17,7 +17,7 @@ export default class Home extends HomeDesign {
     isLoading: boolean = false;
 
     page: number = 1;
-    pageSize: number = 5;
+    pageSize: number = 10;
     constructor() {
         super();
         // Overrides super.onShow method
@@ -29,20 +29,19 @@ export default class Home extends HomeDesign {
     initListView() {
         console.log("initListView");
         this.listView1.itemCount = this.passengers.data.length + 1
-         this.listView1.onRowSelected = (item : ListViewItem, index : number) => {
+        this.listView1.onRowSelected = (item: ListViewItem, index: number) => {
 
-                router.push("/pages/home/details", { passenger: this.passengers.data[index]})
-            }
+            router.push("/pages/home/details", { passenger: this.passengers.data[index] })
+        }
         const router = this.router
         this.listView1.onRowCreate = (type) => {
             const passenger = this.passengers.data[this.index]
-
             let myListViewItem = new ListViewItem();
             this.listView1.dispatch(addChild(`myListViewItem${++this.index}`, myListViewItem, '.sf-listViewItem', {
                 paddingTop: 5,
                 paddingBottom: 5,
-                paddingLeft : 10,
-                paddingRight : 10
+                paddingLeft: 10,
+                paddingRight: 10
             }));
 
             if (type == 2) {// Loading
@@ -114,18 +113,13 @@ export default class Home extends HomeDesign {
                 listViewItem.titleLayout.subtitleLabel.text = this.passengers.data[index % this.passengers.data.length].airline.name;
             }
 
-            console.log(index);
-            console.log(this.passengers.data.length);
-
             if (index > this.passengers.data.length - 3 && !this.isLoading) {
                 this.isLoading = true
-                console.log("will load");
 
                 Timer.setTimeout({
-                    task: () => {
+                    task: async () => {
                         // Loading completed
-                        this.loadMorePassengerData();
-                        console.log("loaded");
+                        await this.loadMorePassengerData();
                         console.log(this.passengers.data.length);
 
                         this.listView1.itemCount = this.passengers.data.length + 1;
@@ -145,22 +139,6 @@ export default class Home extends HomeDesign {
                 return 1;
             }
         }
-        /*
-        //this.listView1.rowHeight = ListViewItem1.getHeight();
-        this.listView1.onRowBind = (listViewItem: ListViewItem1, index: number) => {
-            const passenger = this.passengers.data[index]
-            listViewItem.setTitle(passenger.name)
-            listViewItem.setSubTitle(passenger.airline.name)
-            const router = this.router
-            listViewItem.onTouch = () => {
-                router.push("/pages/home/details", { passenger: passenger })
-            }
-        };
-
-        this.listView1.onPullRefresh = () => {
-            this.refreshListView();
-            this.listView1.stopRefresh();
-        }*/
     }
 
     refreshListView() {
