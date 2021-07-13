@@ -29,7 +29,14 @@ export default class Home extends HomeDesign {
     initListView() {
         console.log("initListView");
         this.listView1.itemCount = this.passengers.data.length + 1
+         this.listView1.onRowSelected = (item : ListViewItem, index : number) => {
+
+                router.push("/pages/home/details", { passenger: this.passengers.data[index]})
+            }
+        const router = this.router
         this.listView1.onRowCreate = (type) => {
+            const passenger = this.passengers.data[this.index]
+
             let myListViewItem = new ListViewItem();
             this.listView1.dispatch(addChild(`myListViewItem${++this.index}`, myListViewItem, '.sf-listViewItem', {
                 paddingTop: 5,
@@ -65,15 +72,16 @@ export default class Home extends HomeDesign {
                 let titleLabel = new Label();
                 let subtitleLabel = new Label();
 
+                titleLayout.flexDirection = FlexLayout.FlexDirection.ROW
+
                 //@ts-ignore
                 myListViewItem.addChild(titleLayout, `titleLayout${this.index}`, ".sf-flexLayout", {
                     flexGrow: 1,
-                    backgroundColor: "#00A1F1"
                 });
 
                 //@ts-ignore
-                titleLayout.addChild(titleLabel, `titleLabel${this.index}`, "sf-label", {
-                    textAlignment: "MIDCENTER",
+                titleLayout.addChild(titleLabel, `titleLabel${this.index}`, "sf-label .my-label", {
+                    //textAlignment: "MIDCENTER",
                     flexGrow: 1,
                     textColor: "#FFFFFF"
                 });
@@ -81,8 +89,8 @@ export default class Home extends HomeDesign {
                 titleLayout.titleLabel = titleLabel;
 
                 //@ts-ignore
-                titleLayout.addChild(subtitleLabel, `subtitleLabel${this.index}`, "sf-label", {
-                    textAlignment: "MIDCENTER",
+                titleLayout.addChild(subtitleLabel, `subtitleLabel${this.index}`, "sf-label .my-label", {
+                    textAlignment: "MIDRIGHT",
                     flexGrow: 1,
                     textColor: "#FFFFFF"
                 });
@@ -92,7 +100,6 @@ export default class Home extends HomeDesign {
                 //@ts-ignore
                 myListViewItem.titleLayout = titleLayout;
             }
-
             return myListViewItem;
         };
         this.listView1.onRowBind = (listViewItem: ListViewItem, index) => {
@@ -109,7 +116,7 @@ export default class Home extends HomeDesign {
 
             console.log(index);
             console.log(this.passengers.data.length);
-            
+
             if (index > this.passengers.data.length - 3 && !this.isLoading) {
                 this.isLoading = true
                 console.log("will load");
