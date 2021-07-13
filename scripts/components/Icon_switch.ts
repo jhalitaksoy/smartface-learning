@@ -22,6 +22,7 @@ export default class Icon_switch extends Icon_switchDesign {
             this.switchState();
             this.updateUI();
         }
+        this.borderRadius = 15
     }
     
     setLeftIcon(icon : Image){

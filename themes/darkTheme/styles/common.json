@@ -11,9 +11,16 @@
 		}
 	},
 	".sf": {
-		"&-imageView": {
-			"backgroundColor": "rgba( 71, 48, 41, 1 )",
-			"tintColor": "rgba(255,255,255,1)"
+		"&-imageView": {},
+		"&-listView": {
+			"borderRadius": 15,
+			"height": null
 		}
+	},
+	".myimageView": {
+		"tintColor": "rgba(255,255,255,1)"
+	},
+	".iconswitch": {
+		"borderRadius": 15
 	}
 }

@@ -1,28 +1,17 @@
 {
 	".my-label": {
+        "textColor" : "#000000",
 		"&-primary": {
+            "textColor" : "#000000",
 			"fontSize": 16
 		},
 		"&-secondary": {
+            "textColor": "#000000",
 			"fontSize": 12
 		},
 		"&-title": {
+            "textColor": "#000000",
 			"fontSize": 36
-		}
-	},
-	".my": {
-		"&-label": {
-			"&-primary": {
-				"textColor": "#000000",
-				"fontSize": 16
-			},
-			"&-secondary": {
-				"fontSize": 12,
-				"textColor": "#000000"
-			},
-			"&-title": {
-				"fontSize": 36
-			}
 		}
 	}
 }

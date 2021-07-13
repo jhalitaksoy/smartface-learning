@@ -48,7 +48,7 @@
 			}
 		},
 		{
-			"className": ".sf-listView",
+			"className": ".sf-listView .mylistview",
 			"id": "bc0c-d91a-4c18-c6ac",
 			"props": {
 				"children": [],

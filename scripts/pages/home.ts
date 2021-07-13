@@ -40,7 +40,9 @@ export default class Home extends HomeDesign {
             let myListViewItem = new ListViewItem();
             this.listView1.dispatch(addChild(`myListViewItem${++this.index}`, myListViewItem, '.sf-listViewItem', {
                 paddingTop: 5,
-                paddingBottom: 5
+                paddingBottom: 5,
+                paddingLeft : 10,
+                paddingRight : 10
             }));
 
             if (type == 2) {// Loading
@@ -83,7 +85,6 @@ export default class Home extends HomeDesign {
                 titleLayout.addChild(titleLabel, `titleLabel${this.index}`, "sf-label .my-label", {
                     //textAlignment: "MIDCENTER",
                     flexGrow: 1,
-                    textColor: "#FFFFFF"
                 });
                 //@ts-ignore
                 titleLayout.titleLabel = titleLabel;
@@ -92,7 +93,6 @@ export default class Home extends HomeDesign {
                 titleLayout.addChild(subtitleLabel, `subtitleLabel${this.index}`, "sf-label .my-label", {
                     textAlignment: "MIDRIGHT",
                     flexGrow: 1,
-                    textColor: "#FFFFFF"
                 });
                 //@ts-ignore
                 titleLayout.subtitleLabel = subtitleLabel;

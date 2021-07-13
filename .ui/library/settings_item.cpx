@@ -54,7 +54,7 @@
 			}
 		},
 		{
-			"className": ".sf-imageView",
+			"className": ".sf-imageView .myimageView",
 			"id": "5c2e-a1c0-5563-e2d1",
 			"props": {
 				"children": [],
@@ -74,7 +74,7 @@
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label .my-label-primary",
 			"id": "5361-4806-6b11-f622",
 			"props": {
 				"children": [],

@@ -52,7 +52,7 @@
 			}
 		},
 		{
-			"className": ".sf-listView",
+			"className": ".sf-listView .mylistview",
 			"id": "7365-f3c4-9de6-a492",
 			"props": {
 				"children": [
@@ -64,7 +64,6 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"borderRadius": 5,
 				"flexProps": {
 					"flexGrow": 1,
 					"alignSelf": "STRETCH"

@@ -67,7 +67,7 @@
 			}
 		},
 		{
-			"className": ".sf-listView",
+			"className": ".sf-listView .mylistview",
 			"id": "f50c-6b27-3d7d-e9fe",
 			"props": {
 				"children": [
@@ -91,7 +91,7 @@
 			}
 		},
 		{
-			"className": ".sf-listViewItem #listview-item .my-label",
+			"className": ".sf-listViewItem",
 			"hiddenComponent": false,
 			"id": "7419-7881-47f0-4fd9",
 			"props": {

@@ -9,7 +9,8 @@
 			},
 			"&-secondary": {
 				"textColor": "rgba(255,255,255,1)"
-			}
+			},
+			"textColor": "rgba(255,255,255,1)"
 		}
 	}
 }

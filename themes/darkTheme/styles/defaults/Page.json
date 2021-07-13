@@ -1,6 +1,6 @@
 {
 	"#page": {
-        "backgroundColor" : "#473029",
+		"backgroundColor": "rgba( 0, 0, 0, 1 )",
 		"&-textbox": {
 			"marginTop": 10
 		}
