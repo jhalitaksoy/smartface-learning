@@ -3,7 +3,7 @@ import ServiceCall from "@smartface/extension-utils/lib/service-call";
 import { Passengers } from "models/passengers";
 const sc = new ServiceCall({
     baseUrl: "https://api.instantwebtools.net/v1",
-    logEnabled: true,
+    logEnabled: false,
 });
 
 export interface PassengerService {

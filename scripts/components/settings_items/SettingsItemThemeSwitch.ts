@@ -39,7 +39,7 @@ export default class Settings_item_ThemeSwitch extends Settings_item {
 
     fireOnThemeChange(theme: "light" | "dark") {
         if (this.onThemeChange) {
-            is.onThemeChange(theme);
+            this.onThemeChange(theme);
         }
     }
 }
