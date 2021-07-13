@@ -45,7 +45,7 @@ export default class Settings extends SettingsDesign {
 
         const settingsItems: Array<SettingsItem> = [
             {
-                icon: Image.createFromFile("images://user.png", 40, 40),
+                icon: Image.createFromFile("images://language.png", 40, 40),
                 title: lang["language"],
                 view: new Settings_item(this)
                 /*values: ["en", "tr"],

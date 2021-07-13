@@ -8,9 +8,7 @@
 				"children": [
 					"cf74-e16b-4e1f-24a7",
 					"a117-4d84-3be5-b577",
-					"bc0c-d91a-4c18-c6ac",
-					"46e1-303c-8e70-7474",
-					"a664-081d-ca92-8fc4"
+					"bc0c-d91a-4c18-c6ac"
 				],
 				"name": "settings",
 				"orientation": "PORTRAIT",
@@ -62,56 +60,6 @@
 			"userProps": {
 				"testId": "2Z4cEV159",
 				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-imageView",
-			"hiddenComponent": true,
-			"id": "46e1-303c-8e70-7474",
-			"props": {
-				"children": [],
-				"name": "imageView1",
-				"parent": "8a75-9cbf-e197-cc35",
-				"usePageVariable": true
-			},
-			"type": "ImageView",
-			"userProps": {
-				"height": 50,
-				"testId": "9RSkNkM_B",
-				"usePageVariable": true,
-				"width": 50
-			}
-		},
-		{
-			"className": ".sf-flexLayout",
-			"hiddenComponent": false,
-			"id": "a664-081d-ca92-8fc4",
-			"props": {
-				"children": [],
-				"name": "iconswitch",
-				"parent": "8a75-9cbf-e197-cc35"
-			},
-			"source": {
-				"page": "__library__",
-				"type": "iconswitch",
-				"id": "72db-4b0c-34ad-20d4"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"flexDirection": 2,
-					"positionType": 0
-				},
-				"flexProps": {
-					"flexDirection": "ROW",
-					"positionType": "RELATIVE",
-					"alignSelf": "STRETCH"
-				},
-				"height": 62.16214154217694,
-				"left": 0,
-				"testId": "VFVe06lBS",
-				"top": 0,
-				"width": 352.7027027027027
 			}
 		}
 	]

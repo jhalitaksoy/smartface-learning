@@ -21,8 +21,8 @@ export default class Settings_item_ThemeSwitch extends Settings_item {
     }
 
     onCustomViewCreate(): View {
-        const imageLeft = Image.createFromFile("images://user.png", 30, 30)
-        const imageRight = Image.createFromFile("images://user.png", 30, 30)
+        const imageLeft = Image.createFromFile("images://sun.png", 30, 30)
+        const imageRight = Image.createFromFile("images://moon.png", 30, 30)
         this.iconSwitch = new Icon_switch();
         this.iconSwitch.state = this.theme == "light" ? "left" : "right"
         const _this = this
