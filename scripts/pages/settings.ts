@@ -8,6 +8,7 @@ import Application = require('@smartface/native/application');
 import Image = require('@smartface/native/ui/image');
 import Settings_item from 'components/Settings_item';
 import Settings_item_ThemeSwitch from 'components/settings_items/SettingsItemThemeSwitch';
+import { clearCache } from '@smartface/extension-utils/lib/getCombinedStyle';
 
 export type SettingsItem = {
     icon: Image,
@@ -27,8 +28,9 @@ export default class Settings extends SettingsDesign {
     onThemeSelected(theme: "light" | "dark") {
         context.settingsStore.setTheme(theme)
         const nextTheme = theme == "light" ? "myTheme" : "darkTheme"
+        clearCache()
         ThemeService.changeTheme(nextTheme);
-        Application.restart()
+        //Application.restart()
     }
 
     onLanguageChanged(language: string) {
