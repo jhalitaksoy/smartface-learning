@@ -11,6 +11,7 @@ import { modifyMaterialTextBox } from 'core/factory/MaterialTextBoxFactory';
 import Color from '@smartface/native/ui/color';
 import TextBox from '@smartface/native/ui/textbox';
 import { createSettingsButton } from 'core/factory/HeaderBarItemFactory';
+import { userNameMinSize, passwordMinSize } from './register';
 
 export default class Page1 extends Page1Design {
     router: any;
@@ -58,6 +59,16 @@ export default class Page1 extends Page1Design {
 
           if(!loginParameters.password){
             this.setErrorMessages(undefined, lang["cannotBeEmty"])
+            return;
+        }
+
+        if (loginParameters.name.length < userNameMinSize) {
+            this.setErrorMessages(lang["userNameTooShort"], undefined)
+            return;
+        }
+
+        if (loginParameters.password.length < passwordMinSize) {
+            this.setErrorMessages(undefined, lang["passwordTooShort"])
             return;
         }
 

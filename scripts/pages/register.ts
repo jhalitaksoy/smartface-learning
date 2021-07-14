@@ -11,6 +11,9 @@ import HeaderBarItem = require('@smartface/native/ui/headerbaritem');
 import Image = require('@smartface/native/ui/image');
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
 
+export const userNameMinSize = 5
+export const passwordMinSize = 4
+
 export default class Register extends RegisterDesign {
     router: any;
     constructor() {
@@ -57,6 +60,16 @@ export default class Register extends RegisterDesign {
 
         if (!registerParameters.password) {
             this.setErrorMessages(undefined, lang["cannotBeEmty"], undefined)
+            return;
+        }
+
+        if (registerParameters.name.length < userNameMinSize) {
+            this.setErrorMessages(lang["userNameTooShort"], undefined, undefined)
+            return;
+        }
+
+        if (registerParameters.password.length < passwordMinSize) {
+            this.setErrorMessages(undefined, lang["passwordTooShort"], undefined)
             return;
         }
 

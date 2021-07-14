@@ -63,5 +63,7 @@ SMF.i18n.defineLanguage('tr', {
     "home": "Anasayfa",
     "profile": "Profil",
     "settings": "Ayarlar",
-    "cannotBeEmty" : "Bu alan boş olamaz!"
+    "cannotBeEmty" : "Bu alan boş olamaz!",
+    "userNameTooShort" : "Kullanıcı adı 4 karaterden daha uzun olmalıdır!",
+    "passwordTooShort" : "Parola 3 karaterden daha uzun olmalıdır!",
 });

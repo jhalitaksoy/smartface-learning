@@ -107,8 +107,6 @@
 				"flexProps": {
 					"positionType": "RELATIVE"
 				},
-				"height": 50,
-				"left": 0,
 				"testId": "jEGfrGBJI",
 				"top": 0,
 				"usePageVariable": true
@@ -138,8 +136,6 @@
 				"flexProps": {
 					"positionType": "RELATIVE"
 				},
-				"height": 50,
-				"left": 0,
 				"testId": "Rc4q8Mhv9",
 				"top": 15,
 				"usePageVariable": true

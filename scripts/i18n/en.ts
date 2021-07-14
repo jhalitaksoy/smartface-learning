@@ -65,5 +65,7 @@ SMF.i18n.defineLanguage('en', {
     "home" : "Home",
     "profile" : "Profile",
     "settings" : "Settings",
-    "cannotBeEmty" : "This area cannot be empty!"
+    "cannotBeEmty" : "This area cannot be empty!",
+    "userNameTooShort" : "User Name must be more than 4 characters!",
+    "passwordTooShort" : "Password must be more than 3 characters!",
 });
