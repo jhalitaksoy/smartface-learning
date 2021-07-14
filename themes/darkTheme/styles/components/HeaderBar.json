@@ -1,6 +1,11 @@
 {
     ".my-headerBar": {
-        "backgroundColor": "#45342e",
+        "backgroundColor": "${headerBarColor}",
         "borderRadius": 25
-    }
+    },
+    ".my-statusBar": {
+		"android": {
+			"color": "${headerBarColor}"
+		}
+	}
 }

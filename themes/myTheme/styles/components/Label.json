@@ -1,17 +1,5 @@
 {
 	".my-label": {
-        "textColor" : "#000000",
-		"&-primary": {
-            "textColor" : "#000000",
-			"fontSize": 16
-		},
-		"&-secondary": {
-            "textColor": "#000000",
-			"fontSize": 12
-		},
-		"&-title": {
-            "textColor": "#000000",
-			"fontSize": 36
-		}
+        "textColor" : "${primaryTextColor}"
 	}
 }

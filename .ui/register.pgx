@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page #page",
+			"className": ".sf-page .page",
 			"id": "0ecc-160b-e931-e5a9",
 			"initialized": true,
 			"props": {
@@ -21,9 +21,7 @@
 				"parent": null
 			},
 			"type": "Page",
-			"userProps": {
-               
-            }
+			"userProps": {}
 		},
 		{
 			"className": ".sf-statusBar .my-statusBar",
@@ -36,7 +34,7 @@
 			},
 			"type": "StatusBar",
 			"userProps": {
-                "visible": true
+				"visible": true
 			}
 		},
 		{

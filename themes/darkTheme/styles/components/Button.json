@@ -1,6 +1,6 @@
 {
     ".mybutton": {
-        "backgroundColor": "#57504e",
+        "backgroundColor": "${buttonBgColor}",
         "borderRadius": 25
     }
 }

@@ -1,7 +1,7 @@
 {
     ".mybottomtabbar" : {
-        "selectedColor" : "#ffffff",
-        "normalColor" : "#736e63",
-        "bgColor" : "#473029"
+        "bgColor" : "${bottomTabBarBgColor}",
+        "normalColor" : "${bottomTabBarNormalColor}",
+        "selectedColor" : "${bottomTabBarSelectedColor}"
     }
 }

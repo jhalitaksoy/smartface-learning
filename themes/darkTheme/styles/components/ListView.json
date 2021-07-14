@@ -1,5 +1,6 @@
 {
 	".mylistview": {
-		"backgroundColor": "rgba( 69, 52, 46, 1 )"
+		"backgroundColor": "${commonBackgroundColor}",
+        "borderRadius": 15
 	}
 }

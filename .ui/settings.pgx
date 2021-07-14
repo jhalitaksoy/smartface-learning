@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page #page",
+			"className": ".sf-page .page",
 			"id": "8a75-9cbf-e197-cc35",
 			"initialized": true,
 			"props": {

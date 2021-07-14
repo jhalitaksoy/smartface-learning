@@ -5,11 +5,6 @@
 			"paddingRight": 25
 		}
 	},
-	".my-statusBar": {
-		"android": {
-			"color": "#45342e"
-		}
-	},
 	".sf": {
 		"&-imageView": {},
 		"&-listView": {

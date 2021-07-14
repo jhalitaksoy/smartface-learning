@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page #page #pgLogin #page-textbox",
+			"className": ".sf-page #pgLogin .page",
 			"id": "e891b86d",
 			"initialized": true,
 			"props": {

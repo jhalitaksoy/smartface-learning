@@ -1,1 +1,11 @@
-{}
+{
+    "pageBackgroundColor" : "#ffffff",
+    "headerBarColor" : "#5EA35D",
+    "bottomTabBarBgColor" : "#ffffff",
+    "bottomTabBarSelectedColor" : "#5EA35D",
+    "bottomTabBarNormalColor" : "#736e63",
+    "commonBackgroundColor" : "rgba( 235, 206, 206, 1 )",
+    "buttonBgColor" : "#5EA35D",
+    "primaryTextColor" : "#000000",
+    "secondaryTextColor" : "#5e3629"
+}
