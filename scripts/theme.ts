@@ -1,9 +1,10 @@
 import Data from "@smartface/native/global/data";
 import Application from "@smartface/native/application";
 import { config } from "settings.json";
-import { clearCache } from "@smartface/extension-utils/lib/getCombinedStyle";
+import { clearCache, getCombinedStyle } from "@smartface/extension-utils/lib/getCombinedStyle";
 import { createThemeContextBound } from "@smartface/contx/lib/styling/ThemeContext";
 import { context } from "context";
+import Color from "@smartface/native/ui/color";
 
 const themeConfig = config.theme;
 const theme =  context.settingsStore.getTheme() == "dark" ?  "darkTheme" : "myTheme" 
@@ -26,6 +27,10 @@ export const ThemeService = {
         themeListenerKeys.push(key)
         themeListeners.set(key, listener);
         const deletionIndex = themeListenerKeys.length - 1;
+        //const { backgroundColor, itemColor } = getCombinedStyle(".tabs");
+        //bottomTabBarRouter._renderer._rootController.tabBar.backgroundColor = Color.WHITE;
+         //@ts-ignore 
+        //bottomTabBarRouter._renderer._rootController.tabBar.itemColor = itemColor;
         return () => {
             if(themeListeners.has(key)){
                 themeListeners.delete(key);

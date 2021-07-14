@@ -84,7 +84,7 @@
 			}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper .mt-mtb",
+			"className": ".flexLayout .materialTextBox-wrapper .my-mtb",
 			"hiddenComponent": false,
 			"id": "5a3c-70c6-20ce-3ac9",
 			"initialized": false,
@@ -113,7 +113,7 @@
 			}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper .mt-mtb",
+			"className": ".flexLayout .materialTextBox-wrapper .my-mtb",
 			"hiddenComponent": false,
 			"id": "b1c7-4096-3f3c-6cec",
 			"initialized": false,

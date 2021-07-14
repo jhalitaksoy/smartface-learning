@@ -53,7 +53,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .my-label-title .centertext .my-label",
+			"className": " .sf-label .centertext .my-label .my-label-title",
 			"id": "f4e2-ae08-65ba-523c",
 			"props": {
 				"children": [],

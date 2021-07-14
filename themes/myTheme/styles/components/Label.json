@@ -1,6 +1,9 @@
 {
 	".my-label": {
 		"textColor": "${primaryTextColor}",
+        "font": {
+            "size" : 24
+        },
 		"&-title": {
 			"fontSize": 36
 		}
