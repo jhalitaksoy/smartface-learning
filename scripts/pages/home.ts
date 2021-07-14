@@ -80,7 +80,7 @@ export default class Home extends HomeDesign {
                 });
 
                 //@ts-ignore
-                titleLayout.addChild(titleLabel, `titleLabel${this.index}`, "sf-label .my-label", {
+                titleLayout.addChild(titleLabel, `titleLabel${this.index}`, ".sf-label .my-label", {
                     //textAlignment: "MIDCENTER",
                     flexGrow: 1,
                 });
@@ -88,7 +88,7 @@ export default class Home extends HomeDesign {
                 titleLayout.titleLabel = titleLabel;
 
                 //@ts-ignore
-                titleLayout.addChild(subtitleLabel, `subtitleLabel${this.index}`, "sf-label .my-label", {
+                titleLayout.addChild(subtitleLabel, `subtitleLabel${this.index}`, ".sf-label .my-label", {
                     textAlignment: "MIDRIGHT",
                     flexGrow: 1,
                 });

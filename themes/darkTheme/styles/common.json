@@ -17,5 +17,8 @@
 	},
 	".iconswitch": {
 		"borderRadius": 15
+	},
+    ".centertext": {
+		"textAlignment": "MIDCENTER"
 	}
 }

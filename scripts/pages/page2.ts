@@ -31,6 +31,7 @@ export default class Page2 extends Page2Design {
 
         this.mtbEmail.materialTextBox.isPassword = true;
         modifyMaterialTextBox(this.mtbEmail.materialTextBox)
+        this.headerBar.title = lang["password-forget"]
     }
 }
 
@@ -40,8 +41,8 @@ export default class Page2 extends Page2Design {
  */
 function onShow(superOnShow: () => void) {
     superOnShow();
-    this.headerBar.titleLayout.applyLayout();
-    this.routeData && console.info(this.routeData.message);
+    //this.headerBar.titleLayout.applyLayout();
+    //this.routeData && console.info(this.routeData.message);
 }
 
 
@@ -53,14 +54,8 @@ function onShow(superOnShow: () => void) {
 function onLoad(superOnLoad: () => void) {
     superOnLoad();
     let headerBar;
-    this.headerBar.titleLayout = new PageTitleLayout();
-    componentContextPatch(this.headerBar.titleLayout, "titleLayout");
-    this.headerBar.setItems([new HeaderBarItem({
-        title: "Option",
-        onPress: () => {
-            console.warn("You pressed Option item!");
-        }
-    })]);
+    //this.headerBar.titleLayout = new PageTitleLayout();
+    //componentContextPatch(this.headerBar.titleLayout, "titleLayout");
     if (System.OS === "Android") {
         headerBar = this.headerBar;
         headerBar.setLeftItem(new HeaderBarItem({

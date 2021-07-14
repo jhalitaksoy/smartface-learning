@@ -58,6 +58,7 @@
 			},
 			"type": "ListView",
 			"userProps": {
+				"height": 200,
 				"testId": "2Z4cEV159",
 				"usePageVariable": true
 			}

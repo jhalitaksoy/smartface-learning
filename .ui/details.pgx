@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page .my-label-primary #page",
+			"className": ".sf-page .my-label-primary .page",
 			"id": "84d7-6708-8ccd-1f7f",
 			"initialized": true,
 			"props": {

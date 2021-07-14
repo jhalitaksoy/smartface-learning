@@ -3,6 +3,8 @@ import { Passenger } from 'models/passengers';
 import ListViewItem1 from 'components/ListViewItem1';
 import Image = require('@smartface/native/ui/image');
 import Http = require("@smartface/native/net/http");
+import System = require('@smartface/native/device/system');
+import HeaderBarItem = require('@smartface/native/ui/headerbaritem');
 
 type KeyValue = {
     name: string,
@@ -107,4 +109,17 @@ function onShow(superOnShow: () => void) {
 function onLoad(superOnLoad: () => void) {
     superOnLoad();
     this.initData();
+    let headerBar
+    if (System.OS === "Android") {
+        headerBar = this.headerBar;
+        headerBar.setLeftItem(new HeaderBarItem({
+            onPress: () => {
+                this.router.goBack();
+            },
+            image: Image.createFromFile("images://arrow_back.png")
+        }));
+    }
+    else {
+        headerBar = this.parentController.headerBar;
+    }
 }

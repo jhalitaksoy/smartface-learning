@@ -3,11 +3,9 @@
 		"paddingTop": 40,
 		"&-lblLoginText": {
 			"height": 90,
-			"textAlignment": "MIDCENTER",
 			"font": {
 				"size": 36
-			},
-			"textColor": "rgba( 10, 0, 0, 1 )"
+			}
 		},
 		"&-lblForgotPassword": {
 			"textAlignment": "MIDRIGHT"

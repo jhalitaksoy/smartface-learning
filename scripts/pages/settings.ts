@@ -55,12 +55,10 @@ export default class Settings extends SettingsDesign {
                 icon: Image.createFromFile("images://darkMode.png"/*, 40, 40*/),
                 title: lang["theme"],
                 view: new Settings_item_ThemeSwitch(this.getTheme(), this.onThemeSelected, this)
-                /*values: ["light", "dark"],
-                onSelected: this.onThemeSelected,
-                selectedItem: context.settingsStore.getTheme() || "light",*/
             },
         ]
 
+        this.listView1.height = settingsItems.length * this.listView1.rowHeight + 10
         this.listView1.itemCount = settingsItems.length;
         var itemIndex = -1;
         this.listView1.onRowCreate = () => {

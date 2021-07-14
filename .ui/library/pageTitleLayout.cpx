@@ -18,12 +18,14 @@
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"flexProps": {
-					"justifyContent": "CENTER"
+					"justifyContent": "CENTER",
+					"alignItems": "CENTER",
+					"alignContent": "CENTER"
 				},
-				"height": 55.55555555555556,
-				"left": 41.66666666666667,
-				"top": 595.8333333333334,
-				"width": 280.55555555555554
+				"height": 52.54237288135594,
+				"left": 0,
+				"top": 588.135593220339,
+				"width": 376.271186440678
 			}
 		},
 		{

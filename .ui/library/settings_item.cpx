@@ -74,7 +74,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .my-label-primary",
+			"className": ".sf-label .my-label",
 			"id": "5361-4806-6b11-f622",
 			"props": {
 				"children": [],

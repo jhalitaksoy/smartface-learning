@@ -67,7 +67,7 @@
 			}
 		},
 		{
-			"className": ".sf-label #pgLogin-lblLoginText .my-label-title",
+			"className": ".sf-label #pgLogin-lblLoginText .my-label .centertext",
 			"id": "b277-e9c7-ea45-ec68",
 			"props": {
 				"children": [],

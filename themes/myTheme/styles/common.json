@@ -6,9 +6,15 @@
 		}
 	},
 	".sf": {
-		"&-imageView": {}
+		"&-imageView": {},
+		"&-listView": {
+			"height": null
+		}
 	},
 	".myimageView": {
 		"tintColor": "rgba( 0, 0, 0, 1 )"
+	},
+	".centertext": {
+		"textAlignment": "MIDCENTER"
 	}
 }

@@ -6,6 +6,10 @@ import { context } from 'context';
 import { modifyMaterialTextBox } from 'core/factory/MaterialTextBoxFactory';
 import { createSettingsButton } from 'core/factory/HeaderBarItemFactory';
 import Color = require('@smartface/native/ui/color');
+import System = require('@smartface/native/device/system');
+import HeaderBarItem = require('@smartface/native/ui/headerbaritem');
+import Image = require('@smartface/native/ui/image');
+import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
 
 export default class Register extends RegisterDesign {
     router: any;
@@ -20,6 +24,7 @@ export default class Register extends RegisterDesign {
         }
         setupButtonActivity(this.buttonRegisterSubmit, this.activityIndicator1, this.onRegisterTab)
 
+        this.headerBar.title = lang["register"]
         this.labelRegisterTittle.text = lang["register"]
         this.buttonRegisterSubmit.text = lang["register"]
         this.labelGotoLogin.text = lang["goto-login"]
@@ -130,8 +135,19 @@ export default class Register extends RegisterDesign {
     }
 
     setupHeaderBar() {
-        const router = this.router;
-        //this.headerBar.setItems([createSettingsButton(router)])
+        const theme = getCombinedStyle(".my-label")
+        console.log(theme);
+        //todo use getCombinedStyle
+        if (System.OS === "Android") {
+            const headerBar = this.headerBar;
+            headerBar.setLeftItem(new HeaderBarItem({
+                onPress: () => {
+                    this.router.dismiss();
+                },
+                image: Image.createFromFile("images://close.png", 32, 32),
+                color : Color.create("#ffffff")
+            }));
+        }
     }
 }
 
