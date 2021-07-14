@@ -5,7 +5,8 @@
 			"id": "e821-b5c9-c023-86a3",
 			"props": {
 				"children": [
-					"6250-e6e8-be4c-5b9e"
+					"6250-e6e8-be4c-5b9e",
+					"aebb-cd58-119c-8612"
 				],
 				"name": "settings_item",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -19,9 +20,9 @@
 					"alignItems": "CENTER"
 				},
 				"height": 67.74193548387098,
-				"left": 0,
+				"left": 6.779661016949153,
 				"testId": "-lOOf_mrk",
-				"top": 260.60606060606057,
+				"top": 555.9322033898305,
 				"width": 369.35483870967744
 			}
 		},
@@ -48,6 +49,8 @@
 					"alignItems": "CENTER"
 				},
 				"height": 170.96774193548387,
+				"marginBottom": 15,
+				"marginTop": 15,
 				"testId": "nhQHv7kBN",
 				"usePageVariable": true,
 				"width": 362.9032258064516
@@ -92,8 +95,27 @@
 					"flexGrow": 1
 				},
 				"height": null,
+				"marginBottom": 1,
 				"testId": "VJqR7Qn6j",
 				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .seperator",
+			"id": "aebb-cd58-119c-8612",
+			"props": {
+				"children": [],
+				"name": "flexLayoutSeperator",
+				"parent": "e821-b5c9-c023-86a3",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "aTOxA0fRu",
 				"usePageVariable": true
 			}
 		}

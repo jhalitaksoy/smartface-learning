@@ -66,6 +66,11 @@ export default class Details extends DetailsDesign {
             const keyValue = listData[index]
             item.setTitle(keyValue.name)
             item.setSubTitle(keyValue.value)
+            if(index == listData.length - 1){
+                item.flexLayoutSeperator.visible = false
+            }else{
+                item.flexLayoutSeperator.visible = true
+            }
         }
 
         this.myHttp.requestImage({

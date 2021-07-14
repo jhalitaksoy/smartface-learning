@@ -7,6 +7,7 @@ import Settings_item from 'components/Settings_item';
 import Settings_item_ThemeSwitch from 'components/settings_items/SettingsItemThemeSwitch';
 import { clearCache } from '@smartface/extension-utils/lib/getCombinedStyle';
 import Settings_item_DropDown from 'components/settings_items/Settings_item_DropDown';
+import Application = require('@smartface/native/application');
 
 export type SettingsItem = {
     icon: Image,
@@ -28,7 +29,7 @@ export default class Settings extends SettingsDesign {
         const nextTheme = theme == "light" ? "myTheme" : "darkTheme"
         clearCache()
         ThemeService.changeTheme(nextTheme);
-        //Application.restart()
+        Application.restart()
     }
 
     onLanguageChanged(language: string) {
@@ -41,7 +42,7 @@ export default class Settings extends SettingsDesign {
     }
 
     initListView() {
-        this.listView1.rowHeight = 50;
+        this.listView1.rowHeight = 70;
 
         const settingsItems: Array<SettingsItem> = [
             {
@@ -75,6 +76,11 @@ export default class Settings extends SettingsDesign {
             item.setIcon(model.icon)
             item.setTitle(model.title)
             item.fireOnCustomViewCreate()
+            if(index == settingsItems.length - 1){
+                item.flexLayoutSeperator.visible = false
+            }else{
+                item.flexLayoutSeperator.visible = true
+            }
         }
     }
 

@@ -1,5 +1,12 @@
 {
 	".my-mtb": {
 		"textColor": "${primaryTextColor}"
+	},
+	".my": {
+		"&-label": {
+			"font": {
+				"size": 16
+			}
+		}
 	}
 }

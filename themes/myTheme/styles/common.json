@@ -16,5 +16,15 @@
 	},
 	".centertext": {
 		"textAlignment": "MIDCENTER"
+	},
+	".seperator": {
+		"flexProps": {
+			"positionType": "ABSOLUTE"
+		},
+		"left": 0,
+		"right": 0,
+		"bottom": 0,
+		"height": 1,
+		"backgroundColor": "rgba( 92, 94, 92, 1 )"
 	}
 }

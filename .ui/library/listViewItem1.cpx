@@ -5,7 +5,8 @@
 			"id": "eb26-3d5e-8ade-681d",
 			"props": {
 				"children": [
-					"a4f1-ce9f-2e0f-6da4"
+					"a4f1-ce9f-2e0f-6da4",
+					"66b8-dbcf-3a7a-8dcb"
 				],
 				"name": "listViewItem1",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -19,12 +20,16 @@
 					"flexDirection": "ROW",
 					"justifyContent": "SPACE_AROUND"
 				},
-				"height": 54.41176470588235,
+				"height": 78.37837837837839,
 				"left": 0,
 				"marginBottom": 1,
+				"paddingBottom": 5,
+				"paddingLeft": 5,
+				"paddingRight": 5,
+				"paddingTop": 5,
 				"testId": "wIkJu90N-",
 				"top": 444.44444444444446,
-				"width": 375
+				"width": 382.43243243243245
 			}
 		},
 		{
@@ -49,8 +54,10 @@
 					"justifyContent": "SPACE_BETWEEN"
 				},
 				"height": null,
-				"marginBottom": 1,
-				"marginTop": 0,
+				"marginBottom": 15,
+				"marginLeft": 10,
+				"marginRight": 10,
+				"marginTop": 15,
 				"paddingBottom": 5,
 				"paddingLeft": 5,
 				"paddingRight": 5,
@@ -76,6 +83,7 @@
 				"flexProps": {
 					"flexGrow": 1
 				},
+				"height": null,
 				"testId": "XYn6P40Ts",
 				"text": "label3",
 				"usePageVariable": true,
@@ -100,11 +108,30 @@
 				"flexProps": {
 					"flexGrow": 1
 				},
+				"height": null,
 				"testId": "lXseuX5hO",
 				"text": "label3",
 				"textAlignment": "MIDRIGHT",
 				"usePageVariable": true,
 				"width": null
+			}
+		},
+		{
+			"className": ".sf-flexLayout .seperator",
+			"id": "66b8-dbcf-3a7a-8dcb",
+			"props": {
+				"children": [],
+				"name": "flexLayoutSeperator",
+				"parent": "eb26-3d5e-8ade-681d",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "jDDeJqKBN",
+				"usePageVariable": true
 			}
 		}
 	]

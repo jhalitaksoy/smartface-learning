@@ -8,6 +8,8 @@ import Label = require('@smartface/native/ui/label');
 import addChild from "@smartface/contx/lib/smartface/action/addChild";
 import ListViewItem = require('@smartface/native/ui/listviewitem');
 import Timer from "@smartface/native/timer";
+import { Separator } from '@smartface/native/io/path';
+import Color = require('@smartface/native/ui/color');
 
 export default class Home extends HomeDesign {
     router: any;
@@ -32,14 +34,17 @@ export default class Home extends HomeDesign {
             router.push("/bottom/stackhome/details", { passenger: this.passengers.data[index] })
         }
         const router = this.router
+        this.listView1.rowHeight = 60;
         this.listView1.onRowCreate = (type) => {
             const passenger = this.passengers.data[this.index]
             let myListViewItem = new ListViewItem();
+            //myListViewItem.borderColor = Color.WHITE;
+            //myListViewItem.borderWidth = 1
             this.listView1.dispatch(addChild(`myListViewItem${++this.index}`, myListViewItem, '.sf-listViewItem', {
-                paddingTop: 5,
+                /*paddingTop: 5,
                 paddingBottom: 5,
                 paddingLeft: 10,
-                paddingRight: 10
+                paddingRight: 10*/
             }));
 
             if (type == 2) {// Loading
@@ -71,7 +76,10 @@ export default class Home extends HomeDesign {
                 let titleLabel = new Label();
                 let subtitleLabel = new Label();
 
+                let seperator = new FlexLayout();
+
                 titleLayout.flexDirection = FlexLayout.FlexDirection.ROW
+                titleLayout.alignItems = FlexLayout.AlignItems.CENTER
 
                 //@ts-ignore
                 myListViewItem.addChild(titleLayout, `titleLayout${this.index}`, ".sf-flexLayout", {
@@ -91,6 +99,23 @@ export default class Home extends HomeDesign {
                     textAlignment: "MIDRIGHT",
                     flexGrow: 1,
                 });
+
+                 //@ts-ignore
+                myListViewItem.addChild(seperator, `sepetator${this.index}`, ".sf-flexLayout", {
+                    //flexGrow: 1,
+                });
+
+                 seperator.height = 1;
+                seperator.positionType = FlexLayout.PositionType.ABSOLUTE;
+                seperator.left = 0;
+                seperator.right = 0;
+                seperator.bottom = 0;
+
+                titleLayout.padding = 15;
+                titleLayout.paddingBottom = 17;
+
+                seperator.backgroundColor = Color.create("#5c5e5c")
+
                 //@ts-ignore
                 titleLayout.subtitleLabel = subtitleLabel;
 
