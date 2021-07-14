@@ -54,7 +54,7 @@ export default class Settings extends SettingsDesign {
                 selectedItem: context.settingsStore.getLanguage() || "en",*/
             },
             {
-                icon: Image.createFromFile("images://darkMode.png"/*, 40, 40*/),
+                icon: Image.createFromFile("images://dark_mode.png"/*, 40, 40*/),
                 title: lang["theme"],
                 view: new Settings_item_ThemeSwitch(this.getTheme(), this.onThemeSelected, this)
             },
