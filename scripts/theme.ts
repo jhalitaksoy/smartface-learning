@@ -21,11 +21,11 @@ const themeListeners = new WeakMap<{}, ThemeListener>();
 const themeListenerKeys:{}[] = [];
 export const ThemeService = {
     onChange(listener: ThemeListener) {
+        
         const key = {};
         themeListenerKeys.push(key)
         themeListeners.set(key, listener);
         const deletionIndex = themeListenerKeys.length - 1;
-
         return () => {
             if(themeListeners.has(key)){
                 themeListeners.delete(key);

@@ -1,5 +1,5 @@
 //import { Data } from "@smartface/native"; // bug ***
-import Data = require('@smartface/native/global/data');
+import Data from '@smartface/native/global/data';
 
 type OnLanguageChangeCallback = (value : string | undefined) => any
 

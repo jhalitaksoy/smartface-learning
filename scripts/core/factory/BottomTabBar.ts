@@ -1,5 +1,4 @@
-import Color = require("@smartface/native/ui/color");
-import { context } from "context";
+import Color from "@smartface/native/ui/color";
 import { getCombinedStyle } from "@smartface/extension-utils/lib/getCombinedStyle";
 
 export function createBottomTabBarParams() {

@@ -1,10 +1,7 @@
 import SettingsDesign from 'generated/pages/settings';
 import addChild from "@smartface/contx/lib/smartface/action/addChild";
-import Settings_drop_down from 'components/Settings_drop_down';
-import { switchLanguage } from 'i18n/i18n';
 import { context } from 'context';
 import { ThemeService } from 'theme';
-import Application = require('@smartface/native/application');
 import Image = require('@smartface/native/ui/image');
 import Settings_item from 'components/Settings_item';
 import Settings_item_ThemeSwitch from 'components/settings_items/SettingsItemThemeSwitch';
