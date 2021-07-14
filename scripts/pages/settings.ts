@@ -6,6 +6,7 @@ import Image = require('@smartface/native/ui/image');
 import Settings_item from 'components/Settings_item';
 import Settings_item_ThemeSwitch from 'components/settings_items/SettingsItemThemeSwitch';
 import { clearCache } from '@smartface/extension-utils/lib/getCombinedStyle';
+import Settings_item_DropDown from 'components/settings_items/Settings_item_DropDown';
 
 export type SettingsItem = {
     icon: Image,
@@ -46,7 +47,8 @@ export default class Settings extends SettingsDesign {
             {
                 icon: Image.createFromFile("images://language.png", 40, 40),
                 title: lang["language"],
-                view: new Settings_item(this)
+                view: new Settings_item_DropDown(
+                    this, context.settingsStore.getLanguage() || "en", ["en", "tr"], lang["language"], this.onLanguageChanged)
                 /*values: ["en", "tr"],
                 onSelected: this.onLanguageChanged,
                 selectedItem: context.settingsStore.getLanguage() || "en",*/
