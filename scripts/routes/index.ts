@@ -54,9 +54,9 @@ const router = Router.of({
             to: "/bottom/stackhome/home",
             tabbarParams: createBottomTabBarParams(),
             items: () => [
-                { title: "Home", icon: Image.createFromFile("images://home.png") },
-                { title: "Profile", icon: Image.createFromFile("images://user.png") },
-                { title: "Settings", icon: Image.createFromFile("images://settings.png") }],
+                { title: lang["home"], icon: Image.createFromFile("images://home.png") },
+                { title: lang["profile"], icon: Image.createFromFile("images://user.png") },
+                { title: lang["settings"], icon: Image.createFromFile("images://settings.png") }],
             // tab1
             routes: [
                 StackRouter.of({

@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page #pgLogin .page",
+			"className": ".sf-page #pgLogin .page-flat",
 			"id": "e891b86d",
 			"initialized": true,
 			"props": {
@@ -67,7 +67,7 @@
 			}
 		},
 		{
-			"className": ".sf-label #pgLogin-lblLoginText .my-label .centertext",
+			"className": ".sf-label .my-label .centertext .my-label-title",
 			"id": "b277-e9c7-ea45-ec68",
 			"props": {
 				"children": [],
@@ -78,6 +78,7 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"height": 60,
 				"testId": "8iM97ITtL",
 				"text": "Login",
 				"usePageVariable": true

@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page .page",
+			"className": ".sf-page .page-flat",
 			"id": "0ecc-160b-e931-e5a9",
 			"initialized": true,
 			"props": {
@@ -64,6 +64,7 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"marginTop": 10,
 				"testId": "-5JDEvY3_",
 				"text": "Register",
 				"usePageVariable": true
@@ -95,7 +96,6 @@
 				},
 				"height": null,
 				"left": 0,
-				"marginTop": 20,
 				"testId": "lxLqWza7_",
 				"top": 0,
 				"usePageVariable": true

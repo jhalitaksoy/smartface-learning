@@ -5,8 +5,7 @@
 			"id": "72db-4b0c-34ad-20d4",
 			"props": {
 				"children": [
-					"4713-4e8f-7b38-0001",
-					"5962-b5b8-7014-0998"
+					"613e-27f9-b45b-55d9"
 				],
 				"name": "icon_switch",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -27,38 +26,42 @@
 			}
 		},
 		{
-			"className": ".sf-imageView",
-			"id": "4713-4e8f-7b38-0001",
+			"className": ".sf-flexLayout",
+			"id": "613e-27f9-b45b-55d9",
 			"props": {
-				"children": [],
-				"name": "imageViewLeft",
-				"parent": "72db-4b0c-34ad-20d4",
-				"usePageVariable": true
+				"children": [
+					"aa8a-66bf-b5d9-6178",
+					"3316-ece2-b667-e3a1"
+				],
+				"name": "flexLayout2",
+				"parent": "72db-4b0c-34ad-20d4"
 			},
 			"source": {
 				"page": "__library__"
 			},
-			"type": "ImageView",
+			"type": "FlexLayout",
 			"userProps": {
+				"borderColor": "rgba( 255, 255, 255, 1 )",
+				"borderRadius": 15,
 				"flexProps": {
-					"flexGrow": 1
+					"flexGrow": 1,
+					"flexDirection": "ROW"
 				},
-				"height": null,
+				"height": 41,
 				"marginBottom": 5,
 				"marginLeft": 5,
+				"marginRight": 5,
 				"marginTop": 5,
-				"testId": "DzG3z-gOG",
-				"usePageVariable": true,
-				"width": null
+				"testId": "YgEhvGw58"
 			}
 		},
 		{
 			"className": ".sf-imageView",
-			"id": "5962-b5b8-7014-0998",
+			"id": "aa8a-66bf-b5d9-6178",
 			"props": {
 				"children": [],
-				"name": "imageViewRight",
-				"parent": "72db-4b0c-34ad-20d4",
+				"name": "imageViewLeft",
+				"parent": "613e-27f9-b45b-55d9",
 				"usePageVariable": true
 			},
 			"source": {
@@ -69,13 +72,35 @@
 				"flexProps": {
 					"flexGrow": 1
 				},
-				"height": null,
-				"marginBottom": 5,
-				"marginRight": 5,
-				"marginTop": 5,
-				"testId": "ECvdwjoa2",
-				"usePageVariable": true,
-				"width": null
+				"height": 40,
+				"marginBottom": null,
+				"marginTop": null,
+				"testId": "I_kdk7zpl",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "3316-ece2-b667-e3a1",
+			"props": {
+				"children": [],
+				"name": "imageViewRight",
+				"parent": "613e-27f9-b45b-55d9",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": 40,
+				"marginBottom": null,
+				"marginTop": null,
+				"testId": "KsfUODOXn",
+				"usePageVariable": true
 			}
 		}
 	]

@@ -1,5 +1,8 @@
 {
 	".page": {
-        "backgroundColor": "${pageBackgroundColor}"
+		"backgroundColor": "${pageBackgroundColor}",
+        "&-flat" : {
+            "backgroundColor": "${commonBackgroundColor}"
+        }
 	}
 }

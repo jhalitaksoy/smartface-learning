@@ -1,8 +1,8 @@
 {
-    ".my-label" : {
-        "textColor" : "${primaryTextColor}",
-        "&-title" : {
-            "fontSize" : 36
-        }
-    }
+	".my-label": {
+		"textColor": "${primaryTextColor}",
+		"&-title": {
+			"font" : {"size" : 36}
+		}
+	}
 }

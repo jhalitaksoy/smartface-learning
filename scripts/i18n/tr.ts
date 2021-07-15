@@ -57,7 +57,7 @@ SMF.i18n.defineLanguage('tr', {
     "register": "Kayıt Ol",
     "code": "kod",
     "send": "Gönder",
-    "loginFailed": "Giriş Başarısız",
+    "loginFailed": "Kullanıcı adı veya parola hatalı!",
     "passwordsDoNotMatch": "Paralolar eşleşmiyor!",
     "tryDifferentUserName": "Farklı bir kullanıcı adı deneyin!",
     "home": "Anasayfa",

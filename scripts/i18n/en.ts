@@ -59,7 +59,7 @@ SMF.i18n.defineLanguage('en', {
     "register" : "Register",
     "code" : "code",
     "send" : "Send",
-    "loginFailed" : "Login Failed",
+    "loginFailed" : "User name or password is incorrect!",
     "passwordsDoNotMatch" : "Passwords do not match!",
     "tryDifferentUserName" : "Try different user name",
     "home" : "Home",

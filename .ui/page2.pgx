@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page .page",
+			"className": ".sf-page .page-flat",
 			"id": "7761adc8",
 			"initialized": true,
 			"props": {
@@ -103,7 +103,7 @@
 			"type": "Button",
 			"userProps": {
 				"marginBottom": null,
-				"marginTop": 15,
+				"marginTop": 30,
 				"testId": "OIn9NOX_r",
 				"text": "Kod Gönder",
 				"usePageVariable": true
