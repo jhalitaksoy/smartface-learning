@@ -4,6 +4,7 @@ import { UserStore, UserStoreImpl } from "store/user-store";
 import { ResourceService, ResourceServiceImpl } from "services/resource-service";
 import { SettingsStore, SettingsStoreImpl } from "store/settings";
 import { PassengerService, PassengerServiceImpl } from "services/passengers-service";
+import { FavoritesStore, FavoritesStoreImpl } from "store/favorite-store";
 
 type Context = {
     jwtKeyStore : JwtKeyStore,
@@ -12,6 +13,7 @@ type Context = {
     passengerService : PassengerService
     userStore : UserStore,
     settingsStore : SettingsStore
+    favoritesStore : FavoritesStore
 }
 
 export const context : Context = {
@@ -21,4 +23,5 @@ export const context : Context = {
     resourceService : new ResourceServiceImpl(),
     passengerService : new PassengerServiceImpl(),
     settingsStore : new SettingsStoreImpl(),
+    favoritesStore : new FavoritesStoreImpl(),
 }

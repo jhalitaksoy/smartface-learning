@@ -3,8 +3,8 @@
         <CompanyName>Smartface User</CompanyName>
         <LicenseName>Smartface Empty Workspace</LicenseName>
         <SASVersion>v5.0.0</SASVersion>
-        <CreateDate>03.06.2021 22:47:16</CreateDate>
-        <ExpireDate>01.06.2031 22:47:16</ExpireDate>
+        <CreateDate>00.06.2021 18:23:31</CreateDate>
+        <ExpireDate>05.06.2031 18:23:31</ExpireDate>
         <LicenseType>Professional</LicenseType>
         <PackageType>iOS</PackageType>
         <PackageName>io.smartface.demo</PackageName>
@@ -14,15 +14,15 @@
                 <FeatureValue>Feature</FeatureValue>
             </PackageFeature>
         </PackageFeatures>
-        <TripleDESKey>GDlTyPYtpXuoznkSVpUY4LVSdl0QpYZe4TCgKv4PDz5Q6dyvDsNV87X9tetQXKizf9iURcMDl6VyKXAugblcrWUuz6Y72pyRrfwqqaHwOWkrsEZB3v5EuCjCtyYQ1+8WcU3gxrLf0fo78F8YKXebUeE/pBuA8gDbYItM/rSCiQE=</TripleDESKey>
+        <TripleDESKey>NsH6XleznypW5QgKnmnE1bhmgaCDwS7/dRwYet2SBl4WdThZWEXNf04Jwdq2cFIJzL25qt2uqIVfv6A/5+5nGacNf7JmD3BwYJ9Rl/qJtfYafVuhU3lkCNycgxbH6NmvFeQRvEpNbAHQW1jPk+Fr/EL1vzovdygDcP8PQrrKljU=</TripleDESKey>
         <SignData></SignData>
     </ApplicationPackageLicense>
     <ApplicationPackageLicense>
         <CompanyName>Smartface User</CompanyName>
         <LicenseName>Smartface Empty Workspace</LicenseName>
         <SASVersion>v5.0.0</SASVersion>
-        <CreateDate>03.06.2021 22:47:16</CreateDate>
-        <ExpireDate>01.06.2031 22:47:16</ExpireDate>
+        <CreateDate>00.06.2021 18:23:31</CreateDate>
+        <ExpireDate>05.06.2031 18:23:31</ExpireDate>
         <LicenseType>Professional</LicenseType>
         <PackageType>Android</PackageType>
         <PackageName>io.smartface.demo</PackageName>
@@ -32,8 +32,8 @@
                 <FeatureValue>Feature</FeatureValue>
             </PackageFeature>
         </PackageFeatures>
-        <TripleDESKey>GDlTyPYtpXuoznkSVpUY4LVSdl0QpYZe4TCgKv4PDz5Q6dyvDsNV87X9tetQXKizf9iURcMDl6VyKXAugblcrWUuz6Y72pyRrfwqqaHwOWkrsEZB3v5EuCjCtyYQ1+8WcU3gxrLf0fo78F8YKXebUeE/pBuA8gDbYItM/rSCiQE=</TripleDESKey>
+        <TripleDESKey>NsH6XleznypW5QgKnmnE1bhmgaCDwS7/dRwYet2SBl4WdThZWEXNf04Jwdq2cFIJzL25qt2uqIVfv6A/5+5nGacNf7JmD3BwYJ9Rl/qJtfYafVuhU3lkCNycgxbH6NmvFeQRvEpNbAHQW1jPk+Fr/EL1vzovdygDcP8PQrrKljU=</TripleDESKey>
         <SignData></SignData>
     </ApplicationPackageLicense>
-    <TripleDESKeyValue>wBrWuahIRwtw0aEYOqExyLE8QgSXR9wW</TripleDESKeyValue>
+    <TripleDESKeyValue>mpMQCFhpGFA95DjlEMsCSFtpDCg0riXa</TripleDESKeyValue>
 </ApplicationPackageLicenses>
