@@ -24,3 +24,10 @@ if (jwtKey) {
 } else {
     router.push("/auth/login");
 }
+
+Application.onApplicationCallReceived = e => {
+    //@ts-ignore
+    if (System.OS === System.OSType.ANDROID && e.url) {
+      console.log(e)
+    }
+};

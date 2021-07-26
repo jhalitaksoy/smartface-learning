@@ -88,6 +88,9 @@
 				<action android:name="biz.smartface3.smartface_demo.run" />
 				<category android:name="android.intent.category.DEFAULT" />
 			</intent-filter>
+            <intent-filter>
+            <data android:scheme="something" android:host="project.example.com" />
+        </intent-filter>
 		</activity>
 		<service android:name="com.geniem.sprat.billing.BillingService" />
 		<receiver android:name="com.geniem.sprat.billing.BillingReceiver">
