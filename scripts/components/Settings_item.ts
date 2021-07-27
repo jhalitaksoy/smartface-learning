@@ -29,8 +29,8 @@ export default class Settings_item extends Settings_itemDesign {
         if (view) {
             this.flexLayout1.addChild(view, "iconSwitch2", ".sf-flexLayout")
         }else{
-            //todo
-            //this.flexLayout1.removeChild"")
+            
+            //this.flexLayout1.removeChild();
         }
     }
 }

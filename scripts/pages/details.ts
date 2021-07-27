@@ -5,10 +5,19 @@ import Image = require('@smartface/native/ui/image');
 import Http = require("@smartface/native/net/http");
 import System = require('@smartface/native/device/system');
 import HeaderBarItem = require('@smartface/native/ui/headerbaritem');
+import { ImageUtil, ImageLoadError } from 'core/util/image-util';
 
 type KeyValue = {
     name: string,
     value: string
+}
+
+function createKeyValue(name: string,
+    value: string): KeyValue {
+    return {
+        name: name,
+        value: value,
+    }
 }
 
 export default class Details extends DetailsDesign {
@@ -28,71 +37,59 @@ export default class Details extends DetailsDesign {
     }
 
     initData() {
-        this.headerBar.title = this.routeData.passenger.name
+        const passenger = this.routeData.passenger;
+        this.headerBar.title = passenger.name
 
-        const listData: Array<KeyValue> = [
-            {
-                name: "Passenger Name",
-                value: this.routeData.passenger.name
-            },
-            {
-                name: "Passenger Trips",
-                value: this.routeData.passenger.trips.toString(),
-            },
-            {
-                name: "Airline Name",
-                value: this.routeData.passenger.airline.name,
-            },
-            {
-                name: "Airline Country",
-                value: this.routeData.passenger.airline.country,
-            },
-            {
-                name: "Airline Slogan",
-                value: this.routeData.passenger.airline.slogan,
-            },
-            {
-                name: "Airline Website",
-                value: this.routeData.passenger.airline.website,
-            },
-            {
-                name: "Airline Headquaters",
-                value: this.routeData.passenger.airline.head_quaters,
-            }
-        ]
+        ImageUtil.setImageViewImageFromNetwork(
+            this.imageView1, passenger.airline.logo, (e: ImageLoadError) => {
+                alert(e.message);
+            });
 
+        this.initListView(passenger)
+    }
+
+    initListView(passenger: Passenger) {
+        const listData: Array<KeyValue> = this.createListData(passenger);
         this.listView1.itemCount = listData.length
         this.listView1.onRowBind = (item: ListViewItem1, index: number) => {
             const keyValue = listData[index]
             item.setTitle(keyValue.name)
             item.setSubTitle(keyValue.value)
-            if(index == listData.length - 1){
+            if (index == listData.length - 1) {
                 item.flexLayoutSeperator.visible = false
-            }else{
+            } else {
                 item.flexLayoutSeperator.visible = true
             }
         }
+    }
 
-        this.myHttp.requestImage({
-            url: this.routeData.passenger.airline.logo,
-            onLoad: (e: {
-                statusCode: number;
-                headers: { [key: string]: string };
-                image: Image;
-            }): void => {
-                // Image loaded.
-                this.imageView1.image = e.image;
-            },
-            onError: (e: {
-                message: string;
-                body: any;
-                statusCode: number;
-                headers: { [key: string]: string };
-            }): void => {
-                // Http request image failed.
-                alert(e.message);
-            }
-        });
+    createListData(passenger: Passenger): Array<KeyValue> {
+        return [
+            createKeyValue("Passenger Name", passenger.name),
+            createKeyValue("Passenger Trips", passenger.trips.toString()),
+            createKeyValue("Airline Name", passenger.airline.name),
+            createKeyValue("Airline Country", passenger.airline.country),
+            createKeyValue("Airline Slogan", passenger.airline.slogan),
+            createKeyValue("Airline Website", passenger.airline.website),
+            createKeyValue("Airline Headquaters", passenger.airline.head_quaters),
+        ]
+    }
+
+    initHeaderbar() {
+        let headerBar
+        if (System.OS === "Android") {
+            headerBar = this.headerBar;
+            headerBar.setLeftItem(new HeaderBarItem({
+                onPress: () => {
+                    this.router.goBack();
+                },
+                image: Image.createFromFile("images://arrow_back.png")
+            }));
+        }
+        else {
+            //@ts-ignore
+            headerBar = this.parentController.headerBar;
+        }
     }
 }
 
@@ -114,17 +111,5 @@ function onShow(superOnShow: () => void) {
 function onLoad(superOnLoad: () => void) {
     superOnLoad();
     this.initData();
-    let headerBar
-    if (System.OS === "Android") {
-        headerBar = this.headerBar;
-        headerBar.setLeftItem(new HeaderBarItem({
-            onPress: () => {
-                this.router.goBack();
-            },
-            image: Image.createFromFile("images://arrow_back.png")
-        }));
-    }
-    else {
-        headerBar = this.parentController.headerBar;
-    }
+    this.initHeaderbar();
 }

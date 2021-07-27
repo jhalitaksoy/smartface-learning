@@ -7,24 +7,23 @@ import componentContextPatch from "@smartface/contx/lib/smartface/componentConte
 import Color from "@smartface/native/ui/color";
 import System from "@smartface/native/device/system";
 import { modifyMaterialTextBox } from 'core/factory/MaterialTextBoxFactory';
+import { createBackButton } from 'core/factory/HeaderBarItemFactory';
 
 export default class Page2 extends Page2Design {
+    router: any;
     constructor() {
         super();
         // Overrides super.onShow method
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        /*touch.addPressEvent(this.btnSayHello, () => {
-            alert("Hello World!");
-        });*/
-        this.buttonSendCode.onTouch = ()=>{
+        this.buttonSendCode.onTouch = () => {
             alert(this.mtbEmail.materialTextBox.text)
         }
         this.buttonSendCode.text = lang["send"]
     }
 
-     initMaterialTextBoxes() {
+    initMaterialTextBoxes() {
         this.mtbEmail.options = {
             hint: lang["code"]
         }
@@ -32,6 +31,20 @@ export default class Page2 extends Page2Design {
         this.mtbEmail.materialTextBox.isPassword = true;
         modifyMaterialTextBox(this.mtbEmail.materialTextBox)
         this.headerBar.title = lang["password-forget"]
+    }
+
+    initHeaderBar() {
+        let headerBar;
+        if (System.OS === "Android") {
+            headerBar = this.headerBar;
+            headerBar.setLeftItem(createBackButton(this.router));
+        }
+        else {
+            //@ts-ignore
+            headerBar = this.parentController.headerBar;
+        }
+        //todo : use getCombinedStyle
+        headerBar.itemColor = Color.WHITE;
     }
 }
 
@@ -53,21 +66,6 @@ function onShow(superOnShow: () => void) {
  */
 function onLoad(superOnLoad: () => void) {
     superOnLoad();
-    let headerBar;
-    //this.headerBar.titleLayout = new PageTitleLayout();
-    //componentContextPatch(this.headerBar.titleLayout, "titleLayout");
-    if (System.OS === "Android") {
-        headerBar = this.headerBar;
-        headerBar.setLeftItem(new HeaderBarItem({
-            onPress: () => {
-                this.router.goBack();
-            },
-            image: Image.createFromFile("images://arrow_back.png")
-        }));
-    }
-    else {
-        headerBar = this.parentController.headerBar;
-    }
-    headerBar.itemColor = Color.WHITE;
+    this.initHeaderBar()
     this.initMaterialTextBoxes();
 }

@@ -15,7 +15,7 @@ export class UserStoreImpl implements UserStore {
     }
 
     deleteUserName() {
-        Data.removeVariable(key)
+        Data.removeVariable(key) 
     }
 
     setUserName(userName: string) {

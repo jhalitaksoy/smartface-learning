@@ -63,69 +63,135 @@ export default class Home extends HomeDesign {
         const passenger = this.passengers.data[e.index]
         const favorites = context.favoritesStore.getFavorites()
         const find = favorites.find((value) => value === passenger._id)
-        if(find){
+        if (find) {
             context.favoritesStore.deleteFavorite(passenger._id)
-        }else{
+        } else {
             context.favoritesStore.addFavorite(passenger._id)
         }
         this.listView1.refreshData();
     }
 
+    createMarkSwipeItem(e: { index: number }): ListView.SwipeItem {
+        const markItem = new ListView.SwipeItem();
+        markItem.text = "MARK " + e.index;
+        markItem.backgroundColor = Color.GREEN;
+        markItem.textColor = Color.BLACK;
+        markItem.font = Font.create("Arial-ItalicMT", 8, Font.NORMAL);
+        //@ts-ignore
+        markItem.ios.padding = 40;
+        //this.applyDimension(e.index, archiveItem);
+        //@ts-ignore
+        markItem.ios.isAutoHide = false;
+        markItem.onPress = (e: any) => {
+            this.markAsFavorite(e)
+        };
+        return markItem;
+    }
+
+    createDeleteSwipeItem(e: { index: number }): ListView.SwipeItem {
+        const deleteItem = new ListView.SwipeItem();
+        deleteItem.text = "DELETE " + e.index;
+        deleteItem.backgroundColor = Color.RED;
+        deleteItem.textColor = Color.YELLOW;
+        deleteItem.icon = Image.createFromFile("images://accountimg36.png");
+        //@ts-ignore
+        deleteItem.ios.iconTextSpacing = 10;
+        //@ts-ignore
+        deleteItem.ios.isAutoHide = false;
+        deleteItem.onPress = (e: any) => {
+            console.log("Delete Index : " + e.index);
+            this.deleteAndRefresh(e);
+        };
+        return deleteItem;
+    }
+
+    addLoadingIndicator(myListViewItem: ListViewItem) {
+        let loadingIndicator = new ActivityIndicator();
+        //@ts-ignore
+        myListViewItem.loadingIndicator = loadingIndicator;
+        //@ts-ignore
+        myListViewItem.addChild(loadingIndicator, `loadingIndicator${this.index}`, ".sf-activityIndicator", {
+            width: 35,
+            height: 35,
+            color: "#008000",
+            flexProps: {
+                positionType: "ABSOLUTE",
+            }
+        });
+        //@ts-ignore
+        myListViewItem.dispatch({
+            type: "updateUserStyle",
+            userStyle: {
+                flexProps: {
+                    justifyContent: "CENTER",
+                    alignItems: "CENTER"
+                }
+            }
+        });
+    }
+
+    addNormalListItem(myListViewItem: ListViewItem) {
+        let titleLayout = new FlexLayout();
+        let titleLabel = new Label();
+        let subtitleLabel = new Label();
+        let seperator = new FlexLayout();
+        titleLayout.flexDirection = FlexLayout.FlexDirection.ROW
+        titleLayout.alignItems = FlexLayout.AlignItems.CENTER
+        //@ts-ignore
+        myListViewItem.addChild(titleLayout, `titleLayout${this.index}`, ".sf-flexLayout", {
+            flexGrow: 1,
+        });
+        //@ts-ignore
+        titleLayout.addChild(titleLabel, `titleLabel${this.index}`, ".sf-label .my-label", {
+            //textAlignment: "MIDCENTER",
+            flexGrow: 1,
+        });
+        //@ts-ignore
+        titleLayout.titleLabel = titleLabel;
+        //@ts-ignore
+        titleLayout.addChild(subtitleLabel, `subtitleLabel${this.index}`, ".sf-label .my-label", {
+            textAlignment: "MIDRIGHT",
+            flexGrow: 1,
+        });
+        //@ts-ignore
+        myListViewItem.addChild(seperator, `sepetator${this.index}`, ".sf-flexLayout", {
+            //flexGrow: 1,
+        });
+        seperator.height = 1;
+        seperator.positionType = FlexLayout.PositionType.ABSOLUTE;
+        seperator.left = 0;
+        seperator.right = 0;
+        seperator.bottom = 0;
+        titleLayout.padding = 15;
+        titleLayout.paddingBottom = 17;
+        seperator.backgroundColor = Color.create("#5c5e5c")
+        //@ts-ignore
+        titleLayout.subtitleLabel = subtitleLabel;
+        //@ts-ignore
+        myListViewItem.titleLayout = titleLayout;
+    }
+
     initListView() {
         this.listView1.itemCount = this.passengers.data.length + 1
-        this.listView1.onRowSelected = (item: ListViewItem, index: number) => {
-            router.push("/bottom/stackhome/details", { passenger: this.passengers.data[index] })
-        }
         this.listView1.swipeEnabled = true;
-
         this.listView1.onRowCanSwipe = (index: number) => {
             return [ListView.SwipeDirection.LEFTTORIGHT, ListView.SwipeDirection.RIGHTTOLEFT];
         }
-
+        this.listView1.onRowSelected = (item: ListViewItem, index: number) => {
+            router.push("/bottom/stackhome/details", { passenger: this.passengers.data[index] })
+        }
         this.listView1.onRowSwipe = (e: any): ListView.SwipeItem[] => {
             if (e.direction == ListView.SwipeDirection.LEFTTORIGHT) {
                 e.ios.expansionSettings.buttonIndex = -1;
-                let archiveItem = new ListView.SwipeItem();
-                archiveItem.text = "ARCHIVE " + e.index;
-                archiveItem.backgroundColor = Color.GREEN;
-                archiveItem.textColor = Color.BLACK;
-                archiveItem.font = Font.create("Arial-ItalicMT", 8, Font.NORMAL);
-                //@ts-ignore
-                archiveItem.ios.padding = 40;
-                //this.applyDimension(e.index, archiveItem);
-                //@ts-ignore
-                archiveItem.ios.isAutoHide = false;
-                archiveItem.onPress = (e: any) => {
-                    console.log("Archive : " + e.index);
-                    this.markAsFavorite(e)
-                };
-                return [archiveItem];
+                const markItem = this.createMarkSwipeItem(e);
+                return [markItem];
             }
             else if (e.direction == ListView.SwipeDirection.RIGHTTOLEFT) {
                 e.ios.expansionSettings.buttonIndex = 0;
                 e.ios.expansionSettings.threshold = 1.5;
                 e.ios.expansionSettings.fillOnTrigger = true;
-                let deleteItem = new ListView.SwipeItem();
-                deleteItem.text = "DELETE " + e.index;
-                deleteItem.backgroundColor = Color.RED;
-                deleteItem.textColor = Color.YELLOW;
-                deleteItem.icon = Image.createFromFile("images://accountimg36.png");
-                //@ts-ignore
-                deleteItem.ios.iconTextSpacing = 10;
-                //@ts-ignore
-                deleteItem.ios.isAutoHide = false;
-                deleteItem.onPress = (e: any) => {
-                    console.log("Delete Index : " + e.index);
-                    this.deleteAndRefresh(e);
-                };
-                let moreItem = new ListView.SwipeItem();
-                moreItem.text = "MORE";
-                moreItem.onPress = function (e) {
-                    console.log("More : " + e.index);
-                    this.myListView.refreshData();
-                };
-                //this.applyDimension(e.index, deleteItem);
-                return [deleteItem, moreItem];
+                const deleteItem = this.createDeleteSwipeItem(e);
+                return [deleteItem];
             }
         }
         const router = this.router
@@ -135,89 +201,16 @@ export default class Home extends HomeDesign {
             let myListViewItem = new ListViewItem();
             const listViewStyle = getCombinedStyle(".mylistview")
             myListViewItem.backgroundColor = listViewStyle.backgroundColor;
-            //myListViewItem.borderColor = Color.WHITE;
-            //myListViewItem.borderWidth = 1
             this.listView1.dispatch(addChild(`myListViewItem${++this.index}`, myListViewItem, '.sf-listViewItem', {
                 /*paddingTop: 5,
                 paddingBottom: 5,
                 paddingLeft: 10,
                 paddingRight: 10*/
             }));
-
             if (type == 2) {// Loading
-                let loadingIndicator = new ActivityIndicator();
-                //@ts-ignore
-                myListViewItem.loadingIndicator = loadingIndicator;
-                //@ts-ignore
-                myListViewItem.addChild(loadingIndicator, `loadingIndicator${this.index}`, ".sf-activityIndicator", {
-                    width: 35,
-                    height: 35,
-                    color: "#008000",
-                    flexProps: {
-                        positionType: "ABSOLUTE",
-                    }
-                });
-
-                //@ts-ignore
-                myListViewItem.dispatch({
-                    type: "updateUserStyle",
-                    userStyle: {
-                        flexProps: {
-                            justifyContent: "CENTER",
-                            alignItems: "CENTER"
-                        }
-                    }
-                });
+                this.addLoadingIndicator(myListViewItem);
             } else {
-                let titleLayout = new FlexLayout();
-                let titleLabel = new Label();
-                let subtitleLabel = new Label();
-
-                let seperator = new FlexLayout();
-
-                titleLayout.flexDirection = FlexLayout.FlexDirection.ROW
-                titleLayout.alignItems = FlexLayout.AlignItems.CENTER
-
-                //@ts-ignore
-                myListViewItem.addChild(titleLayout, `titleLayout${this.index}`, ".sf-flexLayout", {
-                    flexGrow: 1,
-                });
-
-                //@ts-ignore
-                titleLayout.addChild(titleLabel, `titleLabel${this.index}`, ".sf-label .my-label", {
-                    //textAlignment: "MIDCENTER",
-                    flexGrow: 1,
-                });
-                //@ts-ignore
-                titleLayout.titleLabel = titleLabel;
-
-                //@ts-ignore
-                titleLayout.addChild(subtitleLabel, `subtitleLabel${this.index}`, ".sf-label .my-label", {
-                    textAlignment: "MIDRIGHT",
-                    flexGrow: 1,
-                });
-
-                //@ts-ignore
-                myListViewItem.addChild(seperator, `sepetator${this.index}`, ".sf-flexLayout", {
-                    //flexGrow: 1,
-                });
-
-                seperator.height = 1;
-                seperator.positionType = FlexLayout.PositionType.ABSOLUTE;
-                seperator.left = 0;
-                seperator.right = 0;
-                seperator.bottom = 0;
-
-                titleLayout.padding = 15;
-                titleLayout.paddingBottom = 17;
-
-                seperator.backgroundColor = Color.create("#5c5e5c")
-
-                //@ts-ignore
-                titleLayout.subtitleLabel = subtitleLabel;
-
-                //@ts-ignore
-                myListViewItem.titleLayout = titleLayout;
+                this.addNormalListItem(myListViewItem);
             }
             return myListViewItem;
         };
@@ -228,39 +221,31 @@ export default class Home extends HomeDesign {
             }
             else {
                 const passenger = this.passengers.data[index % this.passengers.data.length]
-
                 const favorites = context.favoritesStore.getFavorites()
                 const find = favorites.find((value) => value === passenger._id)
-
                 const listViewStyle = getCombinedStyle(".mylistview")
                 if (find) {
                     listViewItem.backgroundColor = Color.BLUE
                 } else {
                     listViewItem.backgroundColor = listViewStyle.backgroundColor;
                 }
-
                 //@ts-ignore
                 listViewItem.titleLayout.titleLabel.text = this.passengers.data[index % this.passengers.data.length].name;
                 //@ts-ignore
                 listViewItem.titleLayout.subtitleLabel.text = this.passengers.data[index % this.passengers.data.length].airline.name;
             }
-
             if (index > this.passengers.data.length - 3 && !this.isLoading) {
                 this.isLoading = true
-
                 Timer.setTimeout({
                     task: async () => {
                         // Loading completed
                         await this.loadMorePassengerData();
-                        console.log(this.passengers.data.length);
-
                         this.listView1.itemCount = this.passengers.data.length + 1;
                         this.listView1.refreshData();
                         this.isLoading = false;
                     },
                     delay: 500
                 });
-
             }
         };
 
