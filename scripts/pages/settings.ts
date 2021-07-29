@@ -15,6 +15,17 @@ export type SettingsItem = {
     view: Settings_item
 }
 
+function createSettingsItem(
+    title: string,
+    icon: Image,
+    view: Settings_item): SettingsItem {
+    return {
+        icon: icon,
+        title: title,
+        view: view,
+    }
+}
+
 export default class Settings extends SettingsDesign {
     constructor() {
         super();
@@ -36,31 +47,27 @@ export default class Settings extends SettingsDesign {
         context.settingsStore.setLanguage(language)
     }
 
-    getTheme() : "light" | "dark"{
+    getTheme(): "light" | "dark" {
         const themeStr = context.settingsStore.getTheme()
         return themeStr == "dark" ? "dark" : "light"
     }
 
-    initListView() {
-        this.listView1.rowHeight = 70;
-
-        const settingsItems: Array<SettingsItem> = [
-            {
-                icon: Image.createFromFile("images://language.png", 40, 40),
-                title: lang["language"],
-                view: new Settings_item_DropDown(
-                    this, context.settingsStore.getLanguage() || "en", ["en", "tr"], lang["language"], this.onLanguageChanged)
-                /*values: ["en", "tr"],
-                onSelected: this.onLanguageChanged,
-                selectedItem: context.settingsStore.getLanguage() || "en",*/
-            },
-            {
-                icon: Image.createFromFile("images://dark_mode.png"/*, 40, 40*/),
-                title: lang["theme"],
-                view: new Settings_item_ThemeSwitch(this.getTheme(), this.onThemeSelected, this)
-            },
+    createSettingsItem(): Array<SettingsItem> {
+        const languageDropDownView = new Settings_item_DropDown(
+            this,context.settingsStore.getLanguage() || "en",["en", "tr"], 
+            lang["language"],this.onLanguageChanged);
+        const themeDropDownView = new Settings_item_ThemeSwitch(
+            this.getTheme(), this.onThemeSelected, this);
+        const languageImage = Image.createFromFile("images://language.png", 40, 40);
+        const themeImage = Image.createFromFile("images://dark_mode.png"/*, 40, 40*/);
+        return [
+            createSettingsItem(lang["language"], languageImage, languageDropDownView),
+            createSettingsItem(lang["theme"], themeImage, themeDropDownView),
         ]
+    }
 
+    initListView() {
+        const settingsItems: Array<SettingsItem> = this.createSettingsItem();
         this.listView1.height = settingsItems.length * this.listView1.rowHeight + 10
         this.listView1.itemCount = settingsItems.length;
         var itemIndex = -1;
@@ -70,15 +77,14 @@ export default class Settings extends SettingsDesign {
             this.dispatch(addChild(`item${itemIndex}`, settingsItem.view));
             return settingsItem.view
         }
-
-        this.listView1.onRowBind = (item : Settings_item, index : number) => {
+        this.listView1.onRowBind = (item: Settings_item, index: number) => {
             const model = settingsItems[index]
             item.setIcon(model.icon)
             item.setTitle(model.title)
             item.fireOnCustomViewCreate()
-            if(index == settingsItems.length - 1){
+            if (index == settingsItems.length - 1) {
                 item.flexLayoutSeperator.visible = false
-            }else{
+            } else {
                 item.flexLayoutSeperator.visible = true
             }
         }

@@ -10,9 +10,9 @@ import System = require('@smartface/native/device/system');
 import HeaderBarItem = require('@smartface/native/ui/headerbaritem');
 import Image = require('@smartface/native/ui/image');
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import MaterialTextBox = require('@smartface/native/ui/materialtextbox');
+import { LoginHelper } from 'core/helper/login-helper';
 
-export const userNameMinSize = 5
-export const passwordMinSize = 4
 
 export default class Register extends RegisterDesign {
     router: any;
@@ -43,6 +43,36 @@ export default class Register extends RegisterDesign {
         this.labelGotoLogin.touchEnabled = enability
     }
 
+    checkRegisterParametersIsValid(registerParameters: RegisterParameters, password2 : string): boolean {
+        this.resetTextBoxErrorMessages();
+
+        const validResultUserName = LoginHelper.checkUserNameIsValid(registerParameters.name);
+        if (!validResultUserName.valid) {
+            this.setUserNameTextBoxErrorMessage(validResultUserName.inValidMessage);
+            return false;
+        }
+
+        const validResultPassword1 = LoginHelper.checkPasswordIsValid(registerParameters.password);
+        if (!validResultPassword1.valid) {
+            this.setPassword1TextBoxErrorMessage(validResultPassword1.inValidMessage);
+            return false;
+        }
+
+        const validResultPassword2 = LoginHelper.checkPasswordIsValid(password2);
+        if (!validResultPassword2.valid) {
+            this.setPassword1TextBoxErrorMessage(validResultPassword2.inValidMessage);
+            return false;
+        }
+
+        if (registerParameters.password != password2) {
+            this.setPassword1TextBoxErrorMessage(lang["passwordsDoNotMatch"] )
+            this.setPassword2TextBoxErrorMessage(lang["passwordsDoNotMatch"] )
+            return
+        }
+
+        return true;
+    }
+
     onRegisterTab = async (showIndicator, hideIndicator) => {
         const userName = this.mtbUserName.materialTextBox.text
         const password1 = this.mtbPassword1.materialTextBox.text
@@ -53,35 +83,7 @@ export default class Register extends RegisterDesign {
             password: password1,
         }
 
-        if (!registerParameters.name) {
-            this.setErrorMessages(lang["cannotBeEmty"], undefined, undefined)
-            return;
-        }
-
-        if (!registerParameters.password) {
-            this.setErrorMessages(undefined, lang["cannotBeEmty"], undefined)
-            return;
-        }
-
-        if (registerParameters.name.length < userNameMinSize) {
-            this.setErrorMessages(lang["userNameTooShort"], undefined, undefined)
-            return;
-        }
-
-        if (registerParameters.password.length < passwordMinSize) {
-            this.setErrorMessages(undefined, lang["passwordTooShort"], undefined)
-            return;
-        }
-
-        if (!password2) {
-            this.setErrorMessages(undefined, undefined, lang["cannotBeEmty"])
-            return;
-        }
-
-        if (password1 != password2) {
-            this.setErrorMessages(undefined, lang["passwordsDoNotMatch"], lang["passwordsDoNotMatch"])
-            return
-        }
+        if (!this.checkRegisterParametersIsValid(registerParameters, password2)) return;
 
         showIndicator();
         this.setPageEnability(false)
@@ -96,7 +98,7 @@ export default class Register extends RegisterDesign {
             hideIndicator();
             this.setPageEnability(true)
             if (error.statusCode == 409) {
-                this.setErrorMessages(lang["tryDifferentUserName"], undefined, undefined)
+                this.setUserNameTextBoxErrorMessage(lang["tryDifferentUserName"]);
                 return
             }
             alert(lang["applicationError"])
@@ -124,32 +126,40 @@ export default class Register extends RegisterDesign {
         modifyMaterialTextBox(this.mtbPassword2.materialTextBox)
 
         this.mtbUserName.materialTextBox.onTextChanged = () => {
-            this.resetErrorMessages()
+            this.resetTextBoxErrorMessages()
         }
         this.mtbPassword1.materialTextBox.onTextChanged = () => {
-            this.resetErrorMessages()
+            this.resetTextBoxErrorMessages()
         }
         this.mtbPassword2.materialTextBox.onTextChanged = () => {
-            this.resetErrorMessages()
+            this.resetTextBoxErrorMessages()
         }
     }
 
-    resetErrorMessages() {
-        this.setErrorMessages(undefined, undefined, undefined)
+    resetTextBoxErrorMessages() {
+        this.setUserNameTextBoxErrorMessage(undefined)
+        this.setPassword1TextBoxErrorMessage(undefined)
+        this.setPassword2TextBoxErrorMessage(undefined)
     }
 
-    setErrorMessages(
-        userNameErrorMessage: string,
-        password1ErrorMessage: string,
-        password2ErrorMessage: string) {
-        this.mtbUserName.materialTextBox.errorMessage = userNameErrorMessage
-        this.mtbPassword1.materialTextBox.errorMessage = password1ErrorMessage
-        this.mtbPassword2.materialTextBox.errorMessage = password2ErrorMessage
+    setUserNameTextBoxErrorMessage(errorMessage: string) {
+        this.setTextBoxErrorMessage(this.mtbUserName.materialTextBox, errorMessage);
+    }
+
+    setPassword1TextBoxErrorMessage(errorMessage: string) {
+        this.setTextBoxErrorMessage(this.mtbPassword1.materialTextBox, errorMessage);
+    }
+
+    setPassword2TextBoxErrorMessage(errorMessage: string) {
+        this.setTextBoxErrorMessage(this.mtbPassword2.materialTextBox, errorMessage);
+    }
+
+    setTextBoxErrorMessage(materialTextBox: MaterialTextBox, errorMessage: string) {
+        materialTextBox.errorMessage = errorMessage;
     }
 
     setupHeaderBar() {
         const theme = getCombinedStyle(".my-label")
-        console.log(theme);
         //todo use getCombinedStyle
         if (System.OS === "Android") {
             const headerBar = this.headerBar;

@@ -11,7 +11,8 @@ import { modifyMaterialTextBox } from 'core/factory/MaterialTextBoxFactory';
 import Color from '@smartface/native/ui/color';
 import TextBox from '@smartface/native/ui/textbox';
 import { createSettingsButton } from 'core/factory/HeaderBarItemFactory';
-import { userNameMinSize, passwordMinSize } from './register';
+import MaterialTextBox from '@smartface/native/ui/materialtextbox';
+import { LoginHelper } from 'core/helper/login-helper';
 
 export default class Page1 extends Page1Design {
     router: any;
@@ -47,31 +48,34 @@ export default class Page1 extends Page1Design {
         this.labelGotoRegister.touchEnabled = enable
     }
 
-    onLoginTab = async (showIndicator, hideIndicator) => {
-        const loginParameters: LoginParameters = {
+    checkLoginParametersIsValid(loginParameters: LoginParameters): boolean {
+        this.resetTextBoxErrorMessages();
+
+        const validResultUserName = LoginHelper.checkUserNameIsValid(loginParameters.name);
+        if (!validResultUserName.valid) {
+            this.setUserNameTextBoxErrorMessage(validResultUserName.inValidMessage);
+            return false;
+        }
+
+        const validResultPassword = LoginHelper.checkPasswordIsValid(loginParameters.password);
+        if (!validResultPassword.valid) {
+            this.setPasswordTextBoxErrorMessage(validResultPassword.inValidMessage);
+            return false;
+        }
+
+        return true;
+    }
+
+    getLoginParameters(): LoginParameters {
+        return {
             name: this.mtbUsername.materialTextBox.text,
             password: this.mtbPassword.materialTextBox.text,
         }
-        if(!loginParameters.name){
-            this.setErrorMessages(lang["cannotBeEmty"], undefined)
-            return;
-        }
+    }
 
-          if(!loginParameters.password){
-            this.setErrorMessages(undefined, lang["cannotBeEmty"])
-            return;
-        }
-
-        if (loginParameters.name.length < userNameMinSize) {
-            this.setErrorMessages(lang["userNameTooShort"], undefined)
-            return;
-        }
-
-        if (loginParameters.password.length < passwordMinSize) {
-            this.setErrorMessages(undefined, lang["passwordTooShort"])
-            return;
-        }
-
+    onLoginTab = async (showIndicator, hideIndicator) => {
+        const loginParameters = this.getLoginParameters()
+        if (!this.checkLoginParametersIsValid(loginParameters)) return;
         showIndicator();
         this.setPageEnable(false)
         try {
@@ -86,7 +90,8 @@ export default class Page1 extends Page1Design {
             hideIndicator();
             this.setPageEnable(true)
             if (error.statusCode == 409) {
-                this.setErrorMessages(lang["loginFailed"], lang["loginFailed"])
+                this.setUserNameTextBoxErrorMessage(lang["loginFailed"])
+                this.setPasswordTextBoxErrorMessage(lang["loginFailed"])
                 return
             }
             alert(lang["applicationError"])
@@ -108,22 +113,28 @@ export default class Page1 extends Page1Design {
         modifyMaterialTextBox(this.mtbPassword.materialTextBox)
 
         this.mtbUsername.materialTextBox.onTextChanged = () => {
-            this.resetErrorMessages()
+            this.resetTextBoxErrorMessages()
         }
         this.mtbPassword.materialTextBox.onTextChanged = () => {
-            this.resetErrorMessages()
+            this.resetTextBoxErrorMessages()
         }
     }
 
-    resetErrorMessages() {
-        this.setErrorMessages(undefined, undefined)
+    resetTextBoxErrorMessages() {
+        this.setUserNameTextBoxErrorMessage(undefined)
+        this.setPasswordTextBoxErrorMessage(undefined)
     }
 
-    setErrorMessages(
-        userNameErrorMessage: string,
-        passwordErrorMessage: string) {
-        this.mtbUsername.materialTextBox.errorMessage = userNameErrorMessage
-        this.mtbPassword.materialTextBox.errorMessage = passwordErrorMessage
+    setUserNameTextBoxErrorMessage(errorMessage: string) {
+        this.setTextBoxErrorMessage(this.mtbUsername.materialTextBox, errorMessage);
+    }
+
+    setPasswordTextBoxErrorMessage(errorMessage: string) {
+        this.setTextBoxErrorMessage(this.mtbPassword.materialTextBox, errorMessage);
+    }
+
+    setTextBoxErrorMessage(materialTextBox: MaterialTextBox, errorMessage: string) {
+        materialTextBox.errorMessage = errorMessage;
     }
 
     handleUserName() {
@@ -134,8 +145,12 @@ export default class Page1 extends Page1Design {
     }
 
     setupHeaderBar() {
-        //const router = this.router;
-        //this.headerBar.setItems([createSettingsButton(router)])
+        this.headerBar.leftItemEnabled = false;
+        this.headerBar.titleLayout = new PageTitleLayout();
+        componentContextPatch(this.headerBar.titleLayout, "titleLayout");
+        if (System.OS === "Android") {
+            this.headerBar.title = "";
+        }
     }
 }
 
@@ -154,14 +169,7 @@ function onShow(superOnShow: () => void) {
  */
 function onLoad(superOnLoad: () => void) {
     superOnLoad();
-    this.headerBar.leftItemEnabled = false;
-    this.headerBar.titleLayout = new PageTitleLayout();
-    componentContextPatch(this.headerBar.titleLayout, "titleLayout");
-    if (System.OS === "Android") {
-        this.headerBar.title = "";
-    }
-    this.initMaterialTextBoxes()
-    this.handleUserName();
     this.setupHeaderBar();
-
+    this.initMaterialTextBoxes();
+    this.handleUserName();
 }
